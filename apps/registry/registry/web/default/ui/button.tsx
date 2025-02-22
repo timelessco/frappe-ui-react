@@ -7,6 +7,8 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { type IconProps } from "@/components/ui/icon";
 import { cn, handleIconElement } from "@/lib/utils";
 
+import { useButtonGroupContext } from "./button-group";
+
 export interface ButtonProps
 	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "prefix">,
 		VariantProps<typeof buttonVariants> {
@@ -20,8 +22,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
 			className,
-			variant,
-			size,
+			variant: initialVariant,
+			size: initialSize,
 			asChild = false,
 			prefix,
 			suffix,
@@ -32,6 +34,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		ref,
 	) => {
 		const Comp = asChild ? Slot : "button";
+		const groupContext = useButtonGroupContext();
+
+		const size = initialSize ?? groupContext.size;
+		const variant = initialVariant ?? groupContext.variant;
 
 		const prefixContent = handleIconElement(prefix, iconVariants({ size }));
 		const suffixContent = handleIconElement(suffix, iconVariants({ size }));
