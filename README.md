@@ -102,7 +102,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://navinmoorthy.me/"><img src="https://avatars.githubusercontent.com/u/39694575?v=4?s=100" width="100px;" alt="Navin Moorthy"/><br /><sub><b>Navin Moorthy</b></sub></a><br /><a href="https://github.com/timelessco/frappe-ui-react/commits?author=navin-moorthy" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://navinmoorthy.me/"><img src="https://avatars.githubusercontent.com/u/39694575?v=4?s=100" width="100px;" alt="Navin Moorthy"/><br /><sub><b>Navin Moorthy</b></sub></a><br /><a href="https://github.com/timelessco/frappe-ui-react/commits?author=navin-moorthy" title="Code">💻</a> <a href="#infra-navin-moorthy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://mcnaveen.com"><img src="https://avatars.githubusercontent.com/u/8493007?v=4?s=100" width="100px;" alt="Naveen MC"/><br /><sub><b>Naveen MC</b></sub></a><br /><a href="#maintenance-mcnaveen" title="Maintenance">🚧</a> <a href="https://github.com/timelessco/frappe-ui-react/commits?author=mcnaveen" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://bento.me/iamkarthik"><img src="https://avatars.githubusercontent.com/u/35562287?v=4?s=100" width="100px;" alt="Karthik"/><br /><sub><b>Karthik</b></sub></a><br /><a href="#maintenance-karthik-b-06" title="Maintenance">🚧</a></td>
     </tr>
