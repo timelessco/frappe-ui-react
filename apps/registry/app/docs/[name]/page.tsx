@@ -4,10 +4,13 @@ export default async function Page({
 	params: Promise<{ name: string }>;
 }) {
 	const name = (await params).name;
-	console.log(name);
 	const { default: Post } = await import(`../content/${name}.mdx`);
 
-	return <Post />;
+	return (
+		<div className="prose dark:prose-invert">
+			<Post />
+		</div>
+	);
 }
 
 export function generateStaticParams() {

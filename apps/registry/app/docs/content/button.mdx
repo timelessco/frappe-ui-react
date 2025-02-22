@@ -1,107 +1,166 @@
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { PlaceholderIcon } from "@/registry/web/default/icons/placeholder";
 
 # Button
 
 A button component that follows our design system guidelines with support for different variants, sizes, and icon placements.
 
+<ComponentPreview component={<Button>Click me</Button>}>
+<EnhancedCodeBlock language="tsx">
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function ButtonDemo() {
+	return <Button>Click me</Button>
+}
+```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
 ## Installation
 
-```bash
-import { Button } from "@/components/ui/button"
-```
+<InstallationTabs defaultValue="cli">
+	<TabsList>
+		<TabsTrigger value="cli">CLI</TabsTrigger>
+		<TabsTrigger value="copy">Copy Paste</TabsTrigger>
+	</TabsList>
+	<TabsContent value="copy">
+		<EnhancedCodeBlock language="tsx">
+			```tsx
+		import { Button } from "@/components/ui/button"
+		```
+		</EnhancedCodeBlock>
+	</TabsContent>
+	<TabsContent value="cli">
+		<PackageManagerTabs defaultValue="npm">
+			<TabsList>
+				<TabsTrigger value="npm">npm</TabsTrigger>
+				<TabsTrigger value="pnpm">pnpm</TabsTrigger>
+				<TabsTrigger value="yarn">yarn</TabsTrigger>
+			</TabsList>
+			<TabsContent value="npm">
+				npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+			</TabsContent>
+			<TabsContent value="pnpm">
+				pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+			</TabsContent>
+			<TabsContent value="yarn">
+				yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+			</TabsContent>
+		</PackageManagerTabs>
+	</TabsContent>
+</InstallationTabs>
 
 ## Usage
 
-### Basic Button
+### Solid Button
 
-```tsx
-<Button>Click me</Button>
-```
-
-### Button Variants
-
-The Button component supports different variants:
-
+<ComponentPreview component={<Button variant="solid">Solid Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
 <Button variant="solid">Solid Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+### Subtle Button
+
+<ComponentPreview component={<Button variant="subtle">Subtle Button</Button>}>
+<EnhancedCodeBlock language="tsx">
+```tsx
+<Button variant="subtle">Subtle Button</Button>
+```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+### Outline Button
+
+<ComponentPreview component={<Button variant="outline">Outline Button</Button>}>
+<EnhancedCodeBlock language="tsx">
+```tsx
+<Button variant="outline">Outline Button</Button>
+```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+### Ghost Button
+
+<ComponentPreview component={<Button variant="ghost">Ghost Button</Button>}>
+<EnhancedCodeBlock language="tsx">
+```tsx
+<Button variant="ghost">Ghost Button</Button>
+```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
 ### Button Sizes
 
-Available size options:
-
+#### Small Button
+<ComponentPreview component={<Button size="sm">Small Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
 <Button size="sm">Small Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
-### Buttons with Icons
-
-You can add icons before (prefix) or after (suffix) the button text:
-
+#### Medium Button
+<ComponentPreview component={<Button size="md">Medium Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
-import { ArrowRight, Plus } from "lucide-react"
-
-<Button prefix={Plus}>Add Item</Button>
-<Button suffix={ArrowRight}>Next</Button>
+<Button size="md">Medium Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
-### Disabled State
-
+#### Large Button
+<ComponentPreview component={<Button size="lg">Large Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
-<Button disabled>Disabled Button</Button>
+<Button size="lg">Large Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
-### As Child
-
-The button can be rendered as a child component using the `asChild` prop:
-
+#### Extra Large Button
+<ComponentPreview component={<Button size="xl">Extra Large Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
-import Link from "next/link";
-
-<Button asChild>
-	<Link href="/about">About Page</Link>
-</Button>;
+<Button size="xl">Extra Large Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
-## Props
-
-| Prop        | Type                                                              | Default   | Description                                       |
-| ----------- | ----------------------------------------------------------------- | --------- | ------------------------------------------------- |
-| `variant`   | `"solid"`                                                         | `"solid"` | The visual style of the button                    |
-| `size`      | `"sm"`                                                            | `"sm"`    | The size of the button                            |
-| `asChild`   | `boolean`                                                         | `false`   | Whether to render the button as a child component |
-| `prefix`    | `React.ComponentType<IconProps> \| React.ReactElement<IconProps>` | -         | Icon component to render before button text       |
-| `suffix`    | `React.ComponentType<IconProps> \| React.ReactElement<IconProps>` | -         | Icon component to render after button text        |
-| `disabled`  | `boolean`                                                         | `false`   | Whether the button is disabled                    |
-| `className` | `string`                                                          | -         | Additional CSS classes                            |
-
-The Button component also accepts all standard HTML button attributes.
-
-## Examples
-
-### Basic Examples
-
+#### Icon Only Button
+<ComponentPreview component={<Button iconOnly={<PlaceholderIcon />}>Icon Only Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
-import { ArrowRight, Plus } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-
-export default function ButtonDemo() {
-	return (
-		<div className="flex flex-col gap-4">
-			<Button>Default Button</Button>
-			<Button disabled>Disabled Button</Button>
-			<Button prefix={Plus}>Add New</Button>
-			<Button suffix={ArrowRight}>Continue</Button>
-		</div>
-	);
-}
+<Button iconOnly={<PlaceholderIcon />}>Icon Only Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
 
-### Custom Styling
-
-You can customize the button appearance using the `className` prop:
-
+#### Icon Prefix Button
+<ComponentPreview component={<Button prefix={<PlaceholderIcon />}>Icon Prefix Button</Button>}>
+<EnhancedCodeBlock language="tsx">
 ```tsx
-<Button className="bg-blue-500 hover:bg-blue-600">Custom Styled Button</Button>
+<Button prefix={<PlaceholderIcon />}>Icon Prefix Button</Button>
 ```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+#### Icon Suffix Button
+<ComponentPreview component={<Button suffix={<PlaceholderIcon />}>Icon Suffix Button</Button>}>
+<EnhancedCodeBlock language="tsx">
+```tsx
+<Button suffix={<PlaceholderIcon />}>Icon Suffix Button</Button>
+```
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+

@@ -1,7 +1,11 @@
 import Welcome from "@/app/docs/content/welcome.mdx";
 
 export default async function DocsPage() {
-	return <Welcome />;
+	return (
+		<div className="prose dark:prose-invert">
+			<Welcome />
+		</div>
+	);
 }
 
 export function generateStaticParams() {

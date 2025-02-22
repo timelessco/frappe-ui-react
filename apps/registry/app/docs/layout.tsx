@@ -1,4 +1,5 @@
 import { DocsSidebarNav } from "@/components/docs-sidebar";
+import { ModeToggle } from "@/components/mode-toggle";
 import registry from "@/registry.json";
 
 export default function DocsLayout({
@@ -38,14 +39,15 @@ export default function DocsLayout({
 
 	return (
 		<div className="container mx-auto px-4 py-8">
-			<nav className="mb-8 border-b pb-4">
-				<h1 className="text-2xl font-bold">Documentation</h1>
+			<nav className="mb-8 flex items-center justify-between border pb-4">
+				<h1 className="text-2xl font-bold text-foreground">Documentation</h1>
+				<ModeToggle />
 			</nav>
 			<div className="grid grid-cols-1 gap-8 md:grid-cols-[250px_1fr]">
-				<aside className="border-r pr-4">
+				<aside className="border pr-4">
 					<DocsSidebarNav items={items} />
 				</aside>
-				<main className="prose max-w-none">{children}</main>
+				<main className="prose max-w-none dark:prose-invert">{children}</main>
 			</div>
 		</div>
 	);
