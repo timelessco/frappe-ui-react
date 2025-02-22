@@ -44,17 +44,6 @@ export default function Home() {
 
 					{/* solid buttons starts */}
 					<div className="relative flex items-center justify-center gap-4">
-						<Button>Button</Button>
-						<Button prefix={<PlaceholderIcon />}>Button</Button>
-						<Button suffix={<PlaceholderIcon />}>Button</Button>
-						<Button prefix={<PlaceholderIcon />} suffix={<PlaceholderIcon />}>
-							Button
-						</Button>
-						<Button asChild>
-							<Link href="/">Button</Link>
-						</Button>
-					</div>
-					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="solid" size="sm">
 							Button
 						</Button>
@@ -72,9 +61,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="solid" size="sm" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="solid" size="sm" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="solid" size="md">
@@ -94,9 +81,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="solid" size="md" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="solid" size="md" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="solid" size="lg">
@@ -116,9 +101,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="solid" size="lg" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="solid" size="lg" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="solid" size="xl">
@@ -138,9 +121,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="solid" size="xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="solid" size="xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="solid" size="2xl">
@@ -160,9 +141,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="solid" size="2xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="solid" size="2xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					{/* solid buttons ends */}
 					{/* subtle buttons starts */}
@@ -184,9 +163,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="subtle" size="sm" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="subtle" size="sm" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="subtle" size="md">
@@ -206,9 +183,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="subtle" size="md" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="subtle" size="md" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="subtle" size="lg">
@@ -228,9 +203,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="subtle" size="lg" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="subtle" size="lg" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="subtle" size="xl">
@@ -250,9 +223,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="subtle" size="xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="subtle" size="xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="subtle" size="2xl">
@@ -272,9 +243,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="subtle" size="2xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="subtle"
+							size="2xl"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					{/* subtle buttons ends */}
 					{/* outline buttons starts */}
@@ -296,9 +269,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="outline" size="sm" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="outline"
+							size="sm"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="outline" size="md">
@@ -318,9 +293,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="outline" size="md" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="outline"
+							size="md"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="outline" size="lg">
@@ -340,9 +317,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="outline" size="lg" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="outline"
+							size="lg"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="outline" size="xl">
@@ -362,9 +341,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="outline" size="xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="outline"
+							size="xl"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="outline" size="2xl">
@@ -384,9 +365,11 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="outline" size="2xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button
+							variant="outline"
+							size="2xl"
+							iconOnly={<PlaceholderIcon />}
+						/>
 					</div>
 					{/* outline buttons ends */}
 					{/* ghost buttons starts */}
@@ -408,9 +391,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="ghost" size="sm" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="ghost" size="sm" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="ghost" size="md">
@@ -452,9 +433,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="ghost" size="lg" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="ghost" size="lg" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="ghost" size="xl">
@@ -474,9 +453,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="ghost" size="xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="ghost" size="xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					<div className="relative flex items-center justify-center gap-4">
 						<Button variant="ghost" size="2xl">
@@ -496,9 +473,7 @@ export default function Home() {
 						>
 							Button
 						</Button>
-						<Button variant="ghost" size="2xl" asChild>
-							<Link href="/">Button</Link>
-						</Button>
+						<Button variant="ghost" size="2xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					{/* ghost buttons ends */}
 				</div>
