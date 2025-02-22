@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { PropsWithChildren, useCallback } from "react";
+import React, { PropsWithChildren, useCallback } from "react";
 import {
 	GestureResponderEvent,
 	Pressable,
@@ -48,7 +48,7 @@ interface ButtonProps extends PressableProps {
 	 */
 	prefix: RenderPropType;
 	/**
-	 * If added, the button will only show an icon ignoring other children.
+	 * If added, the button will only show an icon ignoring other childrens.
 	 */
 	iconOnly: RenderPropType;
 	/**
@@ -68,7 +68,7 @@ interface ButtonProps extends PressableProps {
 	 * so that people who use VoiceOver know what element they have selected.
 	 * VoiceOver will read this string when a user selects the associated element.
 	 */
-	accessibilityLabel: string;
+	accesibilityLabel: string;
 	/**
 	 * When set to true, The Tap creates a Touch Feedback
 	 * Check more -> https://docs.expo.dev/versions/latest/sdk/haptics/
@@ -82,12 +82,14 @@ interface ButtonProps extends PressableProps {
 	scaleAnimationEnabled: boolean;
 }
 
-export const Button = (buttonProps: PropsWithChildren<ButtonProps>) => {
+export const Button = (
+	buttonProps: PropsWithChildren<Partial<ButtonProps>>,
+) => {
 	const {
 		children,
 		className,
-		size,
-		variant,
+		size = "md",
+		variant = "solid",
 		disabled,
 		themeColor = "default",
 		textClassName = "",
