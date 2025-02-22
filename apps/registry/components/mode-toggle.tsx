@@ -11,23 +11,16 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { type IconProps } from "@/components/ui/icon";
+import { cn } from "@/lib/utils";
 
 export function ModeToggle(props: React.ComponentProps<typeof Button>) {
-	const { theme, setTheme } = useTheme();
+	const { setTheme } = useTheme();
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button
-					iconOnly={
-						theme === "light" ? (
-							<Sun className="inline-block size-[1em] shrink-0 align-middle leading-[1em]" />
-						) : (
-							<Moon className="inline-block size-[1em] shrink-0 align-middle leading-[1em]" />
-						)
-					}
-					{...props}
-				/>
+				<Button iconOnly={<ModeToggleIcon />} {...props} />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end">
 				<DropdownMenuItem onClick={() => setTheme("light")}>
@@ -43,3 +36,29 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
 		</DropdownMenu>
 	);
 }
+
+const ModeToggleIcon = ({ className, ...props }: IconProps) => {
+	const { theme } = useTheme();
+
+	if (theme === "dark") {
+		return (
+			<Moon
+				className={cn(
+					"inline-block size-[1em] shrink-0 align-middle leading-[1em]",
+					className,
+				)}
+				{...props}
+			/>
+		);
+	}
+
+	return (
+		<Sun
+			className={cn(
+				"inline-block size-[1em] shrink-0 align-middle leading-[1em]",
+				className,
+			)}
+			{...props}
+		/>
+	);
+};
