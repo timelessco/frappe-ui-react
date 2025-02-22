@@ -14,7 +14,8 @@
 					"path": "registry/web/default/ui/button.tsx",
 					"type": "registry:ui"
 				}
-			]
+			],
+			"categories": ["primitives"]
 		},
 		{
 			"name": "hello-world",
@@ -27,7 +28,8 @@
 					"path": "registry/web/default/hello-world/hello-world.tsx",
 					"type": "registry:component"
 				}
-			]
+			],
+			"categories": ["primitives"]
 		},
 		{
 			"name": "example-form",
@@ -41,7 +43,8 @@
 					"path": "registry/web/default/example-form/example-form.tsx",
 					"type": "registry:component"
 				}
-			]
+			],
+			"categories": ["primitives"]
 		},
 		{
 			"name": "complex-component",
@@ -71,7 +74,8 @@
 					"path": "registry/web/default/complex-component/hooks/use-pokemon.ts",
 					"type": "registry:hook"
 				}
-			]
+			],
+			"categories": ["primitives"]
 		}
 	]
 }

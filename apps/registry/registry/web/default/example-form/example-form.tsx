@@ -96,7 +96,7 @@ export function ExampleForm() {
 							defaultValue={state.defaultValues.name}
 						/>
 						{state.errors?.name && (
-							<p id="error-name" className="text-sm text-destructive">
+							<p id="error-name" className="text-destructive text-sm">
 								{state.errors.name}
 							</p>
 						)}
@@ -122,7 +122,7 @@ export function ExampleForm() {
 							defaultValue={state.defaultValues.email}
 						/>
 						{state.errors?.email && (
-							<p id="error-email" className="text-sm text-destructive">
+							<p id="error-email" className="text-destructive text-sm">
 								{state.errors.email}
 							</p>
 						)}
@@ -148,7 +148,7 @@ export function ExampleForm() {
 							defaultValue={state.defaultValues.message}
 						/>
 						{state.errors?.message && (
-							<p id="error-message" className="text-sm text-destructive">
+							<p id="error-message" className="text-destructive text-sm">
 								{state.errors.message}
 							</p>
 						)}
