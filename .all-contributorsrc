@@ -1,36 +1,55 @@
 {
-	"badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-21bb42.svg\" />",
-	"commit": false,
-	"commitConvention": "angular",
-	"contributors": [
-		{
-			"login": "navin-moorthy",
-			"name": "Navin Moorthy",
-			"avatar_url": "https://avatars.githubusercontent.com/u/39694575?v=4",
-			"profile": "https://navinmoorthy.me/",
-			"contributions": ["code", "infra"]
-		},
-		{
-			"login": "mcnaveen",
-			"name": "Naveen MC",
-			"avatar_url": "https://avatars.githubusercontent.com/u/8493007?v=4",
-			"profile": "http://mcnaveen.com",
-			"contributions": ["maintenance", "code"]
-		},
-		{
-			"login": "karthik-b-06",
-			"name": "Karthik",
-			"avatar_url": "https://avatars.githubusercontent.com/u/35562287?v=4",
-			"profile": "https://bento.me/iamkarthik",
-			"contributions": ["maintenance"]
-		}
-	],
-	"contributorsPerLine": 7,
-	"files": ["README.md"],
-	"imageSize": 100,
-	"projectName": "frappe-ui-react",
-	"projectOwner": "timelessco",
-	"repoHost": "https://github.com",
-	"repoType": "github",
-	"commitType": "docs"
+  "badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-21bb42.svg\" />",
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "navin-moorthy",
+      "name": "Navin Moorthy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39694575?v=4",
+      "profile": "https://navinmoorthy.me/",
+      "contributions": [
+        "code",
+        "infra"
+      ]
+    },
+    {
+      "login": "mcnaveen",
+      "name": "Naveen MC",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8493007?v=4",
+      "profile": "http://mcnaveen.com",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
+    },
+    {
+      "login": "karthik-b-06",
+      "name": "Karthik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35562287?v=4",
+      "profile": "https://bento.me/iamkarthik",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "padmanathan10",
+      "name": "padmanathan10",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58564318?v=4",
+      "profile": "https://github.com/padmanathan10",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "projectName": "frappe-ui-react",
+  "projectOwner": "timelessco",
+  "repoHost": "https://github.com",
+  "repoType": "github",
+  "commitType": "docs"
 }
