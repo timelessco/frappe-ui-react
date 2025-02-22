@@ -18,10 +18,6 @@
  </a>
 </p>
 
-# frappe-ui-react
-
-A React component library implementing Frappe's Espresso UI design system.
-
 ## Overview
 
 frappe-ui-react is a comprehensive React component library that implements Frappe's Espresso UI design system. While Frappe officially uses Vue.js internally, this library bridges the gap for React developers in the Frappe ecosystem who want to maintain consistent design language across their applications.
@@ -76,9 +72,17 @@ Components are built following the [Espresso UI Design System](https://www.figma
 - Component behavior
 - Accessibility patterns
 
+## Structure
+
+```txt
+.
+└── apps
+    └── registry (shadcn component registry with nextjs website)
+```
+
 ## Apps
 
-- [apps/playground](./apps/playground): Next.js, Typescript [README](./apps/playground/README.md) | [CHANGELOG](./apps/playground/CHANGELOG.md)
+- [apps/registry](./apps/registry): Next.js, Typescript [README](./apps/registry/README.md) | [CHANGELOG](./apps/registry/CHANGELOG.md)
 
 ## Development
 
