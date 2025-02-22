@@ -1,0 +1,87 @@
+{
+	"name": "registry",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Shadcn component registry",
+	"keywords": [
+		"react",
+		"next-react-app",
+		"typescript"
+	],
+	"homepage": "https://github.com/timelessco/frappe-ui-react",
+	"bugs": {
+		"url": "https://github.com/timelessco/frappe-ui-react/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/timelessco/frappe-ui-react.git",
+		"directory": "apps/registry"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Timeless // Navin Moorthy",
+		"email": "hello@timeless.co",
+		"url": "https://timeless.co/"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "next build",
+		"build:ci": "next build",
+		"build:start": "pnpm build && pnpm start",
+		"clean": "rimraf ./.next ./tsconfig.tsbuildinfo",
+		"dev": "next dev --turbopack",
+		"fix:eslint": "eslint --cache --color --fix .",
+		"lint:eslint": "eslint --cache --color .",
+		"lint:types": "tsc --noEmit",
+		"registry:build": "shadcn build",
+		"start": "next start",
+		"test": "echo \"no test specified\" && exit 0"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"@radix-ui/react-label": "2.1.2",
+		"@radix-ui/react-slot": "1.1.2",
+		"class-variance-authority": "0.7.1",
+		"clsx": "2.1.1",
+		"lucide-react": "0.475.0",
+		"next": "15.1.7",
+		"next-themes": "0.4.4",
+		"react": "19.0.0",
+		"react-dom": "19.0.0",
+		"shadcn": "2.3.0",
+		"tailwind-merge": "2.6.0",
+		"tailwindcss-animate": "1.0.7",
+		"zod": "3.24.1"
+	},
+	"devDependencies": {
+		"@next/env": "15.1.7",
+		"@next/eslint-plugin-next": "15.1.7",
+		"@types/node": "22.13.4",
+		"@types/react": "19.0.10",
+		"@types/react-dom": "19.0.4",
+		"autoprefixer": "10.4.20",
+		"eslint": "9.20.1",
+		"eslint-config-canonical": "44.3.43",
+		"eslint-config-flat-gitignore": "2.1.0",
+		"eslint-config-prettier": "10.0.1",
+		"eslint-plugin-jsonc": "2.19.1",
+		"eslint-plugin-tailwindcss": "3.18.0",
+		"eslint-plugin-yml": "1.17.0",
+		"lint-staged": "15.4.3",
+		"postcss": "8.5.3",
+		"rimraf": "6.0.1",
+		"tailwindcss": "3.4.17",
+		"typescript": "5.7.3"
+	}
+}
