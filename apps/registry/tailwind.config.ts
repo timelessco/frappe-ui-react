@@ -191,6 +191,10 @@ export default {
 				"ef-15": "var(--ef-spacing-15)",
 				"ef-16": "var(--ef-spacing-16)",
 			},
+			boxShadow: {
+				"ef-xl":
+					"0px 0px 1px 0px rgba(0, 0, 0, 0.20), 0px 0px 10px 2px rgba(0, 0, 0, 0.04), 0px 24px 30px -8px rgba(0, 0, 0, 0.10)",
+			},
 		},
 	},
 	plugins: [tailwindAnimate, typography],
