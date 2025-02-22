@@ -1,23 +1,26 @@
+import { notFound } from "next/navigation";
+
 export default async function Page({
 	params,
 }: {
 	params: Promise<{ name: string }>;
 }) {
 	const name = (await params).name;
-	const { default: Post } = await import(`../content/${name}.mdx`);
 
-	return (
-		<div className="prose dark:prose-invert">
-			<Post />
-		</div>
-	);
+	try {
+		const { default: Post } = await import(`../content/${name}.mdx`);
+
+		return (
+			<div className="prose dark:prose-invert">
+				<Post />
+			</div>
+		);
+	} catch {
+		notFound();
+	}
 }
 
-export function generateStaticParams() {
-	return [{ name: "welcome" }, { slug: "about" }];
-}
-
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export const generateMetadata = async ({
 	params,
