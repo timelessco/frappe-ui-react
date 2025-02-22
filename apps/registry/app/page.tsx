@@ -2,6 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
+import { ButtonGroupComp } from "@/components/button-group-comp";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
 import { ExampleForm } from "@/components/example-form";
 import { HelloWorld } from "@/components/hello-world";
@@ -476,6 +478,37 @@ export default function Home() {
 						<Button variant="ghost" size="2xl" iconOnly={<PlaceholderIcon />} />
 					</div>
 					{/* ghost buttons ends */}
+				</div>
+
+				{/* Button Group Component */}
+				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							A button group component
+						</h2>
+						<OpenInV0Button name="button-group" className="w-fit" />
+					</div>
+					<div className="relative flex min-h-[100px] flex-col items-center justify-center gap-4">
+						<ButtonGroupComp />
+						<ButtonGroup variant="subtle">
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+						</ButtonGroup>
+						<ButtonGroup variant="outline">
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+						</ButtonGroup>
+						<ButtonGroup variant="ghost">
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+						</ButtonGroup>
+					</div>
 				</div>
 
 				{/* Dropdown Menu Component */}
