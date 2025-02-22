@@ -1,9 +1,9 @@
 import * as React from "react";
+import Link from "next/link";
 
+import { ExampleForm } from "@/components/example-form";
+import { HelloWorld } from "@/components/hello-world";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
-import PokemonPage from "@/registry/web/default/complex-component/page";
-import { ExampleForm } from "@/registry/web/default/example-form/example-form";
-import { HelloWorld } from "@/registry/web/default/hello-world/hello-world";
 
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
@@ -42,16 +42,16 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
+				<div className="relative flex flex-col gap-4 rounded-lg py-4">
 					<div className="flex items-center justify-between">
-						<h2 className="text-sm text-muted-foreground sm:pl-3">
+						<h2 className="text-sm text-muted-foreground">
 							A complex component showing hooks, libs and components.
 						</h2>
 						<OpenInV0Button name="complex-component" className="w-fit" />
 					</div>
-					<div className="relative flex min-h-[400px] items-center justify-center">
-						<PokemonPage />
-					</div>
+					<Link href="/pokemon" className="text-sm text-blue-600">
+						Go to Pokemon
+					</Link>
 				</div>
 			</main>
 		</div>
