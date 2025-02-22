@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import { ExampleForm } from "@/components/example-form";
 import { HelloWorld } from "@/components/hello-world";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -18,6 +19,7 @@ export default function Home() {
 				<ModeToggle className="absolute right-2 top-4" />
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
+				{/* Icon Component */}
 				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
@@ -29,6 +31,28 @@ export default function Home() {
 						<PlaceholderIcon />
 					</div>
 				</div>
+
+				{/* Button Component */}
+				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							A button component
+						</h2>
+						<OpenInV0Button name="button" className="w-fit" />
+					</div>
+					<div className="relative flex min-h-[100px] items-center justify-center gap-4">
+						<Button>Click me</Button>
+						<Button prefix={<PlaceholderIcon />}>Click me</Button>
+						<Button suffix={<PlaceholderIcon />}>Click me</Button>
+						<Button prefix={<PlaceholderIcon />} suffix={<PlaceholderIcon />}>
+							Click me
+						</Button>
+						<Button asChild>
+							<Link href="/">Click me</Link>
+						</Button>
+					</div>
+				</div>
+
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
