@@ -12,6 +12,7 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { type IconProps } from "@/components/ui/icon";
+import { cn } from "@/lib/utils";
 
 export function ModeToggle(props: React.ComponentProps<typeof Button>) {
 	const { setTheme } = useTheme();
@@ -36,25 +37,28 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
 	);
 }
 
-const ModeToggleIcon = (props: IconProps) => {
+const ModeToggleIcon = ({ className, ...props }: IconProps) => {
 	const { theme } = useTheme();
 
-	return (
-		<>
-			<Sun
-				suppressHydrationWarning
-				className={`inline-block size-[1em] shrink-0 align-middle leading-[1em] ${
-					theme === "dark" ? "hidden" : "block"
-				}`}
-				{...props}
-			/>
+	if (theme === "dark") {
+		return (
 			<Moon
-				suppressHydrationWarning
-				className={`inline-block size-[1em] shrink-0 align-middle leading-[1em] ${
-					theme === "dark" ? "block" : "hidden"
-				}`}
+				className={cn(
+					"inline-block size-[1em] shrink-0 align-middle leading-[1em]",
+					className,
+				)}
 				{...props}
 			/>
-		</>
+		);
+	}
+
+	return (
+		<Sun
+			className={cn(
+				"inline-block size-[1em] shrink-0 align-middle leading-[1em]",
+				className,
+			)}
+			{...props}
+		/>
 	);
 };
