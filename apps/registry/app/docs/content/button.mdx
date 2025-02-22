@@ -1,0 +1,107 @@
+import { Button } from "@/components/ui/button";
+
+# Button
+
+A button component that follows our design system guidelines with support for different variants, sizes, and icon placements.
+
+## Installation
+
+```bash
+import { Button } from "@/components/ui/button"
+```
+
+## Usage
+
+### Basic Button
+
+```tsx
+<Button>Click me</Button>
+```
+
+### Button Variants
+
+The Button component supports different variants:
+
+```tsx
+<Button variant="solid">Solid Button</Button>
+```
+
+### Button Sizes
+
+Available size options:
+
+```tsx
+<Button size="sm">Small Button</Button>
+```
+
+### Buttons with Icons
+
+You can add icons before (prefix) or after (suffix) the button text:
+
+```tsx
+import { ArrowRight, Plus } from "lucide-react"
+
+<Button prefix={Plus}>Add Item</Button>
+<Button suffix={ArrowRight}>Next</Button>
+```
+
+### Disabled State
+
+```tsx
+<Button disabled>Disabled Button</Button>
+```
+
+### As Child
+
+The button can be rendered as a child component using the `asChild` prop:
+
+```tsx
+import Link from "next/link";
+
+<Button asChild>
+	<Link href="/about">About Page</Link>
+</Button>;
+```
+
+## Props
+
+| Prop        | Type                                                              | Default   | Description                                       |
+| ----------- | ----------------------------------------------------------------- | --------- | ------------------------------------------------- |
+| `variant`   | `"solid"`                                                         | `"solid"` | The visual style of the button                    |
+| `size`      | `"sm"`                                                            | `"sm"`    | The size of the button                            |
+| `asChild`   | `boolean`                                                         | `false`   | Whether to render the button as a child component |
+| `prefix`    | `React.ComponentType<IconProps> \| React.ReactElement<IconProps>` | -         | Icon component to render before button text       |
+| `suffix`    | `React.ComponentType<IconProps> \| React.ReactElement<IconProps>` | -         | Icon component to render after button text        |
+| `disabled`  | `boolean`                                                         | `false`   | Whether the button is disabled                    |
+| `className` | `string`                                                          | -         | Additional CSS classes                            |
+
+The Button component also accepts all standard HTML button attributes.
+
+## Examples
+
+### Basic Examples
+
+```tsx
+import { ArrowRight, Plus } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
+export default function ButtonDemo() {
+	return (
+		<div className="flex flex-col gap-4">
+			<Button>Default Button</Button>
+			<Button disabled>Disabled Button</Button>
+			<Button prefix={Plus}>Add New</Button>
+			<Button suffix={ArrowRight}>Continue</Button>
+		</div>
+	);
+}
+```
+
+### Custom Styling
+
+You can customize the button appearance using the `className` prop:
+
+```tsx
+<Button className="bg-blue-500 hover:bg-blue-600">Custom Styled Button</Button>
+```
