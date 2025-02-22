@@ -20,37 +20,486 @@ export default function Home() {
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
 				{/* Icon Component */}
-				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
+				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
 							An icon component
 						</h2>
 						<OpenInV0Button name="icon" className="w-fit" />
 					</div>
-					<div className="relative flex min-h-[100px] items-center justify-center">
+					<div className="relative flex items-center justify-center">
 						<PlaceholderIcon />
 					</div>
 				</div>
 
 				{/* Button Component */}
-				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
+				<div className="relative flex flex-col gap-8 rounded-lg border px-4 pb-8 pt-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
 							A button component
 						</h2>
 						<OpenInV0Button name="button" className="w-fit" />
 					</div>
-					<div className="relative flex min-h-[100px] items-center justify-center gap-4">
-						<Button>Click me</Button>
-						<Button prefix={<PlaceholderIcon />}>Click me</Button>
-						<Button suffix={<PlaceholderIcon />}>Click me</Button>
+
+					{/* solid buttons starts */}
+					<div className="relative flex items-center justify-center gap-4">
+						<Button>Button</Button>
+						<Button prefix={<PlaceholderIcon />}>Button</Button>
+						<Button suffix={<PlaceholderIcon />}>Button</Button>
 						<Button prefix={<PlaceholderIcon />} suffix={<PlaceholderIcon />}>
-							Click me
+							Button
 						</Button>
 						<Button asChild>
-							<Link href="/">Click me</Link>
+							<Link href="/">Button</Link>
 						</Button>
 					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="solid" size="sm">
+							Button
+						</Button>
+						<Button variant="solid" size="sm" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="solid" size="sm" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="solid"
+							size="sm"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="solid" size="sm" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="solid" size="md">
+							Button
+						</Button>
+						<Button variant="solid" size="md" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="solid" size="md" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="solid"
+							size="md"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="solid" size="md" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="solid" size="lg">
+							Button
+						</Button>
+						<Button variant="solid" size="lg" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="solid" size="lg" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="solid"
+							size="lg"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="solid" size="lg" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="solid" size="xl">
+							Button
+						</Button>
+						<Button variant="solid" size="xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="solid" size="xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="solid"
+							size="xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="solid" size="xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="solid" size="2xl">
+							Button
+						</Button>
+						<Button variant="solid" size="2xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="solid" size="2xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="solid"
+							size="2xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="solid" size="2xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					{/* solid buttons ends */}
+					{/* subtle buttons starts */}
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="subtle" size="sm">
+							Button
+						</Button>
+						<Button variant="subtle" size="sm" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="subtle" size="sm" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="subtle"
+							size="sm"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="subtle" size="sm" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="subtle" size="md">
+							Button
+						</Button>
+						<Button variant="subtle" size="md" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="subtle" size="md" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="subtle"
+							size="md"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="subtle" size="md" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="subtle" size="lg">
+							Button
+						</Button>
+						<Button variant="subtle" size="lg" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="subtle" size="lg" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="subtle"
+							size="lg"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="subtle" size="lg" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="subtle" size="xl">
+							Button
+						</Button>
+						<Button variant="subtle" size="xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="subtle" size="xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="subtle"
+							size="xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="subtle" size="xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="subtle" size="2xl">
+							Button
+						</Button>
+						<Button variant="subtle" size="2xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="subtle" size="2xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="subtle"
+							size="2xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="subtle" size="2xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					{/* subtle buttons ends */}
+					{/* outline buttons starts */}
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="outline" size="sm">
+							Button
+						</Button>
+						<Button variant="outline" size="sm" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="outline" size="sm" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="outline"
+							size="sm"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="outline" size="sm" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="outline" size="md">
+							Button
+						</Button>
+						<Button variant="outline" size="md" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="outline" size="md" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="outline"
+							size="md"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="outline" size="md" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="outline" size="lg">
+							Button
+						</Button>
+						<Button variant="outline" size="lg" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="outline" size="lg" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="outline"
+							size="lg"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="outline" size="lg" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="outline" size="xl">
+							Button
+						</Button>
+						<Button variant="outline" size="xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="outline" size="xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="outline"
+							size="xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="outline" size="xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="outline" size="2xl">
+							Button
+						</Button>
+						<Button variant="outline" size="2xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="outline" size="2xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="outline"
+							size="2xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="outline" size="2xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					{/* outline buttons ends */}
+					{/* ghost buttons starts */}
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="ghost" size="sm">
+							Button
+						</Button>
+						<Button variant="ghost" size="sm" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="ghost" size="sm" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="ghost"
+							size="sm"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="ghost" size="sm" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="ghost" size="md">
+							Button
+						</Button>
+						<Button variant="ghost" size="md" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="ghost" size="md" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="ghost"
+							size="md"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="ghost" size="md" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="ghost" size="lg">
+							Button
+						</Button>
+						<Button variant="ghost" size="lg" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="ghost" size="lg" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="ghost"
+							size="lg"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="ghost" size="lg" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="ghost" size="xl">
+							Button
+						</Button>
+						<Button variant="ghost" size="xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="ghost" size="xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="ghost"
+							size="xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="ghost" size="xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					<div className="relative flex items-center justify-center gap-4">
+						<Button variant="ghost" size="2xl">
+							Button
+						</Button>
+						<Button variant="ghost" size="2xl" prefix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button variant="ghost" size="2xl" suffix={<PlaceholderIcon />}>
+							Button
+						</Button>
+						<Button
+							variant="ghost"
+							size="2xl"
+							prefix={<PlaceholderIcon />}
+							suffix={<PlaceholderIcon />}
+						>
+							Button
+						</Button>
+						<Button variant="ghost" size="2xl" asChild>
+							<Link href="/">Button</Link>
+						</Button>
+					</div>
+					{/* ghost buttons ends */}
 				</div>
 
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
