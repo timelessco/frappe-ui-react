@@ -20,6 +20,16 @@ export default {
 				],
 			},
 			colors: {
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
+				accent: {
+					DEFAULT: "hsl(var(--accent))",
+					foreground: "hsl(var(--accent-foreground))",
+				},
+				muted: {
+					DEFAULT: "hsl(var(--muted))",
+					foreground: "hsl(var(--muted-foreground))",
+				},
 				outline: {
 					white: "var(--ef-outline-white, #fff)",
 					"gray-1": "var(--ef-outline-gray-1, #ededed)",
