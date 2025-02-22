@@ -1,21 +1,35 @@
 {
-	"badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-21bb42.svg\" />",
-	"commit": false,
-	"commitConvention": "angular",
-	"contributors": [
-		{
-			"login": "navin-moorthy",
-			"name": "Navin Moorthy",
-			"avatar_url": "https://avatars.githubusercontent.com/u/39694575?v=4",
-			"profile": "https://navinmoorthy.me/",
-			"contributions": ["code"]
-		}
-	],
-	"contributorsPerLine": 7,
-	"files": ["README.md"],
-	"imageSize": 100,
-	"projectName": "frappe-ui-react",
-	"projectOwner": "timelessco",
-	"repoHost": "https://github.com",
-	"repoType": "github"
+  "badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-21bb42.svg\" />",
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "navin-moorthy",
+      "name": "Navin Moorthy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39694575?v=4",
+      "profile": "https://navinmoorthy.me/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mcnaveen",
+      "name": "Naveen MC",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8493007?v=4",
+      "profile": "http://mcnaveen.com",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "projectName": "frappe-ui-react",
+  "projectOwner": "timelessco",
+  "repoHost": "https://github.com",
+  "repoType": "github",
+  "commitType": "docs"
 }
