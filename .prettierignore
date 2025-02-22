@@ -1,0 +1,13 @@
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Changeset
+.changeset/*.md
+
+# Extras(if any)
+# For nextjs app
+public
+**/*/CHANGELOG.md
+**/types/generated/*.d.ts

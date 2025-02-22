@@ -1,0 +1,45 @@
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+jobs:
+  release:
+    # Basic security: the release job can only be executed from this repo and from the main branch (not a remote thing)
+    if: ${{ github.repository == 'timelessco/frappe-ui-react' && contains('refs/heads/main',github.ref)}}
+    name: Version and create changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          # To run comparison we need more than the latest commit.
+          # @link https://github.com/actions/checkout#fetch-all-history-for-all-tags-and-branches
+          fetch-depth: 0
+      - name: Configure Git
+        uses: ./.github/actions/git-config
+      - name: ♻️ Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
+      # @link https://github.com/changesets/action
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # See https://github.com/changesets/action/issues/147
+          HOME: ${{ github.workspace }}
+          id: changesets
+        name: 🦋 Create or Update Version
+        uses: changesets/action@v1
+        with:
+          cwd: ${{ github.workspace }}
+          title: "chore(release): 🎉 version packages"
+          # Uncomment and add secrets to allow publishing
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: contains(github.event.head_commit.message, '🎉 version packages')
+        name: Publish & Release
+        run: pnpm release
+name: Release Or Version PR
+on:
+  push:
+    branches:
+      - main

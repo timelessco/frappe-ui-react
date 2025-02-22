@@ -1,0 +1,9 @@
+packages:
+  # # all apps in direct subdirs of app/
+  - "apps/*"
+  # # all packages in direct subdirs of packages/
+  - "packages/*"
+  # # all apps in subdirs of app/
+  # - "apps/**"
+  # # exclude packages that are inside .next directories
+  # - "!**/.next/**"

@@ -1,0 +1,23 @@
+description: Run pnpm install with cache enabled
+name: PNPM install
+runs:
+  steps:
+    - name: Configure Git
+      uses: ./.github/actions/git-config
+    - name: "Install pnpm"
+      uses: pnpm/action-setup@v4
+      with:
+        run_install: false
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        cache: pnpm
+        node-version-file: .nvmrc
+    - env:
+        # Other environment variables
+        HUSKY: "0" # By default do not run HUSKY install
+      name: Install dependencies
+      run: pnpm install --frozen-lockfile --prefer-offline
+      shell: bash
+      working-directory: ${{ inputs.cwd }}
+  using: composite

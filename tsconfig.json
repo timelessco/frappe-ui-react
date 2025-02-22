@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"target": "ESNext",
+		"lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable"],
+		"typeRoots": ["./node_modules/@types", "@types", "./env/environment.d.ts"],
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		"strict": true,
+		"downlevelIteration": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"verbatimModuleSyntax": true,
+		"allowUnreachableCode": false,
+		"noImplicitOverride": true,
+		"useUnknownInCatchVariables": true,
+		"noUnusedParameters": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"incremental": true,
+		"allowJs": true
+	},
+	"include": ["./**/*"],
+	"exclude": ["**/.*/", "node_modules", "apps", "packages"],
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true,
+		"esm": true,
+		"experimentalSpecifierResolution": "node",
+		"pretty": true,
+		"experimentalResolver": true
+	}
+}
