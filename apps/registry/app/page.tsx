@@ -5,6 +5,7 @@ import { ExampleForm } from "@/components/example-form";
 import { HelloWorld } from "@/components/hello-world";
 import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { PlaceholderIcon } from "@/icons/placeholder";
 
 export default function Home() {
 	return (
@@ -17,6 +18,17 @@ export default function Home() {
 				<ModeToggle className="absolute right-2 top-4" />
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
+				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							An icon component
+						</h2>
+						<OpenInV0Button name="icon" className="w-fit" />
+					</div>
+					<div className="relative flex min-h-[100px] items-center justify-center">
+						<PlaceholderIcon />
+					</div>
+				</div>
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
