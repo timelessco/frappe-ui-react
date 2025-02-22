@@ -114,3 +114,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- spellchecker: enable -->
 <sub>
+
+> 💙 This package uses template files from
+> [@JoshuaKGoldberg](https://github.com/JoshuaKGoldberg)'s
+> [template-typescript-node-package](https://github.com/JoshuaKGoldberg/template-typescript-node-package).
