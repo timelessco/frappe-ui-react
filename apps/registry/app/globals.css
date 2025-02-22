@@ -510,7 +510,7 @@
 		--ef-radius-6: 12px;
 		--ef-radius-7: 16px;
 		--ef-radius-8: 20px;
-		--ef-radius-9: 100px; /* Full large radius */
+		--ef-radius-9: 9999px; /* Full large radius */
 
 		/* 📏 Spacing */
 		--ef-spacing-0: 0px;

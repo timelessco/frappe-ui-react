@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
+import { AvatarComp } from "@/components/avatar-comp";
+import { AvatarSquaredComp } from "@/components/avatar-squared-comp";
 import { ButtonGroupComp } from "@/components/button-group-comp";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
 import { ExampleForm } from "@/components/example-form";
@@ -32,6 +34,20 @@ export default function Home() {
 					</div>
 					<div className="relative flex items-center justify-center">
 						<PlaceholderIcon />
+					</div>
+				</div>
+
+				{/* Avatar Component */}
+				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							An avatar component
+						</h2>
+						<OpenInV0Button name="avatar" className="w-fit" />
+					</div>
+					<div className="relative flex flex-col items-center justify-center gap-4">
+						<AvatarComp />
+						<AvatarSquaredComp />
 					</div>
 				</div>
 
