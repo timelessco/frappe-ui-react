@@ -186,7 +186,7 @@ export default [
 			"hooks/**/*.ts",
 			"app/**/*.{ts,tsx}",
 			"components/**/*.{ts,tsx}",
-			"registry/**/*.{ts,tsx}",
+			"registry/web/**/*.{ts,tsx}",
 			"icons/**/*.{ts,tsx}",
 		],
 		languageOptions: {
@@ -223,8 +223,8 @@ export default [
 			"components/**/*.tsx",
 			"components/**/use*.ts",
 			"hooks/**/*.ts",
-			"registry/**/*.tsx",
-			"registry/**/use*.ts",
+			"registry/web/**/*.tsx",
+			"registry/web/**/use*.ts",
 			"icons/**/*.tsx",
 		],
 		languageOptions: {
