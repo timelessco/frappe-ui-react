@@ -4,6 +4,10 @@
 			"name": "🌳 root",
 			"path": ".",
 		},
+		{
+			"name": "📦 registry",
+			"path": "apps/registry",
+		},
 	],
 	"extensions": {
 		"recommendations": [
