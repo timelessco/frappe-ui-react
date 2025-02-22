@@ -183,9 +183,11 @@ export default [
 		name: "TS/TSX",
 		files: [
 			"lib/**/*.ts",
+			"hooks/**/*.ts",
 			"app/**/*.{ts,tsx}",
 			"components/**/*.{ts,tsx}",
 			"registry/**/*.{ts,tsx}",
+			"icons/**/*.{ts,tsx}",
 		],
 		languageOptions: {
 			...eslintPluginTypescript.recommended.languageOptions,
@@ -220,8 +222,10 @@ export default [
 			"app/**/use*.ts",
 			"components/**/*.tsx",
 			"components/**/use*.ts",
+			"hooks/**/*.ts",
 			"registry/**/*.tsx",
 			"registry/**/use*.ts",
+			"icons/**/*.tsx",
 		],
 		languageOptions: {
 			...eslintPluginReact.recommended.languageOptions,
