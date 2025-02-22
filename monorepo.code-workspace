@@ -1,0 +1,219 @@
+{
+	"folders": [
+		{
+			"name": "🌳 root",
+			"path": ".",
+		},
+	],
+	"extensions": {
+		"recommendations": [
+			// General tooling extensions
+			"folke.vscode-monorepo-workspace",
+			// Prettier is an opinionated code formatter.
+			"esbenp.prettier-vscode",
+			// ESLint, Find and fix problems in your JavaScript code
+			"dbaeumer.vscode-eslint",
+			"DavidAnson.vscode-markdownlint",
+			"streetsidesoftware.code-spell-checker",
+			// Frontend
+			"bradlc.vscode-tailwindcss",
+			"stylelint.vscode-stylelint",
+			// REST Client allows you to send HTTP request and view the response in Visual Studio Code directly.
+			// Makes use of `.http` files
+			// "humao.rest-client",
+
+			// Optional
+			"yoavbls.pretty-ts-errors",
+			"vivaxy.vscode-conventional-commits",
+			"aaron-bond.better-comments",
+			"formulahendry.auto-close-tag",
+			"formulahendry.auto-rename-tag",
+			"christian-kohler.npm-intellisense",
+			"christian-kohler.path-intellisense",
+			"mattpocock.ts-error-translator",
+		],
+	},
+	"settings": {
+		"git.branchProtection": ["main"],
+		"githubPullRequests.ignoredPullRequestBranches": ["main"],
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"typescript.enablePromptUseWorkspaceTsdk": true,
+
+		"files.associations": {
+			"package.json": "json",
+			"*.svg": "html",
+			".env.*": "dotenv",
+			"*.json": "jsonc",
+			".*ignore": "ignore",
+			"monorepo.code-workspace": "jsonc",
+			"*.tsx": "typescriptreact",
+			"*.jsx": "javascriptreact",
+		},
+		"files.exclude": {
+			"USE_GITIGNORE": true,
+		},
+
+		"search.useIgnoreFiles": true,
+		"search.useParentIgnoreFiles": true,
+		"search.exclude": {
+			// Default
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/*.code-search": true,
+			// Custom
+			"**/package-lock.json": true,
+			"**/composer.lock": true,
+		},
+
+		// General Tooling Extensions config
+
+		// Linters & Formatters
+		"prettier.enable": true,
+		"eslint.enable": true,
+		"eslint.useESLintClass": true,
+		"eslint.useFlatConfig": true,
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"json",
+			"jsonc",
+			"json5",
+			"yaml",
+			"yml",
+		],
+		// https://github.com/Microsoft/vscode-eslint#mono-repository-setup
+		"eslint.workingDirectories": [
+			{ "pattern": "apps/*/" },
+			{ "pattern": "packages/*/" },
+		],
+		"stylelint.enable": true,
+
+		// cSpell
+		"cSpell.enabled": true,
+
+		// Tailwind CSS
+		// Detect additional class regex
+		"tailwindCSS.experimental.classRegex": [
+			// https://regex-vis.com/?r=%5C%5Cs*class%3A%5C%5Cs*%3F%5B%60%27%5C%22%5D%28.*%29%5B%60%27%5C%22%5D%5C%5Cs*%28%3F%3D%5B%3B%2C.%5D%29
+			// Selection visualizer at https://www.debuggex.com/
+			"\\s*class:\\s*?[`'\"](.*)[`'\"]\\s*(?=[;,.])",
+			["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+			["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		],
+		// Enable features in languages that are not supported by default. Add a mapping here between the new language and an already supported language.
+		"tailwindCSS.includeLanguages": {
+			"plaintext": "html",
+			"typescript": "javascript",
+			"typescriptreact": "javascript",
+			"javascriptreact": "javascript",
+		},
+
+		// Editor Formatters & Linters.
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+		},
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": false,
+		"editor.codeActionsOnSave": {
+			"source.addMissingImports": "explicit",
+			"source.formatDocument": "explicit",
+			"source.fixAll.eslint": "explicit",
+			"source.fixAll.stylelint": "explicit",
+			"source.fixAll.markdownlint": "explicit",
+			// "source.organizeImports": "explicit",
+			// "source.sortImports": "explicit",
+			// "source.fixAll": "explicit"
+		},
+
+		// Language based settings
+
+		// JavaScript
+		"javascript.updateImportsOnFileMove.enabled": "always",
+		"javascript.referencesCodeLens.enabled": true,
+		"javascript.referencesCodeLens.showOnAllFunctions": true,
+
+		// TypeScript
+		"typescript.updateImportsOnFileMove.enabled": "always",
+		"typescript.validate.enable": true,
+		"typescript.surveys.enabled": false,
+
+		// CSS
+		"css.validate": false,
+		"css.lint.unknownAtRules": "ignore",
+		"less.validate": false,
+		"scss.validate": false,
+		"stylelint.validate": ["css", "scss"],
+
+		// Markdown
+		"markdown.validate.enabled": false,
+		"markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
+		"markdown.occurrencesHighlight.enabled": true,
+		"[markdown]": {
+			"editor.quickSuggestions": {
+				"comments": "on",
+				"strings": "on",
+				"other": "on",
+			},
+		},
+		// Takes the config from .markdownlint.json but needed for inner folders
+		"markdownlint.config": {
+			"first-line-h1": false,
+			"no-inline-html": false,
+			"no-hard-tabs": { "code_blocks": false },
+		},
+		// Array of glob expressions to include or ignore when linting the workspace
+		"markdownlint.lintWorkspaceGlobs": [
+			"**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+			"!**/*.code-search",
+			"!**/bower_components",
+			"!**/node_modules",
+			"!**/.git",
+			"!**/vendor",
+			"!**/CHANGELOG.md",
+		],
+
+		// Other supporting Extensions config
+
+		// Error Translator for TypeScript
+		"totalTypeScript.hideAllTips": true,
+		"totalTypeScript.hideBasicTips": true,
+
+		// Conventional Commit
+		"conventionalCommits.emojiFormat": "emoji",
+		"conventionalCommits.showEditor": true,
+		"conventionalCommits.lineBreak": "\\n",
+		"conventionalCommits.promptFooter": false,
+		"conventionalCommits.promptBody": false,
+
+		// AutoClosing Tag
+		"html.autoClosingTags": true,
+		"javascript.autoClosingTags": true,
+		"typescript.autoClosingTags": true,
+
+		// Auto close tag
+		"auto-close-tag.SublimeText3Mode": true,
+		"auto-close-tag.activationOnLanguage": [
+			"xml",
+			"php",
+			"blade",
+			"ejs",
+			"jinja",
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"plaintext",
+			"markdown",
+			"vue",
+			"liquid",
+			"erb",
+			"lang-cfml",
+			"cfml",
+			"HTML (Eex)",
+			"mdx",
+		],
+	},
+}

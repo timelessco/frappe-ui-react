@@ -1,3 +1,23 @@
+<div align="center">
+ <h1 align="center"><a aria-label="Frappe UI React" href="https://github.com/timelessco/frappe-ui-react">Frappe UI React</a></h1>
+ <p align="center">A React component library implementing Frappe's Espresso UI design system.</p>
+</div>
+
+<p align="center">
+ <a href="https://github.com/timelessco/frappe-ui-react/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank">
+  <img alt="Contributor Covenant" src="https://img.shields.io/badge/code_of_conduct-enforced-21bb42" />
+ </a>
+ <img alt="Style: Prettier" src="https://img.shields.io/badge/style-prettier-21bb42.svg" />
+ <img alt="TypeScript: Strict" src="https://img.shields.io/badge/typescript-strict-21bb42.svg" />
+ <a href="#contributors" target="_blank">
+  <!-- prettier-ignore-start -->
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<img alt="All Contributors: 1" src="https://img.shields.io/badge/all_contributors-1-21bb42.svg" />
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+  <!-- prettier-ignore-end -->
+ </a>
+</p>
+
 # frappe-ui-react
 
 A React component library implementing Frappe's Espresso UI design system.
@@ -11,16 +31,18 @@ frappe-ui-react is a comprehensive React component library that implements Frapp
 ### Community Need
 
 The Frappe ecosystem provides excellent tools including a [React SDK](https://github.com/The-Commit-Company/frappe-react-sdk) for backend interactions, but lacks official React UI components. This forces React developers to either:
+
 - Build UI components from scratch
 - Use inconsistent UI libraries that don't match Frappe's design language
 - Switch to Vue.js (which might not be feasible for existing React projects)
 
 ### Design Consistency
+
 This library ensures React applications can maintain the same look and feel as official Frappe products which used [frappe-ui](https://github.com/frappe/frappe-ui) like:
+
 - Gameplan
 - Frappe Cloud
 - Helpdesk
-
 
 ## Features
 
@@ -38,19 +60,52 @@ This library ensures React applications can maintain the same look and feel as o
 ## Technical Details
 
 ### Built With
+
 - React 18+
 - TypeScript
 - Tailwind CSS
 - Radix UI (for accessible primitives)
 
 ### Design System
+
 Components are built following the [Espresso UI Design System](https://www.figma.com/community/file/1407648399328528443) specifications, ensuring:
+
 - Consistent spacing
 - Color schemes
 - Typography
 - Component behavior
 - Accessibility patterns
 
+## Apps
+
+- [apps/playground](./apps/playground): Next.js, Typescript [README](./apps/playground/README.md) | [CHANGELOG](./apps/playground/CHANGELOG.md)
+
+## Development
+
+See [`.github/CONTRIBUTING.md`](./.github/CONTRIBUTING.md), then
+[`.github/DEVELOPMENT.md`](./.github/DEVELOPMENT.md). Thanks! 💖
+
 ## License
 
 MIT License - See [LICENSE](LICENSE) for details.
+
+## Contributors
+
+<!-- spellchecker: disable -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://navinmoorthy.me/"><img src="https://avatars.githubusercontent.com/u/39694575?v=4?s=100" width="100px;" alt="Navin Moorthy"/><br /><sub><b>Navin Moorthy</b></sub></a><br /><a href="https://github.com/timelessco/frappe-ui-react/commits?author=navin-moorthy" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+<!-- spellchecker: enable -->
+<sub>

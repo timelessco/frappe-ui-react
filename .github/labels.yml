@@ -1,0 +1,132 @@
+# Priority labels
+- color: ee0701
+  description: This should be dealt with ASAP. Not fixing this issue would be a serious error.
+  name: "Priority: Critical"
+- color: b60205
+  description: After critical issues are fixed, these should be dealt with before any further issues.
+  name: "Priority: High"
+- color: 0e8a16
+  description: "This issue may be useful, and needs some attention."
+  name: "Priority: Medium"
+- color: e4ea8a
+  description: "Nice addition, maybe... someday..."
+  name: "Priority: Low"
+# Type labels
+- color: ee0701
+  description: Inconsistencies or issues which will cause a problem for users or implementors.
+  name: "Type: Bug"
+- color: 0052cc
+  description: Solely about the documentation of the project.
+  name: "Type: Documentation"
+- color: 1d76db
+  description: "Enhancement of the code, not introducing new features."
+  name: "Type: Enhancement"
+- color: fef2c0
+  description: "Marks an idea, which might be accepted and implemented."
+  name: "Type: Idea"
+- color: 0e8a16
+  description: New features or options.
+  name: "Type: Feature"
+- color: 2af79e
+  description: "Generic maintenance tasks, e.g., package updates."
+  name: "Type: Maintenance"
+- color: 6009D7
+  description: "Improving how the repository's tests are run and/or code is tested"
+  name: "Type: Testing"
+- color: fbca04
+  name: "Type: RFC"
+# Additional markers
+- color: ee0701
+  description: Marks an security issues that needs to be resolved asap.
+  name: Security
+- color: c2e0c6
+  description: This issue or PR has been accepted.
+  name: Accepted
+- color: f9d0c4
+  description: This issue or PR has been declined.
+  name: Declined
+- color: a80016
+  description: This change will require a new major release.
+  name: Breaking Change
+- color: a80016
+  description: A feature is no longer wanted/needed (remove/deprecate it)
+  name: Feature Removal
+# Ongoing Status labels
+- color: fbca04
+  description: This issue needs to be triaged.
+  name: "Status: Triage"
+- color: fef2c0
+  description: Issue need to be investigated further.
+  name: "Status: Investigation Needed"
+- color: cccccc
+  description: Issue or PR that has been placed on hold for now.
+  name: "Status: On Hold"
+- color: fbca04
+  description: Issue is currently being resolved by a developer.
+  name: "Status: In Progress"
+- color: fef2c0
+  description: There has not been activity on this issue or PR for quite some time.
+  name: "Status: Stale"
+- color: fef2c0
+  description: Issue or PR awaits response from the creator.
+  name: "Status: Awaiting Response"
+- color: fef2c0
+  description: Issue or PR awaits feedback from the community.
+  name: "Status: Awaiting Feedback"
+- color: fef2c0
+  description: Progress on this issue is currently not possible.
+  name: "Status: Blocked"
+- color: d7e102
+  description: Good for newcomers, please hop on
+  name: "Status: Good first issue"
+- color: 0E8A16
+  description: Please, send a pull request to resolve this!
+  name: "Status: Accepting PRs"
+# Resolution Status labels
+- color: e6e6e6
+  description: The behavior reported in the issue is actually correct.
+  name: "Resolution: By Design"
+- color: e6e6e6
+  description: This issue or pull request already exists
+  name: "Resolution: Duplicate"
+- color: e6e6e6
+  description: "It was a real bug, but not in the code in this repo."
+  name: "Resolution: External"
+- color: e6e6e6
+  description: ""
+  name: "Resolution: Invalid"
+- color: e6e6e6
+  description: The issue is not relevant to code in this repo and is not an external issue. (Out of scope)
+  name: "Resolution: Not Applicable"
+- color: e6e6e6
+  description: The bug could not be reproduced.
+  name: "Resolution: Not Reproducible"
+- color: e6e6e6
+  description: A real bug or issue, but the issue is not impactful enough to spend time on.
+  name: "Resolution: Won't Fix"
+- color: c2e0c6
+  description: The issue has been fixed.
+  name: "Resolution: Fixed"
+- color: c2e0c6
+  description: This has been added to the project.
+  name: "Resolution: Added"
+# Bots
+- color: ffffff
+  description: Renovate
+  name: ":blue_heart:"
+- color: c2e0c6
+  description: "It's now live."
+  name: "Status: Released"
+- color: ff0000
+  name: autoapprove ✅
+- color: "#bfdadc"
+  name: autoupdate 🔁
+- color: e1f788
+  description: Pull requests that update a dependency file
+  name: Dependency ⏫
+- color: fbca04
+  description: OtherDependencies Changed
+  name: OtherDependencies ⬆️
+- color: fd73c3
+  description: Pull requests that update a dev dependency file
+  name: DevDependency 🔼
