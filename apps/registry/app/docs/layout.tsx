@@ -39,12 +39,12 @@ export default function DocsLayout({
 
 	return (
 		<div className="container mx-auto px-4 py-8">
-			<nav className="mb-8 flex items-center justify-between border pb-4">
+			<nav className="mb-8 flex items-center justify-between pb-4">
 				<h1 className="text-2xl font-bold text-foreground">Documentation</h1>
 				<ModeToggle />
 			</nav>
 			<div className="grid grid-cols-1 gap-8 md:grid-cols-[250px_1fr]">
-				<aside className="border pr-4">
+				<aside className="border-r pr-4">
 					<DocsSidebarNav items={items} />
 				</aside>
 				<main className="prose max-w-none dark:prose-invert">{children}</main>

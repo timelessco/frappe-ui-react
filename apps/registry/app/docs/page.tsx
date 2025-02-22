@@ -8,10 +8,6 @@ export default async function DocsPage() {
 	);
 }
 
-export function generateStaticParams() {
-	return [{ name: "welcome" }, { name: "button" }, { name: "hello-world" }];
-}
-
 export const generateMetadata = async () => {
 	return {
 		title: "Docs",
