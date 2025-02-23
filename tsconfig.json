@@ -24,7 +24,7 @@
 		"allowJs": true
 	},
 	"include": ["./**/*"],
-	"exclude": ["**/.*/", "node_modules", "apps", "packages"],
+	"exclude": ["**/.*/", "node_modules", "apps", "packages", "native-app"],
 	"ts-node": {
 		"transpileOnly": true,
 		"files": true,

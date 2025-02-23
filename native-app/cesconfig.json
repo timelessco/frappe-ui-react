@@ -1,0 +1,28 @@
+{
+	"cesVersion": "2.12.2",
+	"projectName": "frappe-ui-react-native",
+	"packages": [
+		{
+			"name": "stylesheet",
+			"type": "styling"
+		}
+	],
+	"flags": {
+		"noGit": false,
+		"noInstall": false,
+		"overwrite": false,
+		"importAlias": true,
+		"packageManager": "npm",
+		"eas": true
+	},
+	"packageManager": {
+		"type": "npm",
+		"version": "9.2.0"
+	},
+	"os": {
+		"type": "Darwin",
+		"platform": "darwin",
+		"arch": "arm64",
+		"kernelVersion": "23.5.0"
+	}
+}

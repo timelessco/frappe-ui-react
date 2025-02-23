@@ -13,3 +13,6 @@ pnpm-lock.yaml
 public
 **/*/CHANGELOG.md
 **/types/generated/*.d.ts
+
+# Native app
+native-app

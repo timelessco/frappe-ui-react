@@ -1,0 +1,59 @@
+{
+	"expo": {
+		"name": "frappe-ui-react-native",
+		"slug": "frappe-ui-react-native",
+		"version": "1.0.0",
+		"web": {
+			"favicon": "./assets/favicon.png",
+			"bundler": "metro"
+		},
+		"experiments": {
+			"tsconfigPaths": true
+		},
+		"plugins": [
+			[
+				"expo-dev-launcher",
+				{
+					"launchMode": "most-recent"
+				}
+			],
+			[
+				"expo-font",
+				{
+					"fonts": [
+						"./assets/fonts/InterDisplay-Black.ttf",
+						"./assets/fonts/InterDisplay-Bold.ttf",
+						"./assets/fonts/InterDisplay-Medium.ttf",
+						"./assets/fonts/InterDisplay-Regular.ttf",
+						"./assets/fonts/InterDisplay-SemiBold.ttf"
+					]
+				}
+			]
+		],
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "automatic",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.timelessco.frappeuireactnative"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.timelessco.frappeuireactnative"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "99094a05-1c65-447d-b0ea-933f14c098f7"
+			}
+		}
+	}
+}
