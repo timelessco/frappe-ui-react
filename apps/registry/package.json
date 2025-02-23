@@ -25,7 +25,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"build": "next build",
+		"build": "pnpm registry:build && next build",
 		"build:ci": "next build",
 		"build:start": "pnpm build && pnpm start",
 		"clean": "rimraf ./.next ./tsconfig.tsbuildinfo",
