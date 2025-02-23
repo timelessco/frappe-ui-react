@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+import { Button } from "./ui/button";
 
 interface SidebarNavItem {
 	disabled?: boolean;
@@ -20,10 +24,33 @@ export interface DocsSidebarNavProps {
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
 	const pathname = usePathname();
+	const [isOpen, setIsOpen] = useState(false);
 
 	return items.length ? (
 		<div className="w-full">
-			<nav className="lg:sticky lg:top-16">
+			<Button
+				onClick={() => setIsOpen(!isOpen)}
+				className="flex w-full items-center justify-between rounded-md px-4 py-2 lg:hidden"
+			>
+				<div className="flex items-center gap-2">
+					<span className="font-medium">Navigation</span>
+					<ChevronDown
+						className={cn(
+							"h-4 w-4 transition-transform",
+							isOpen && "rotate-180",
+						)}
+					/>
+				</div>
+			</Button>
+			<nav
+				className={cn(
+					"lg:sticky lg:top-16",
+					"overflow-hidden transition-all duration-200 ease-in-out",
+					isOpen
+						? "max-h-[1000px] opacity-100"
+						: "max-h-0 opacity-0 lg:max-h-[1000px] lg:opacity-100",
+				)}
+			>
 				{items.map((item) => (
 					<div key={item.title} className={cn("pb-4")}>
 						{item.href ? (

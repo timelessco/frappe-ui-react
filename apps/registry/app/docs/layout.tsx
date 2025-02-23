@@ -50,7 +50,7 @@ export default function DocsLayout({
 
 			acc[baseCategory].push({
 				title: item.name.startsWith("use") ? item.name : item.title,
-				href: `/docs/${basePath}/${item.name}`,
+				href: `/docs/${basePath}/${item.name === "icon" ? "icon-component" : item.name}`,
 				isGettingStarted: false,
 			});
 			return acc;

@@ -1049,6 +1049,23 @@
 			"categories": ["primitives"]
 		},
 		{
+			"name": "native-utils",
+			"type": "registry:ui",
+			"title": "Native Utils",
+			"description": "A native utils component",
+			"dependencies": ["react-native", "react-native-reanimated"],
+			"files": [
+				{
+					"path": "registry/native/default/lib/utils.ts",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
 			"name": "native-button",
 			"type": "registry:ui",
 			"title": "Button",
