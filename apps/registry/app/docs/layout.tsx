@@ -7,20 +7,27 @@ export default function DocsLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const categoryGroups = registry.items.reduce<
-		Record<string, Array<{ href: string; title: string }>>
-	>((acc, item) => {
-		const category = item.categories[0] || "uncategorized";
-		if (!acc[category]) {
-			acc[category] = [];
-		}
+	const categoryGroups = registry.items
+		.filter((item) => item.type === "registry:ui")
+		.reduce<Record<string, Array<{ href: string; title: string }>>>(
+			(acc, item) => {
+				const category = item?.categories?.[0];
+				if (!category) {
+					return acc;
+				}
 
-		acc[category].push({
-			title: item.title,
-			href: `/docs/${item.name}`,
-		});
-		return acc;
-	}, {});
+				if (!acc[category]) {
+					acc[category] = [];
+				}
+
+				acc[category].push({
+					title: item.title,
+					href: `/docs/${item.name}`,
+				});
+				return acc;
+			},
+			{},
+		);
 
 	const items = [
 		{
