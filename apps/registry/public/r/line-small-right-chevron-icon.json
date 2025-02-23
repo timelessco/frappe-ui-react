@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-small-right-chevron-icon",
+  "type": "registry:file",
+  "title": "Line Small Right Chevron Icon",
+  "description": "A line small right chevron icon component",
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/icons/line/small-right-chevron.tsx",
+      "content": "import { Icon, type IconProps } from \"@/components/ui/icon\";\n\nexport const SmallRightChevronIcon = (props: IconProps) => (\n\t<Icon fill=\"none\" viewBox=\"0 0 16 16\" {...props}>\n\t\t<path\n\t\t\tfill=\"currentColor\"\n\t\t\tfillRule=\"evenodd\"\n\t\t\td=\"M5.64 12.1a.5.5 0 0 1 .02-.71L9.26 8l-3.6-3.39a.5.5 0 0 1 .68-.72l4 3.75a.5.5 0 0 1 0 .72l-4 3.75a.5.5 0 0 1-.7-.02Z\"\n\t\t\tclipRule=\"evenodd\"\n\t\t/>\n\t</Icon>\n);\n",
+      "type": "registry:file",
+      "target": "icons/line/small-right-chevron.tsx"
+    }
+  ]
+}

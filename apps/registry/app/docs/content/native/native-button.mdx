@@ -1,0 +1,61 @@
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
+import image from "./images/native-button.png"
+
+# Button
+
+A versatile button component that supports different sizes, variants, states and content types including icons and loading spinners.
+
+<Image src={image} alt="Button" className="w-full rounded-lg shadow-lg" />
+
+## Features
+
+- Multiple sizes: sm, md, lg, xl, 2xl
+- Different variants: solid, outline, ghost, subtle
+- Support for prefix/suffix icons
+- Loading state with customizable spinner
+- Icon-only mode
+- Haptic feedback support
+- Scale animation on press
+- Accessibility support
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    <EnhancedCodeBlock language="tsx">
+{`import { Button } from "@/components/ui/button";`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+			<TabsTrigger value="npm">npm</TabsTrigger>
+			<TabsTrigger value="pnpm">pnpm</TabsTrigger>
+			<TabsTrigger value="yarn">yarn</TabsTrigger>
+		</TabsList>
+		<TabsContent value="npm">
+			<EnhancedCodeBlock language="bash">
+				npx shadcn-ui@latest add "https://frappe-ui-react.tmls.dev/registry/native-button"
+			</EnhancedCodeBlock>
+		</TabsContent>
+		<TabsContent value="pnpm">
+			<EnhancedCodeBlock language="bash">
+				pnpm install @/components/ui/button
+			</EnhancedCodeBlock>
+		</TabsContent>
+		<TabsContent value="yarn">
+			<EnhancedCodeBlock language="bash">
+				yarn add @/components/ui/button
+			</EnhancedCodeBlock>
+		</TabsContent>
+	</PackageManagerTabs>
+</TabsContent>
+</InstallationTabs>

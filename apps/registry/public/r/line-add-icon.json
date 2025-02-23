@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-add-icon",
+  "type": "registry:file",
+  "title": "Line Add Icon",
+  "description": "A line add icon component",
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/icons/line/add.tsx",
+      "content": "import { Icon, type IconProps } from \"@/components/ui/icon\";\n\nexport const AddIcon = (props: IconProps) => (\n\t<Icon fill=\"none\" viewBox=\"0 0 16 16\" {...props}>\n\t\t<path\n\t\t\tfill=\"currentColor\"\n\t\t\tfillRule=\"evenodd\"\n\t\t\td=\"M8.5 2.5a.5.5 0 0 0-1 0v5h-5a.5.5 0 0 0 0 1h5v5a.5.5 0 0 0 1 0v-5h5a.5.5 0 0 0 0-1h-5v-5Z\"\n\t\t\tclipRule=\"evenodd\"\n\t\t/>\n\t</Icon>\n);\n",
+      "type": "registry:file",
+      "target": "icons/line/add.tsx"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-avatar-group",
+  "type": "registry:ui",
+  "title": "Avatar Group",
+  "description": "An avatar group component",
+  "dependencies": [
+    "nativewind",
+    "react-native-svg"
+  ],
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/native-avatar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/native/default/ui/avatarGroup.tsx",
+      "content": "// @ts-nocheck\nimport React from \"react\";\nimport { View, ViewProps } from \"react-native\";\n\nimport {\n\tcreateContext,\n\tcx,\n\tgetValidChildren,\n\tisUndefined,\n\tstyleAdapter,\n} from \"@/lib/utils\";\n\nimport { Avatar, AvatarProps, AvatarSizes, avatarTheme } from \"./avatar\";\n\ninterface AvatarGroupWrapperProps extends ViewProps {\n\tsize?: AvatarSizes;\n\tshowRing?: boolean;\n}\n\nconst AvatarGroupWrapper: React.FC<AvatarGroupWrapperProps> = ({\n\tchildren,\n\tstyle,\n\t...props\n}) => {\n\treturn (\n\t\t<View\n\t\t\t{...props}\n\t\t\tclassName={cx(avatarTheme.group.base, styleAdapter(style))}\n\t\t>\n\t\t\t{children}\n\t\t</View>\n\t);\n};\n\nconst [AvatarGroupProvider, useAvatarGroup] =\n\tcreateContext<AvatarGroupSharedProps>({\n\t\tstrict: false,\n\t\tname: \"AvatarGroupProvider\",\n\t});\n\nexport { useAvatarGroup };\n\nexport type AvatarGroupSharedProps = Pick<AvatarProps, \"size\" | \"squared\">;\n\nexport type AvatarGroupProps = ViewProps &\n\tAvatarGroupSharedProps & {\n\t\t/**\n\t\t * Maximum number of avatars to be displayed within the group.\n\t\t *\n\t\t */\n\t\tmax?: number;\n\t\t/**\n\t\t * A ring around the Avatar Component. If true, the Avatar will show a border around it.\n\t\t *\n\t\t */\n\t\tshowRing?: boolean;\n\t\t/**\n\t\t * Color of the ring around the Avatar Component.\n\t\t *\n\t\t */\n\t\tringColor?: string;\n\t};\n\nexport const AvatarGroup: React.FC<Partial<AvatarGroupProps>> = (props) => {\n\tconst {\n\t\tsquared = false,\n\t\tsize = \"xl\",\n\t\tshowRing = true,\n\t\tringColor = \"white\",\n\t\tchildren,\n\t\tmax,\n\t\t...rest\n\t} = props;\n\tconst validChildren = getValidChildren(children);\n\n\t/**\n\t * Get the avatars within the max\n\t */\n\tconst childrenWithinMax = isUndefined(max)\n\t\t? validChildren\n\t\t: validChildren.slice(0, max);\n\n\tconst context = React.useMemo(() => ({ size, squared }), [size, squared]);\n\n\tconst excess = isUndefined(max) ? 0 : validChildren.length - max;\n\treturn (\n\t\t<AvatarGroupProvider value={context}>\n\t\t\t<AvatarGroupWrapper size={size} {...rest}>\n\t\t\t\t{childrenWithinMax.map((renderElement, index) => (\n\t\t\t\t\t<View\n\t\t\t\t\t\tclassName={cx(\n\t\t\t\t\t\t\tavatarTheme.borderRadius.size[size],\n\t\t\t\t\t\t\tindex !== 0 ? avatarTheme.group.avatarWrapper.spacing[size] : \"\",\n\t\t\t\t\t\t\tsquared ? \"\" : avatarTheme.group.avatarWrapper.circular,\n\t\t\t\t\t\t\tshowRing ? avatarTheme.group.avatarWrapper.ringStyle : \"\",\n\t\t\t\t\t\t)}\n\t\t\t\t\t\tstyle={[\n\t\t\t\t\t\t\tshowRing\n\t\t\t\t\t\t\t\t? { borderColor: ringColor, backgroundColor: ringColor }\n\t\t\t\t\t\t\t\t: {},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tzIndex: childrenWithinMax.length - index,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t]}\n\t\t\t\t\t\tkey={index}\n\t\t\t\t\t>\n\t\t\t\t\t\t{renderElement}\n\t\t\t\t\t</View>\n\t\t\t\t))}\n\t\t\t\t{excess > 0 ? (\n\t\t\t\t\t<View\n\t\t\t\t\t\tclassName={cx(\n\t\t\t\t\t\t\tavatarTheme.borderRadius.size[size],\n\t\t\t\t\t\t\tavatarTheme.group.avatarWrapper.spacing[size],\n\t\t\t\t\t\t\tsquared ? \"\" : avatarTheme.group.avatarWrapper.circular,\n\t\t\t\t\t\t\tshowRing ? avatarTheme.group.avatarWrapper.ringStyle : \"\",\n\t\t\t\t\t\t)}\n\t\t\t\t\t\tstyle={[\n\t\t\t\t\t\t\tshowRing\n\t\t\t\t\t\t\t\t? { borderColor: ringColor, backgroundColor: ringColor }\n\t\t\t\t\t\t\t\t: {},\n\t\t\t\t\t\t]}\n\t\t\t\t\t>\n\t\t\t\t\t\t<Avatar name={excess.toString()} />\n\t\t\t\t\t</View>\n\t\t\t\t) : null}\n\t\t\t</AvatarGroupWrapper>\n\t\t</AvatarGroupProvider>\n\t);\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "native": true
+  },
+  "categories": [
+    "primitives"
+  ]
+}

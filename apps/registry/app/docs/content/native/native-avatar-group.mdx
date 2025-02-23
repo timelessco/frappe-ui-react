@@ -1,0 +1,268 @@
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
+import image from "./images/native-avatar-group.png"
+
+# Avatar Group
+
+A component for grouping multiple avatars together with customizable layout and styling options.
+
+<Image src={image} alt="Avatar Group" className="w-full rounded-lg shadow-lg" />
+
+## Features
+
+- Group multiple avatars with consistent spacing
+- Maximum avatar limit with overflow count
+- Optional ring border around avatars
+- Customizable ring color
+- Consistent sizing across grouped avatars
+- Square or circular shapes
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    <EnhancedCodeBlock language="tsx">
+{`
+import React from "react";
+import { View, ViewProps } from "react-native";
+
+import {
+	createContext,
+	cx,
+	getValidChildren,
+	isUndefined,
+	styleAdapter,
+} from "@/lib/utils";
+
+import { Avatar, AvatarProps, AvatarSizes, avatarTheme } from "./avatar";
+
+interface AvatarGroupWrapperProps extends ViewProps {
+	size?: AvatarSizes;
+	showRing?: boolean;
+}
+
+const AvatarGroupWrapper: React.FC<AvatarGroupWrapperProps> = ({
+	children,
+	style,
+	...props
+}) => {
+	return (
+		<View
+			{...props}
+			className={cx(avatarTheme.group.base, styleAdapter(style))}
+		>
+			{children}
+		</View>
+	);
+};
+
+const [AvatarGroupProvider, useAvatarGroup] =
+	createContext<AvatarGroupSharedProps>({
+		strict: false,
+		name: "AvatarGroupProvider",
+	});
+
+export { useAvatarGroup };
+
+export type AvatarGroupSharedProps = Pick<AvatarProps, "size" | "squared">;
+
+export type AvatarGroupProps = ViewProps &
+	AvatarGroupSharedProps & {
+		/**
+		 * Maximum number of avatars to be displayed within the group.
+		 *
+		 */
+		max?: number;
+		/**
+		 * A ring around the Avatar Component. If true, the Avatar will show a border around it.
+		 *
+		 */
+		showRing?: boolean;
+		/**
+		 * Color of the ring around the Avatar Component.
+		 *
+		 */
+		ringColor?: string;
+	};
+
+export const AvatarGroup: React.FC<Partial<AvatarGroupProps>> = (props) => {
+	const {
+		squared = false,
+		size = "xl",
+		showRing = true,
+		ringColor = "white",
+		children,
+		max,
+		...rest
+	} = props;
+	const validChildren = getValidChildren(children);
+
+	/**
+	 * Get the avatars within the max
+	 */
+	const childrenWithinMax = isUndefined(max)
+		? validChildren
+		: validChildren.slice(0, max);
+
+	const context = React.useMemo(() => ({ size, squared }), [size, squared]);
+
+	const excess = isUndefined(max) ? 0 : validChildren.length - max;
+	return (
+		<AvatarGroupProvider value={context}>
+			<AvatarGroupWrapper size={size} {...rest}>
+				{childrenWithinMax.map((renderElement, index) => (
+					<View
+						className={cx(
+							avatarTheme.borderRadius.size[size],
+							index !== 0 ? avatarTheme.group.avatarWrapper.spacing[size] : "",
+							squared ? "" : avatarTheme.group.avatarWrapper.circular,
+							showRing ? avatarTheme.group.avatarWrapper.ringStyle : "",
+						)}
+						style={[
+							showRing
+								? { borderColor: ringColor, backgroundColor: ringColor }
+								: {},
+							{
+								zIndex: childrenWithinMax.length - index,
+							},
+						]}
+						key={index}
+					>
+						{renderElement}
+					</View>
+				))}
+				{excess > 0 ? (
+					<View
+						className={cx(
+							avatarTheme.borderRadius.size[size],
+							avatarTheme.group.avatarWrapper.spacing[size],
+							squared ? "" : avatarTheme.group.avatarWrapper.circular,
+							showRing ? avatarTheme.group.avatarWrapper.ringStyle : "",
+						)}
+						style={[
+							showRing
+								? { borderColor: ringColor, backgroundColor: ringColor }
+								: {},
+						]}
+					>
+						<Avatar name={excess.toString()} />
+					</View>
+				) : null}
+			</AvatarGroupWrapper>
+		</AvatarGroupProvider>
+	);
+};
+
+
+`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/native-avatar-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/native-avatar-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/native-avatar-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+## Usage
+
+### Basic Avatar Group
+
+<EnhancedCodeBlock language="tsx">
+{`import { Avatar, AvatarGroup } from "@/components/ui/avatar";
+
+export function AvatarGroupDemo() {
+  return (
+    <AvatarGroup>
+      <Avatar
+        src={{ uri: "https://example.com/avatar1.jpg" }}
+        name="John Doe"
+      />
+      <Avatar
+        src={{ uri: "https://example.com/avatar2.jpg" }}
+        name="Jane Smith"
+      />
+      <Avatar
+        src={{ uri: "https://example.com/avatar3.jpg" }}
+        name="Bob Wilson"
+      />
+    </AvatarGroup>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### With Maximum Limit
+
+<EnhancedCodeBlock language="tsx">
+{`import { Avatar, AvatarGroup } from "@/components/ui/avatar";
+
+export function AvatarGroupWithMax() {
+  return (
+    <AvatarGroup max={2}>
+      <Avatar name="John Doe" />
+      <Avatar name="Jane Smith" />
+      <Avatar name="Bob Wilson" />
+      <Avatar name="Alice Brown" />
+    </AvatarGroup>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### Customized Ring
+
+<EnhancedCodeBlock language="tsx">
+{`import { Avatar, AvatarGroup } from "@/components/ui/avatar";
+
+export function AvatarGroupWithRing() {
+  return (
+    <AvatarGroup showRing ringColor="#e2e8f0">
+      <Avatar name="John Doe" />
+      <Avatar name="Jane Smith" />
+      <Avatar name="Bob Wilson" />
+    </AvatarGroup>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### Squared Avatars
+
+<EnhancedCodeBlock language="tsx">
+{`import { Avatar, AvatarGroup } from "@/components/ui/avatar";
+
+export function SquaredAvatarGroup() {
+  return (
+    <AvatarGroup squared size="xl">
+      <Avatar name="John Doe" squared />
+      <Avatar name="Jane Smith" squared />
+      <Avatar name="Bob Wilson" squared />
+    </AvatarGroup>
+  );
+}`}
+</EnhancedCodeBlock>

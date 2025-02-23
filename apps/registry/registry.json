@@ -744,6 +744,175 @@
 			]
 		},
 		{
+			"name": "placeholder-icon",
+			"type": "registry:file",
+			"title": "Placeholder Icon",
+			"description": "A placeholder icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/placeholder.tsx",
+					"type": "registry:file",
+					"target": "icons/placeholder.tsx"
+				}
+			],
+			"categories": ["primitives"]
+		},
+		{
+			"name": "solid-user-icon",
+			"type": "registry:file",
+			"title": "Solid User Icon",
+			"description": "A solid user icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/solid/user.tsx",
+					"type": "registry:file",
+					"target": "icons/solid/user.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-add-icon",
+			"type": "registry:file",
+			"title": "Line Add Icon",
+			"description": "A line add icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/add.tsx",
+					"type": "registry:file",
+					"target": "icons/line/add.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-course-icon",
+			"type": "registry:file",
+			"title": "Line Course Icon",
+			"description": "A line course icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/course.tsx",
+					"type": "registry:file",
+					"target": "icons/line/course.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-filter-icon",
+			"type": "registry:file",
+			"title": "Line Filter Icon",
+			"description": "A line filter icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/filter.tsx",
+					"type": "registry:file",
+					"target": "icons/line/filter.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-people-icon",
+			"type": "registry:file",
+			"title": "Line People Icon",
+			"description": "A line people icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/people.tsx",
+					"type": "registry:file",
+					"target": "icons/line/people.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-search-icon",
+			"type": "registry:file",
+			"title": "Line Search Icon",
+			"description": "A line search icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/search.tsx",
+					"type": "registry:file",
+					"target": "icons/line/search.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-share-icon",
+			"type": "registry:file",
+			"title": "Line Share Icon",
+			"description": "A line share icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/share.tsx",
+					"type": "registry:file",
+					"target": "icons/line/share.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-small-down-icon",
+			"type": "registry:file",
+			"title": "Line Small Down Icon",
+			"description": "A line small down icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/small-down.tsx",
+					"type": "registry:file",
+					"target": "icons/line/small-down.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-small-right-chevron-icon",
+			"type": "registry:file",
+			"title": "Line Small Right Chevron Icon",
+			"description": "A line small right chevron icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/small-right-chevron.tsx",
+					"type": "registry:file",
+					"target": "icons/line/small-right-chevron.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-sort-icon",
+			"type": "registry:file",
+			"title": "Line Sort Icon",
+			"description": "A line sort icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/sort.tsx",
+					"type": "registry:file",
+					"target": "icons/line/sort.tsx"
+				}
+			]
+		},
+		{
+			"name": "line-star-icon",
+			"type": "registry:file",
+			"title": "Line Star Icon",
+			"description": "A line star icon component",
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/icon.json"],
+			"files": [
+				{
+					"path": "registry/web/default/icons/line/star.tsx",
+					"type": "registry:file",
+					"target": "icons/line/star.tsx"
+				}
+			]
+		},
+		{
 			"name": "icon",
 			"type": "registry:ui",
 			"title": "Icon",
@@ -878,6 +1047,122 @@
 				}
 			],
 			"categories": ["primitives"]
+		},
+		{
+			"name": "native-button",
+			"type": "registry:ui",
+			"title": "Button",
+			"description": "A button component",
+			"dependencies": ["react-native", "react-native-reanimated"],
+			"files": [
+				{
+					"path": "registry/native/default/ui/button.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "native-avatar",
+			"type": "registry:ui",
+			"title": "Avatar",
+			"description": "An avatar component",
+			"dependencies": ["nativewind", "react-native-svg"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/native-avatar-group.json"
+			],
+			"files": [
+				{
+					"path": "registry/native/default/ui/avatar.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "native-avatar-group",
+			"type": "registry:ui",
+			"title": "Avatar Group",
+			"description": "An avatar group component",
+			"dependencies": ["nativewind", "react-native-svg"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/native-avatar.json"
+			],
+			"files": [
+				{
+					"path": "registry/native/default/ui/avatarGroup.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "native-tag",
+			"type": "registry:ui",
+			"title": "Tags",
+			"description": "A tags component",
+			"dependencies": [
+				"react-native-css-interop",
+				"react-native-svg",
+				"react-native-reanimated"
+			],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/use-haptic.json",
+				"https://frappe-ui-react.tmls.dev/r/use-scale-animation.json"
+			],
+			"files": [
+				{
+					"path": "registry/native/default/ui/tag.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "use-haptic",
+			"type": "registry:hook",
+			"title": "Use Haptic",
+			"description": "A hook to use haptic feedback",
+			"dependencies": ["expo-haptics"],
+			"files": [
+				{
+					"path": "registry/native/default/hooks/useHaptic.ts",
+					"type": "registry:hook"
+				}
+			],
+			"categories": ["hooks"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "use-scale-animation",
+			"type": "registry:hook",
+			"title": "Use Scale Animation",
+			"description": "A hook to use scale animation",
+			"dependencies": ["react-native", "react-native-reanimated"],
+			"files": [
+				{
+					"path": "registry/native/default/hooks/useScaleAnimation.ts",
+					"type": "registry:hook"
+				}
+			],
+			"categories": ["hooks"],
+			"meta": {
+				"native": true
+			}
 		}
 	]
 }

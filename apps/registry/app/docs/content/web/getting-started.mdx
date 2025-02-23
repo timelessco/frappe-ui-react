@@ -1,0 +1,116 @@
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { ComponentPreview } from "@/components/component-preview";
+import { Button } from "@/components/ui/button";
+
+# Getting Started with React
+
+This guide will help you set up your application and get started with the basic components.
+
+## Installation
+
+### Create Project
+
+Run the init command to create a new Next.js project or to setup an existing one:
+
+<PackageManagerTabs defaultValue="npm">
+  <TabsList>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+    <EnhancedCodeBlock language="bash">
+      npx shadcn@latest init
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="pnpm">
+    <EnhancedCodeBlock language="bash">
+      pnpm dlx shadcn@latest init
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="yarn">
+    <EnhancedCodeBlock language="bash">
+      yarn shadcn@latest init
+    </EnhancedCodeBlock>
+  </TabsContent>
+</PackageManagerTabs>
+
+You can use the `-d` flag for defaults (New York style, Zinc color, and CSS variables):
+
+<PackageManagerTabs defaultValue="npm">
+  <TabsList>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+    <EnhancedCodeBlock language="bash">
+      npx shadcn@latest init -d
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="pnpm">
+    <EnhancedCodeBlock language="bash">
+      pnpm dlx shadcn@latest init -d
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="yarn">
+    <EnhancedCodeBlock language="bash">
+      yarn shadcn@latest init -d
+    </EnhancedCodeBlock>
+  </TabsContent>
+</PackageManagerTabs>
+
+### Configure components.json
+
+You will be asked a few questions to configure `components.json`:
+
+- Which style would you like to use? › New York
+- Which color would you like to use as base color? › Zinc
+- Do you want to use CSS variables for colors? › no / yes
+
+### Adding Components
+
+Once configured, you can start adding components to your project:
+
+<PackageManagerTabs defaultValue="npm">
+  <TabsList>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+    <EnhancedCodeBlock language="bash">
+      npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="pnpm">
+    <EnhancedCodeBlock language="bash">
+      pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="yarn">
+    <EnhancedCodeBlock language="bash">
+      yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button"
+    </EnhancedCodeBlock>
+  </TabsContent>
+</PackageManagerTabs>
+
+You can then import and use components like this:
+
+<ComponentPreview name="button" component={<Button>Click me</Button>}>
+  <EnhancedCodeBlock language="tsx">
+    {`import { Button } from "@/components/ui/button"
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+For more examples and usage details, check out the [Button documentation](/docs/web/button).

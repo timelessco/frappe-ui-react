@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-haptic",
+  "type": "registry:hook",
+  "title": "Use Haptic",
+  "description": "A hook to use haptic feedback",
+  "dependencies": [
+    "expo-haptics"
+  ],
+  "files": [
+    {
+      "path": "registry/native/default/hooks/useHaptic.ts",
+      "content": "// @ts-nocheck\nimport { useCallback, useMemo } from \"react\";\nimport * as Haptics from \"expo-haptics\";\nimport { Platform } from \"react-native\";\n\ntype FeedbackType = \"light\" | \"medium\" | \"heavy\" | \"selection\";\n\nexport const useHaptic = (feedbackType: FeedbackType = \"selection\") => {\n\tconst createHapticHandler = useCallback(\n\t\t(type: Haptics.ImpactFeedbackStyle) => {\n\t\t\treturn Platform.OS === \"web\"\n\t\t\t\t? undefined\n\t\t\t\t: () => Haptics.impactAsync(type);\n\t\t},\n\t\t[],\n\t);\n\n\tconst hapticHandlers = useMemo(\n\t\t() => ({\n\t\t\tlight: createHapticHandler(Haptics.ImpactFeedbackStyle.Light),\n\t\t\tmedium: createHapticHandler(Haptics.ImpactFeedbackStyle.Medium),\n\t\t\theavy: createHapticHandler(Haptics.ImpactFeedbackStyle.Heavy),\n\t\t\tselection: Platform.OS === \"web\" ? undefined : Haptics.selectionAsync,\n\t\t}),\n\t\t[createHapticHandler],\n\t);\n\n\treturn hapticHandlers[feedbackType];\n};\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "native": true
+  },
+  "categories": [
+    "hooks"
+  ]
+}

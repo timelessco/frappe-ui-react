@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "solid-user-icon",
+  "type": "registry:file",
+  "title": "Solid User Icon",
+  "description": "A solid user icon component",
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/icons/solid/user.tsx",
+      "content": "import { Icon, type IconProps } from \"@/components/ui/icon\";\n\nexport const UserIcon = (props: IconProps) => (\n\t<Icon fill=\"none\" viewBox=\"0 0 16 16\" {...props}>\n\t\t<path\n\t\t\tfill=\"currentColor\"\n\t\t\tfillRule=\"evenodd\"\n\t\t\td=\"M8 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-.4 1A5.6 5.6 0 0 0 2 13.6c0 .52.38.96.9 1.05l1.62.27c2.3.38 4.65.38 6.96 0l1.63-.27c.51-.09.89-.53.89-1.05C14 10.5 11.5 8 8.4 8h-.8Z\"\n\t\t\tclipRule=\"evenodd\"\n\t\t/>\n\t</Icon>\n);\n",
+      "type": "registry:file",
+      "target": "icons/solid/user.tsx"
+    }
+  ]
+}
