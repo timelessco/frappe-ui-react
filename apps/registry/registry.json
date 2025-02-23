@@ -36,6 +36,20 @@
 			"meta": {
 				"native": true
 			}
+		},
+		{
+			"name": "dropdown",
+			"type": "registry:ui",
+			"title": "Dropdown",
+			"description": "A dropdown component",
+			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"files": [
+				{
+					"path": "registry/web/default/ui/dropdown.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["overlays"]
 		}
 	]
 }
