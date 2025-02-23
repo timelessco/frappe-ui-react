@@ -1,5 +1,5 @@
 <div align="center">
- <h1 align="center"><a aria-label="Frappe UI React" href="https://github.com/timelessco/frappe-ui-react">Frappe UI React</a></h1>
+ <h1 align="center"><a aria-label="Frappe UI React" href="https://github.com/timelessco/frappe-ui-react">Frappe UI React & React Native</a></h1>
  <p align="center">A React component library implementing Frappe's Espresso UI design system.</p>
 </div>
 
@@ -20,13 +20,13 @@
 
 ## Overview
 
-frappe-ui-react is a comprehensive React component library that implements Frappe's Espresso UI design system. While Frappe officially uses Vue.js internally, this library bridges the gap for React developers in the Frappe ecosystem who want to maintain consistent design language across their applications.
+frappe-ui-react is a comprehensive React & React Native component library that implements Frappe's Espresso UI design system. While Frappe officially uses Vue.js internally, this library bridges the gap for React developers in the Frappe ecosystem who want to maintain consistent design language across their applications.
 
 ## Why This Library?
 
 ### Community Need
 
-The Frappe ecosystem provides excellent tools including a [React SDK](https://github.com/The-Commit-Company/frappe-react-sdk) for backend interactions, but lacks official React UI components. This forces React developers to either:
+The Frappe ecosystem provides excellent tools including a [React SDK](https://github.com/The-Commit-Company/frappe-react-sdk) for backend interactions, but lacks official React components. This forces React developers to either:
 
 - Build UI components from scratch
 - Use inconsistent UI libraries that don't match Frappe's design language
@@ -58,6 +58,7 @@ This library ensures React applications can maintain the same look and feel as o
 ### Built With
 
 - React 18+
+- React Native
 - TypeScript
 - Tailwind CSS
 - Radix UI (for accessible primitives)
