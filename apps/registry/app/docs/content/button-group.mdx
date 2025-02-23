@@ -1,0 +1,147 @@
+import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+# Button Group
+
+A button group component that allows grouping multiple buttons together, providing a unified interface for actions.
+
+<ComponentPreview component={
+  <ButtonGroup>
+    <Button>Button 1</Button>
+    <Button>Button 2</Button>
+    <Button>Button 3</Button>
+  </ButtonGroup>
+}>
+  <EnhancedCodeBlock language="tsx">
+    {`import { ButtonGroup } from "@/components/ui/button-group";
+import { Button } from "@/components/ui/button";
+
+export function ButtonGroupDemo() {
+  return (
+    <ButtonGroup>
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+    </ButtonGroup>
+  );
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    1. Create a new component file in the `components/ui` directory called `button-group.tsx`
+    2. Update the import path according to your project structure
+    3. Copy and paste the following code into the file:
+    <EnhancedCodeBlock language="tsx">
+      {`"use client";
+
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
+interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
+export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <div ref={ref} className={cn("flex gap-ef-4", className)} role="group" {...props}>
+        {children}
+      </div>
+    );
+  },
+);
+
+ButtonGroup.displayName = "ButtonGroup";`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/button-group"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+## Usage
+
+### Basic Button Group
+
+<ComponentPreview component={
+  <ButtonGroup>
+    <Button>Button 1</Button>
+    <Button>Button 2</Button>
+    <Button>Button 3</Button>
+  </ButtonGroup>
+}>
+  <EnhancedCodeBlock language="tsx">
+    {`import { ButtonGroup } from "@/components/ui/button-group";
+import { Button } from "@/components/ui/button";
+
+export function ButtonGroupDemo() {
+  return (
+    <ButtonGroup>
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+    </ButtonGroup>
+  );
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+### Button Group with Variants
+
+<ComponentPreview component={
+  <ButtonGroup>
+    <Button variant="solid">Solid Button</Button>
+    <Button variant="outline">Outline Button</Button>
+    <Button variant="ghost">Ghost Button</Button>
+  </ButtonGroup>
+}>
+  <EnhancedCodeBlock language="tsx">
+    {`import { ButtonGroup } from "@/components/ui/button-group";
+import { Button } from "@/components/ui/button";
+
+export function ButtonGroupDemo() {
+  return (
+    <ButtonGroup>
+      <Button variant="solid">Solid Button</Button>
+      <Button variant="outline">Outline Button</Button>
+      <Button variant="ghost">Ghost Button</Button>
+    </ButtonGroup>
+  );
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>

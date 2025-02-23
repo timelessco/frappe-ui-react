@@ -15,7 +15,27 @@
 					"type": "registry:ui"
 				}
 			],
-			"categories": ["primitives"]
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
+		},
+		{
+			"name": "button-group",
+			"type": "registry:ui",
+			"title": "Button Group",
+			"description": "A button group component",
+			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"files": [
+				{
+					"path": "registry/web/default/ui/button-group.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"],
+			"meta": {
+				"native": true
+			}
 		}
 	]
 }
