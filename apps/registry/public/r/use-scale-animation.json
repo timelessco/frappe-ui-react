@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-scale-animation",
+  "type": "registry:hook",
+  "title": "Use Scale Animation",
+  "description": "A hook to use scale animation",
+  "dependencies": [
+    "react-native",
+    "react-native-reanimated"
+  ],
+  "files": [
+    {
+      "path": "registry/native/default/hooks/useScaleAnimation.ts",
+      "content": "// @ts-nocheck\nimport { useCallback, useMemo } from \"react\";\nimport {\n\tuseAnimatedStyle,\n\tuseSharedValue,\n\twithSpring,\n\tWithSpringConfig,\n\twithTiming,\n\tWithTimingConfig,\n} from \"react-native-reanimated\";\n\ntype AnimationValue = {\n\t/**\n\t * The scale value to which the component should resize onPressIn\n\t * @default 0.95\n\t */\n\tvalue: number;\n};\n\ntype SpringAnimation = AnimationValue & {\n\t/**\n\t * The animation type\n\t * @default \"spring\"\n\t */\n\ttype: \"spring\";\n\tconfig: WithSpringConfig;\n};\n\ntype TimingAnimation = AnimationValue & {\n\t/**\n\t * The animation type\n\t * @default \"spring\"\n\t */\n\ttype: \"timing\";\n\tconfig: WithTimingConfig;\n};\n\ntype AnimationTypes = SpringAnimation | TimingAnimation;\n\nconst DefaultSpringConfig: WithSpringConfig = {\n\tmass: 1,\n\tdamping: 17,\n\tstiffness: 250,\n\tovershootClamping: false,\n\trestSpeedThreshold: 0.001,\n\trestDisplacementThreshold: 0.001,\n};\n\nconst DefaultAnimationType: AnimationTypes = {\n\ttype: \"spring\",\n\tconfig: DefaultSpringConfig,\n\tvalue: 0.96,\n};\n\nexport const useScaleAnimation = (\n\tscaleAnimationConfig: AnimationTypes = DefaultAnimationType,\n) => {\n\tconst scale = useSharedValue(1);\n\tconst { type, config, value } = scaleAnimationConfig;\n\n\tconst getAnimation = useCallback((animationValue: number) => {\n\t\tif (type === \"spring\") {\n\t\t\treturn withSpring(animationValue, config);\n\t\t} else {\n\t\t\treturn withTiming(animationValue, config);\n\t\t}\n\t\t// eslint-disable-next-line react-hooks/exhaustive-deps\n\t}, []);\n\n\tconst onPressIn = useCallback(() => {\n\t\tscale.value = getAnimation(value);\n\t\t// eslint-disable-next-line react-hooks/exhaustive-deps\n\t}, []);\n\n\tconst onPressOut = useCallback(() => {\n\t\tscale.value = getAnimation(1);\n\t\t// eslint-disable-next-line react-hooks/exhaustive-deps\n\t}, []);\n\n\tconst animatedStyle = useAnimatedStyle(() => ({\n\t\ttransform: [{ scale: scale.value }],\n\t}));\n\n\tconst scaleAnimationHandler = useMemo(() => {\n\t\treturn {\n\t\t\thandlers: { onPressIn, onPressOut },\n\t\t\tanimatedStyle,\n\t\t};\n\t}, [animatedStyle, onPressIn, onPressOut]);\n\n\treturn scaleAnimationHandler;\n};\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "native": true
+  },
+  "categories": [
+    "hooks"
+  ]
+}

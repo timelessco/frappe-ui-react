@@ -1,0 +1,213 @@
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+# useScaleAnimation
+
+A hook for adding scale animations to pressable components in React Native applications.
+
+## Features
+
+- Support for spring and timing animations
+- Customizable animation configurations
+- Easy integration with pressable components
+- Smooth and performant animations using Reanimated
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    - Create a new file in your project under `/src/hooks/useScaleAnimation.ts`
+    - Copy and paste the following code:
+    <EnhancedCodeBlock language="tsx">
+{`import { useCallback, useMemo } from "react";
+import {
+	useAnimatedStyle,
+	useSharedValue,
+	withSpring,
+	WithSpringConfig,
+	withTiming,
+	WithTimingConfig,
+} from "react-native-reanimated";
+
+type AnimationValue = {
+	value: number;
+};
+
+type SpringAnimation = AnimationValue & {
+	type: "spring";
+	config: WithSpringConfig;
+};
+
+type TimingAnimation = AnimationValue & {
+	type: "timing";
+	config: WithTimingConfig;
+};
+
+type AnimationTypes = SpringAnimation | TimingAnimation;
+
+const DefaultSpringConfig: WithSpringConfig = {
+	mass: 1,
+	damping: 17,
+	stiffness: 250,
+	overshootClamping: false,
+	restSpeedThreshold: 0.001,
+	restDisplacementThreshold: 0.001,
+};
+
+const DefaultAnimationType: AnimationTypes = {
+	type: "spring",
+	config: DefaultSpringConfig,
+	value: 0.96,
+};
+
+export const useScaleAnimation = (
+	scaleAnimationConfig: AnimationTypes = DefaultAnimationType,
+) => {
+	const scale = useSharedValue(1);
+	const { type, config, value } = scaleAnimationConfig;
+
+	const getAnimation = useCallback((animationValue: number) => {
+		if (type === "spring") {
+			return withSpring(animationValue, config);
+		} else {
+			return withTiming(animationValue, config);
+		}
+	}, []);
+
+	const onPressIn = useCallback(() => {
+		scale.value = getAnimation(value);
+	}, []);
+
+	const onPressOut = useCallback(() => {
+		scale.value = getAnimation(1);
+	}, []);
+
+	const animatedStyle = useAnimatedStyle(() => ({
+		transform: [{ scale: scale.value }],
+	}));
+
+	const scaleAnimationHandler = useMemo(() => {
+		return {
+			handlers: { onPressIn, onPressOut },
+			animatedStyle,
+		};
+	}, [animatedStyle, onPressIn, onPressOut]);
+
+	return scaleAnimationHandler;
+};`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-scale-animation"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-scale-animation"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-scale-animation"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+## Usage
+
+### Basic Usage
+
+<EnhancedCodeBlock language="tsx">
+{`import { useScaleAnimation } from "@/hooks/use-scale-animation";
+import { Pressable } from "react-native";
+import Animated from "react-native-reanimated";
+
+export function ScaleAnimationDemo() {
+  const { handlers, animatedStyle } = useScaleAnimation();
+
+  return (
+    <Pressable {...handlers}>
+      <Animated.View style={animatedStyle}>
+        <Text>Press me!</Text>
+      </Animated.View>
+    </Pressable>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### Custom Spring Animation
+
+<EnhancedCodeBlock language="tsx">
+{`import { useScaleAnimation } from "@/hooks/use-scale-animation";
+import { Pressable } from "react-native";
+import Animated from "react-native-reanimated";
+
+export function CustomSpringDemo() {
+  const { handlers, animatedStyle } = useScaleAnimation({
+    type: "spring",
+    value: 0.8,
+    config: {
+      mass: 1,
+      damping: 15,
+      stiffness: 200
+    }
+  });
+
+  return (
+    <Pressable {...handlers}>
+      <Animated.View style={animatedStyle}>
+        <Text>Spring Animation</Text>
+      </Animated.View>
+    </Pressable>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### Timing Animation
+
+<EnhancedCodeBlock language="tsx">
+{`import { useScaleAnimation } from "@/hooks/use-scale-animation";
+import { Pressable } from "react-native";
+import Animated from "react-native-reanimated";
+
+export function TimingDemo() {
+  const { handlers, animatedStyle } = useScaleAnimation({
+    type: "timing",
+    value: 0.9,
+    config: {
+      duration: 100
+    }
+  });
+
+  return (
+    <Pressable {...handlers}>
+      <Animated.View style={animatedStyle}>
+        <Text>Timing Animation</Text>
+      </Animated.View>
+    </Pressable>
+  );
+}`}
+</EnhancedCodeBlock>
+
+export const metadata = {
+  title: "useScaleAnimation",
+  description: "A hook for adding scale animations to pressable components",
+};
+

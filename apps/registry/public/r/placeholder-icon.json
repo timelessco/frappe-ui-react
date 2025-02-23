@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "placeholder-icon",
+  "type": "registry:file",
+  "title": "Placeholder Icon",
+  "description": "A placeholder icon component",
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/icons/placeholder.tsx",
+      "content": "import { Icon, type IconProps } from \"@/components/ui/icon\";\n\ntype PlaceholderProps = IconProps;\n\nexport const PlaceholderIcon = (props: PlaceholderProps) => (\n\t<Icon fill=\"none\" viewBox=\"0 0 16 16\" {...props}>\n\t\t<g clipPath=\"url(#placeholder-icon)\">\n\t\t\t<path\n\t\t\t\tfill=\"currentColor\"\n\t\t\t\tfillRule=\"evenodd\"\n\t\t\t\td=\"M7.5.79a.7.7 0 0 1 1 0l6.7 6.71a.7.7 0 0 1 0 1l-3.36 3.35-3.36 3.36a.7.7 0 0 1-.99 0l-3.35-3.36L.79 8.5a.7.7 0 0 1 0-.99l3.36-3.35L7.5.79Zm.5.92L4.85 4.85 1.71 8l3.14 3.15L8 14.29l3.15-3.14L14.29 8 8 1.7Z\"\n\t\t\t\tclipRule=\"evenodd\"\n\t\t\t/>\n\t\t</g>\n\t\t<defs>\n\t\t\t<clipPath id=\"placeholder-icon\">\n\t\t\t\t<path fill=\"currentColor\" d=\"M0 0h16v16H0z\" />\n\t\t\t</clipPath>\n\t\t</defs>\n\t</Icon>\n);\n",
+      "type": "registry:file",
+      "target": "icons/placeholder.tsx"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ]
+}

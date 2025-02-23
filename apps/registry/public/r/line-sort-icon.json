@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-sort-icon",
+  "type": "registry:file",
+  "title": "Line Sort Icon",
+  "description": "A line sort icon component",
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/icons/line/sort.tsx",
+      "content": "import { Icon, type IconProps } from \"@/components/ui/icon\";\n\nexport const SortIcon = (props: IconProps) => (\n\t<Icon fill=\"none\" viewBox=\"0 0 16 16\" {...props}>\n\t\t<path\n\t\t\tfill=\"currentColor\"\n\t\t\tfillRule=\"evenodd\"\n\t\t\td=\"M5.5 3.5a.5.5 0 0 0-1 0v7.793L2.878 9.672a.5.5 0 0 0-.707.707l2.475 2.475a.499.499 0 0 0 .716-.009l2.466-2.466a.5.5 0 1 0-.707-.707L5.5 11.292V3.5Zm5.87-.337a.499.499 0 0 0-.724-.017L8.171 5.621a.5.5 0 0 0 .707.707l1.623-1.622V12.5a.5.5 0 1 0 1 0V4.708l1.62 1.62a.5.5 0 1 0 .707-.707L11.37 3.163Z\"\n\t\t\tclipRule=\"evenodd\"\n\t\t/>\n\t</Icon>\n);\n",
+      "type": "registry:file",
+      "target": "icons/line/sort.tsx"
+    }
+  ]
+}

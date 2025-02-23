@@ -1,6 +1,20 @@
+"use client";
+
+import { redirect } from "next/navigation";
+
 import { DocsSidebarNav } from "@/components/docs-sidebar";
 import { Navbar } from "@/components/navbar";
 import registry from "@/registry.json";
+
+interface RegistryItem {
+	categories?: string[];
+	meta?: {
+		native?: boolean;
+	};
+	name: string;
+	title: string;
+	type: string;
+}
 
 export default function DocsLayout({
 	children,
@@ -8,40 +22,68 @@ export default function DocsLayout({
 	children: React.ReactNode;
 }) {
 	const categoryGroups = registry.items
-		.filter((item) => item.type === "registry:ui")
-		.reduce<Record<string, Array<{ href: string; title: string }>>>(
-			(acc, item) => {
-				const category = item?.categories?.[0];
-				if (!category) {
-					return acc;
-				}
+		.filter(
+			(item: RegistryItem) =>
+				item.type === "registry:ui" ||
+				item.type === "registry:hook" ||
+				item.name === "getting-started",
+		)
+		.reduce<
+			Record<
+				string,
+				Array<{ href: string; isGettingStarted?: boolean; title: string }>
+			>
+		>((acc, item) => {
+			const baseCategory = item?.meta?.native ? "React Native" : "Web";
 
-				if (!acc[category]) {
-					acc[category] = [];
-				}
+			if (!acc[baseCategory]) {
+				acc[baseCategory] = [];
+			}
 
-				acc[category].push({
-					title: item.title,
-					href: `/docs/${item.name}${item.name === "icon" ? "-component" : ""}`,
-				});
+			const basePath = item?.meta?.native ? "native" : "web";
+			const isGettingStarted = item.name === "getting-started";
+
+			// Add getting-started pages but don't show in nav
+			if (isGettingStarted) {
 				return acc;
-			},
-			{},
-		);
+			}
+
+			const category = item?.categories?.[0];
+			if (!category) {
+				return acc;
+			}
+
+			acc[baseCategory].push({
+				title: item.name.startsWith("use") ? item.name : item.title,
+				href: `/docs/${basePath}/${item.name === "icon" ? "icon-component" : item.name}`,
+				isGettingStarted: false,
+			});
+			return acc;
+		}, {});
 
 	const items = [
 		{
-			title: "Overview",
+			title: "Welcome",
 			href: "/docs",
 		},
-		{
-			title: "Getting Started",
-			href: "/docs/getting-started",
-		},
-		...Object.entries(categoryGroups).map(([category, categoryItems]) => ({
-			title: category.charAt(0).toUpperCase() + category.slice(1),
-			items: categoryItems.sort((a, b) => a.title.localeCompare(b.title)),
-		})),
+		...Object.entries(categoryGroups).map(([category, categoryItems]) => {
+			const sortedItems = categoryItems.sort((a, b) => {
+				return a.title.localeCompare(b.title);
+			});
+
+			const basePath = category === "React Native" ? "native" : "web";
+
+			// Redirect /docs/web to /docs/web/getting-started
+			if (window?.location?.pathname === `/docs/${basePath}`) {
+				redirect(`/docs/${basePath}/getting-started`);
+			}
+
+			return {
+				title: category,
+				href: `/docs/${basePath}/getting-started`,
+				items: sortedItems,
+			};
+		}),
 	];
 
 	return (

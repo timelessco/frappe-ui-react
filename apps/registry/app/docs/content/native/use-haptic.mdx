@@ -1,0 +1,133 @@
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+# useHaptic
+
+A hook for adding haptic feedback to interactions in React Native applications.
+
+## Features
+
+- Support for different haptic feedback intensities
+- Platform-safe implementation
+- Easy integration with components
+- Automatic web platform handling
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    - Create a new file in your project under `/src/hooks/useHaptic.ts`
+    - Copy and paste the following code:
+    <EnhancedCodeBlock language="tsx">
+{`
+import { useCallback, useMemo } from "react";
+import * as Haptics from "expo-haptics";
+import { Platform } from "react-native";
+
+type FeedbackType = "light" | "medium" | "heavy" | "selection";
+
+export const useHaptic = (feedbackType: FeedbackType = "selection") => {
+	const createHapticHandler = useCallback(
+		(type: Haptics.ImpactFeedbackStyle) => {
+			return Platform.OS === "web"
+				? undefined
+				: () => Haptics.impactAsync(type);
+		},
+		[],
+	);
+
+	const hapticHandlers = useMemo(
+		() => ({
+			light: createHapticHandler(Haptics.ImpactFeedbackStyle.Light),
+			medium: createHapticHandler(Haptics.ImpactFeedbackStyle.Medium),
+			heavy: createHapticHandler(Haptics.ImpactFeedbackStyle.Heavy),
+			selection: Platform.OS === "web" ? undefined : Haptics.selectionAsync,
+		}),
+		[createHapticHandler],
+	);
+
+	return hapticHandlers[feedbackType];
+};
+
+`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-haptic"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-haptic"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/use-haptic"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+## Usage
+
+### Basic Usage
+
+<EnhancedCodeBlock language="tsx">
+{`import { useHaptic } from "@/hooks/use-haptic";
+import { Button } from "@/components/ui/button";
+
+export function HapticDemo() {
+  const triggerHaptic = useHaptic();
+
+  return (
+    <Button onPress={triggerHaptic}>
+      Trigger Haptic
+    </Button>
+  );
+}`}
+</EnhancedCodeBlock>
+
+### Different Feedback Types
+
+<EnhancedCodeBlock language="tsx">
+{`import { useHaptic } from "@/hooks/use-haptic";
+import { Button } from "@/components/ui/button";
+
+export function HapticTypes() {
+  const lightHaptic = useHaptic("light");
+  const mediumHaptic = useHaptic("medium");
+  const heavyHaptic = useHaptic("heavy");
+  const selectionHaptic = useHaptic("selection");
+
+  return (
+    <>
+      <Button onPress={lightHaptic}>Light Feedback</Button>
+      <Button onPress={mediumHaptic}>Medium Feedback</Button>
+      <Button onPress={heavyHaptic}>Heavy Feedback</Button>
+      <Button onPress={selectionHaptic}>Selection Feedback</Button>
+    </>
+  );
+}`}
+</EnhancedCodeBlock>
+
+export const metadata = {
+  title: "useHaptic",
+  description: "A hook for adding haptic feedback to interactions",
+};
