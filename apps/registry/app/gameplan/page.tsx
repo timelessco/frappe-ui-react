@@ -92,7 +92,7 @@ const GamePlanPage = () => {
 						<div className="mb-8 flex flex-col items-start justify-between sm:flex-row sm:items-center">
 							<div className="flex w-full items-center pb-3 sm:pb-0">
 								<Avatar size="3xl">
-									<AvatarImage src="https://github.com/shadcn.png" />
+									<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_17.png" />
 									<AvatarFallback>S</AvatarFallback>
 								</Avatar>
 								<div className="pl-3">
@@ -284,7 +284,7 @@ const GamePlanPage = () => {
 								<div>
 									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
 										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png" />
 											<AvatarFallback>S</AvatarFallback>
 										</Avatar>
 										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
@@ -293,95 +293,95 @@ const GamePlanPage = () => {
 											</h3>
 											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
 												Me: We have been passionately...
+											</p>
+										</div>
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+											12 mins ago
+										</span>
+									</div>
+									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
+										<Avatar size="3xl">
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_18.png" />
+											<AvatarFallback>S</AvatarFallback>
+										</Avatar>
+										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
+											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
+												Internal call purpose - Conf’23
+											</h3>
+											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
+												Rushabh: The monthly statistics for...
+											</p>
+										</div>
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+											9 mins ago
+										</span>
+									</div>
+									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
+										<Avatar size="3xl">
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png" />
+											<AvatarFallback>S</AvatarFallback>
+										</Avatar>
+										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
+											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
+												Customer hiring support
+											</h3>
+											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
+												Faris: Let me move content from ...
+											</p>
+										</div>
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+											48 mins ago
+										</span>
+									</div>
+									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
+										<Avatar size="3xl">
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_35.png" />
+											<AvatarFallback>S</AvatarFallback>
+										</Avatar>
+										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
+											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
+												Conference feedback and summary...
+											</h3>
+											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
+												Me: We have been passionately...
+											</p>
+										</div>
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+											12 mins ago
+										</span>
+									</div>
+									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
+										<Avatar size="3xl">
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_30.png" />
+											<AvatarFallback>S</AvatarFallback>
+										</Avatar>
+										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
+											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
+												Internal call purpose - Conf’23
+											</h3>
+											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
+												Rushabh: The monthly statistics for...
 											</p>
 										</div>
 										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
 											45 mins ago
 										</span>
 									</div>
-									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
+									<div className="flex flex-col items-start  py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
 										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
+											<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_7.png" />
 											<AvatarFallback>S</AvatarFallback>
 										</Avatar>
 										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
 											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
-												Conference feedback and summary...
+												Customer hiring support
 											</h3>
 											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
-												Me: We have been passionately...
+												Faris: Let me move content from ...
 											</p>
 										</div>
 										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
-											45 mins ago
-										</span>
-									</div>
-									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
-										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
-											<AvatarFallback>S</AvatarFallback>
-										</Avatar>
-										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
-											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
-												Conference feedback and summary...
-											</h3>
-											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
-												Me: We have been passionately...
-											</p>
-										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
-											45 mins ago
-										</span>
-									</div>
-									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
-										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
-											<AvatarFallback>S</AvatarFallback>
-										</Avatar>
-										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
-											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
-												Conference feedback and summary...
-											</h3>
-											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
-												Me: We have been passionately...
-											</p>
-										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
-											45 mins ago
-										</span>
-									</div>
-									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
-										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
-											<AvatarFallback>S</AvatarFallback>
-										</Avatar>
-										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
-											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
-												Conference feedback and summary...
-											</h3>
-											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
-												Me: We have been passionately...
-											</p>
-										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
-											45 mins ago
-										</span>
-									</div>
-									<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
-										<Avatar size="3xl">
-											<AvatarImage src="https://github.com/shadcn.png" />
-											<AvatarFallback>S</AvatarFallback>
-										</Avatar>
-										<div className="my-2.5 flex-1 sm:my-0 sm:px-3">
-											<h3 className="max-w-[230px] truncate pb-1.5 text-[14px] font-ef-semibold leading-[115%] tracking-[0.21px] text-ink-gray-8 sm:pb-2.5">
-												Conference feedback and summary...
-											</h3>
-											<p className="text-[14px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-5">
-												Me: We have been passionately...
-											</p>
-										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
-											45 mins ago
+											24 mins ago
 										</span>
 									</div>
 								</div>
