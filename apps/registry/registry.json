@@ -124,6 +124,24 @@
 				}
 			],
 			"categories": ["primitives"]
+		},
+		{
+			"name": "badge",
+			"type": "registry:ui",
+			"title": "Badge",
+			"description": "A badge component",
+			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/utils.json",
+				"https://frappe-ui-react.tmls.dev/r/icon.json"
+			],
+			"files": [
+				{
+					"path": "registry/web/default/ui/badge.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"]
 		}
 	]
 }
