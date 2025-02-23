@@ -1,8 +1,6 @@
 import { Icon, type IconProps } from "@/components/ui/icon";
 
-type SmallRightChevronProps = IconProps;
-
-export const SmallRightChevronIcon = (props: SmallRightChevronProps) => (
+export const SmallRightChevronIcon = (props: IconProps) => (
 	<Icon fill="none" viewBox="0 0 16 16" {...props}>
 		<path
 			fill="currentColor"

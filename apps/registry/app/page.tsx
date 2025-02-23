@@ -1,22 +1,34 @@
 import Link from "next/link";
 
+import {
+	Avatar,
+	AvatarFallback,
+	AvatarIcon,
+	AvatarImage,
+} from "@/components/ui/avatar";
+import {
+	AvatarGroup,
+	AvatarLabel,
+	AvatarLabelGroup,
+} from "@/components/ui/avatar-group";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
-import { AvatarComp } from "@/components/avatar-comp";
-import { AvatarSquaredComp } from "@/components/avatar-squared-comp";
-import { ButtonGroupComp } from "@/components/button-group-comp";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
 import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
-import { PlaceholderIcon } from "@/icons/placeholder";
+import { SmallDownIcon } from "@/registry/web/default/icons/line/small-down";
+import { SmallRightChevronIcon } from "@/registry/web/default/icons/line/small-right-chevron";
+import { SortIcon } from "@/registry/web/default/icons/line/sort";
+import { PlaceholderIcon } from "@/registry/web/default/icons/placeholder";
+import { UserIcon } from "@/registry/web/default/icons/solid/user";
 
 export default function Home() {
 	return (
 		<div className="mx-auto flex min-h-svh max-w-3xl flex-col gap-8 px-4 py-8">
 			<header className="relative flex flex-col gap-1">
-				<h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
+				<h1 className="text-3xl font-bold tracking-tight">Kitchen Sink</h1>
 				<p className="text-outline-gray-5">
-					A custom registry for distribution code using shadcn.
+					A collection of components to test the frappe-ui-react library.
 				</p>
 				<ModeToggle className="absolute right-2 top-4" />
 			</header>
@@ -29,8 +41,156 @@ export default function Home() {
 						</h2>
 						<OpenInV0Button name="icon" className="w-fit" />
 					</div>
-					<div className="relative flex items-center justify-center">
+					<div className="relative flex items-center justify-center gap-2">
 						<PlaceholderIcon />
+						<SmallRightChevronIcon />
+						<SmallDownIcon />
+						<SortIcon />
+						<UserIcon />
+					</div>
+				</div>
+
+				{/* Avatar Group Component */}
+				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							An avatar group component
+						</h2>
+						<OpenInV0Button name="avatar-group" className="w-fit" />
+					</div>
+					<div className="relative flex flex-col items-center justify-center gap-4">
+						<AvatarGroup size="xs" max={3}>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+						</AvatarGroup>
+						<AvatarGroup size="sm" max={3}>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarImage src="https://github.com/shadcn.png" />
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+						</AvatarGroup>
+						<AvatarGroup size="md" max={3}>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+						</AvatarGroup>
+						<AvatarGroup size="lg" max={3}>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+						</AvatarGroup>
+						<AvatarGroup size="xl" max={3}>
+							<Avatar>
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar>
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+						</AvatarGroup>
+						<AvatarLabelGroup size="2xl">
+							<AvatarLabel>8 members</AvatarLabel>
+							<AvatarGroup size="2xl" max={3}>
+								<Avatar>
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+							</AvatarGroup>
+						</AvatarLabelGroup>
+						<AvatarLabelGroup size="3xl">
+							<AvatarLabel>8 members</AvatarLabel>
+							<AvatarGroup max={3}>
+								<Avatar>
+									<AvatarImage src="https://github.com/shadcn.png" />
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarImage src="https://github.com/shadcn.png" />
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarImage src="https://github.com/shadcn.png" />
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+								<Avatar>
+									<AvatarImage src="https://github.com/shadcn.png" />
+									<AvatarFallback>N</AvatarFallback>
+								</Avatar>
+							</AvatarGroup>
+						</AvatarLabelGroup>
 					</div>
 				</div>
 
@@ -43,8 +203,109 @@ export default function Home() {
 						<OpenInV0Button name="avatar" className="w-fit" />
 					</div>
 					<div className="relative flex flex-col items-center justify-center gap-4">
-						<AvatarComp />
-						<AvatarSquaredComp />
+						<div className="flex items-center gap-4">
+							<Avatar size="xs">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="sm">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="md">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="lg">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="xl">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="2xl">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="3xl">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="xs">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="sm">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="md">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="lg">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="xl">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="2xl">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+							<Avatar size="3xl">
+								<AvatarFallback>N</AvatarFallback>
+							</Avatar>
+						</div>
+						<div className="flex items-center gap-4">
+							<Avatar size="xs" status="active">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="sm" status="away">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="md" status="sleep">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="lg" status="pinned">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="xl" status="pin">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="2xl" status="active">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+							<Avatar size="3xl" status="active">
+								<AvatarImage src="https://github.com/shadcn.png" />
+							</Avatar>
+
+							<Avatar size="xs" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="sm" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="md" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="lg" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="xl" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="2xl" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+							<Avatar size="3xl" squared>
+								<AvatarIcon>
+									<UserIcon />
+								</AvatarIcon>
+							</Avatar>
+						</div>
 					</div>
 				</div>
 
@@ -502,7 +763,12 @@ export default function Home() {
 						<OpenInV0Button name="button-group" className="w-fit" />
 					</div>
 					<div className="relative flex min-h-[100px] flex-col items-center justify-center gap-4">
-						<ButtonGroupComp />
+						<ButtonGroup>
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+							<Button>Day</Button>
+						</ButtonGroup>
 						<ButtonGroup variant="subtle">
 							<Button>Day</Button>
 							<Button>Day</Button>
