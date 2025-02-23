@@ -4,11 +4,44 @@
 	"homepage": "https://acme.com",
 	"items": [
 		{
+			"name": "utils",
+			"type": "registry:lib",
+			"title": "Utils",
+			"description": "A utility component",
+			"dependencies": ["tailwind-merge", "clsx"],
+			"files": [
+				{
+					"path": "registry/web/default/lib/utils.ts",
+					"type": "registry:lib"
+				}
+			]
+		},
+		{
+			"name": "icon",
+			"type": "registry:ui",
+			"title": "Icon",
+			"description": "An icon component",
+			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/utils.json"],
+			"files": [
+				{
+					"path": "registry/web/default/ui/icon.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"]
+		},
+		{
 			"name": "button",
 			"type": "registry:ui",
 			"title": "Button",
 			"description": "A button component",
 			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/utils.json",
+				"https://frappe-ui-react.tmls.dev/r/icon.json",
+				"https://frappe-ui-react.tmls.dev/r/button-group.json"
+			],
 			"files": [
 				{
 					"path": "registry/web/default/ui/button.tsx",
@@ -26,6 +59,10 @@
 			"title": "Button Group",
 			"description": "A button group component",
 			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/utils.json",
+				"https://frappe-ui-react.tmls.dev/r/button.json"
+			],
 			"files": [
 				{
 					"path": "registry/web/default/ui/button-group.tsx",
