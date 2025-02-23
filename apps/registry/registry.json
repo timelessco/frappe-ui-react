@@ -136,6 +136,21 @@
 				}
 			],
 			"categories": ["primitives"]
+		},
+		{
+			"name": "input",
+			"type": "registry:ui",
+			"title": "Input",
+			"description": "An input component",
+			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+			"registryDependencies": ["https://frappe-ui-react.tmls.dev/r/utils.json"],
+			"files": [
+				{
+					"path": "registry/web/default/ui/input.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"]
 		}
 	]
 }
