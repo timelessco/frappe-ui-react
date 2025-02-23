@@ -4,8 +4,8 @@ import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, Circle } from "lucide-react";
 
-import { SmallRightChevronIcon } from "@/icons/line/small-right-chevron";
 import { cn } from "@/lib/utils";
+import { SmallRightChevronIcon } from "@/registry/web/default/icons/line/small-right-chevron";
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
