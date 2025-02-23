@@ -66,7 +66,7 @@ export function EnhancedCodeBlock({
 
 	return (
 		<div className="relative bg-transparent">
-			<div className="absolute right-5 top-6">
+			<div className="absolute right-4 top-4">
 				<Button
 					variant="subtle"
 					onClick={copyToClipboard}
@@ -82,7 +82,7 @@ export function EnhancedCodeBlock({
 			</div>
 			<div
 				className={cn(
-					"overflow-x-auto rounded-lg p-4 font-mono text-sm",
+					"max-h-[400px] overflow-y-auto overflow-x-auto rounded-lg font-mono text-sm",
 					className,
 				)}
 			>
