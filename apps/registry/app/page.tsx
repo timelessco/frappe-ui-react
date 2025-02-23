@@ -15,7 +15,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
-import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { SmallDownIcon } from "@/icons/line/small-down";
 import { SmallRightChevronIcon } from "@/icons/line/small-right-chevron";
@@ -25,13 +24,12 @@ import { UserIcon } from "@/icons/solid/user";
 
 export default function Home() {
 	return (
-		<div className="mx-auto flex min-h-svh max-w-3xl flex-col gap-8 px-4 py-8">
-			<header className="relative flex flex-col gap-1">
+		<div className="relative mx-auto w-full max-w-[540px] px-4 py-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+			<header className="relative flex flex-col gap-1 py-8">
 				<h1 className="text-3xl font-bold tracking-tight">Kitchen Sink</h1>
 				<p className="text-outline-gray-5">
 					A collection of components to test the frappe-ui-react library.
 				</p>
-				<ModeToggle className="absolute right-2 top-4" />
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
 				{/* Badge Component */}
