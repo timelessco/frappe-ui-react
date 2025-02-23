@@ -83,8 +83,6 @@ export type RenderPropType<T = unknown> =
 	| React.ReactNode
 	| ((args: T) => JSX.Element | React.ReactNode);
 
-export type IconProps = PathProps;
-
 export type AnyObject = Record<keyof any, any>;
 
 export type RenderProp<P = AnyObject> = (props: P) => React.ReactNode;
@@ -102,3 +100,5 @@ export function passProps<T extends AnyObject = AnyObject, S = AnyObject>(
 		: // @ts-ignore
 			runIfFn(component, { ...props });
 }
+
+export type IconProps = { fill?: string; className?: string };
