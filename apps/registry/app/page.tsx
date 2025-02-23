@@ -6,8 +6,6 @@ import { AvatarComp } from "@/components/avatar-comp";
 import { AvatarSquaredComp } from "@/components/avatar-squared-comp";
 import { ButtonGroupComp } from "@/components/button-group-comp";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
-import { ExampleForm } from "@/components/example-form";
-import { HelloWorld } from "@/components/hello-world";
 import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { PlaceholderIcon } from "@/icons/placeholder";
@@ -537,42 +535,6 @@ export default function Home() {
 					<div className="relative flex min-h-[100px] items-center justify-center gap-4">
 						<DropdownMenuComp />
 					</div>
-				</div>
-
-				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
-					<div className="flex items-center justify-between">
-						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
-							A simple hello world component
-						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
-					</div>
-					<div className="relative flex min-h-[400px] items-center justify-center">
-						<HelloWorld />
-					</div>
-				</div>
-
-				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
-					<div className="flex items-center justify-between">
-						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
-							A contact form with Zod validation.
-						</h2>
-						<OpenInV0Button name="example-form" className="w-fit" />
-					</div>
-					<div className="relative flex min-h-[500px] items-center justify-center">
-						<ExampleForm />
-					</div>
-				</div>
-
-				<div className="relative flex flex-col gap-4 rounded-lg py-4">
-					<div className="flex items-center justify-between">
-						<h2 className="text-sm text-outline-gray-5">
-							A complex component showing hooks, libs and components.
-						</h2>
-						<OpenInV0Button name="complex-component" className="w-fit" />
-					</div>
-					<Link href="/pokemon" className="text-sm text-blue-600">
-						Go to Pokemon
-					</Link>
 				</div>
 			</main>
 		</div>
