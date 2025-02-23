@@ -36,8 +36,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		const Comp = asChild ? Slot : "button";
 		const groupContext = useButtonGroupContext();
 
-		const size = initialSize ?? groupContext.size;
-		const variant = initialVariant ?? groupContext.variant;
+		const size = initialSize ?? groupContext.size ?? "md";
+		const variant = initialVariant ?? groupContext.variant ?? "solid";
 
 		const prefixContent = handleIconElement(prefix, iconVariants({ size }));
 		const suffixContent = handleIconElement(suffix, iconVariants({ size }));
@@ -182,7 +182,7 @@ const buttonVariants = cva(
 		],
 		defaultVariants: {
 			variant: "solid",
-			size: "sm",
+			size: "md",
 		},
 	},
 );
@@ -198,6 +198,6 @@ const iconVariants = cva("", {
 		},
 	},
 	defaultVariants: {
-		size: "sm",
+		size: "md",
 	},
 });
