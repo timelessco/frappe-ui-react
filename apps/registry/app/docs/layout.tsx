@@ -22,7 +22,7 @@ export default function DocsLayout({
 
 				acc[category].push({
 					title: item.title,
-					href: `/docs/${item.name}`,
+					href: `/docs/${item.name}${item.name === "icon" ? "-component" : ""}`,
 				});
 				return acc;
 			},
