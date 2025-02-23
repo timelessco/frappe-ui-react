@@ -48,10 +48,7 @@
 					"type": "registry:ui"
 				}
 			],
-			"categories": ["primitives"],
-			"meta": {
-				"native": true
-			}
+			"categories": ["primitives"]
 		},
 		{
 			"name": "button-group",
@@ -69,10 +66,7 @@
 					"type": "registry:ui"
 				}
 			],
-			"categories": ["primitives"],
-			"meta": {
-				"native": true
-			}
+			"categories": ["primitives"]
 		},
 		{
 			"name": "dropdown",
