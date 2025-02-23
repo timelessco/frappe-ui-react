@@ -5,12 +5,14 @@ import { GithubIcon, StarIcon } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarGroup } from "@/components/ui/avatar-group";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuGameplan } from "@/components/dropdown-menu-gameplan";
 import { ModeToggle } from "@/components/mode-toggle";
 import { CourseIcon } from "@/icons/line/course";
 import { PeopleIcon } from "@/icons/line/people";
 import { SmallDownIcon } from "@/icons/line/small-down";
+import { SmallRightChevronIcon } from "@/icons/line/small-right-chevron";
 import { SortIcon } from "@/icons/line/sort";
 
 import CourseImg1 from "./lms/_images/course-img-1.png";
@@ -115,7 +117,15 @@ export default function IndexPage() {
 			<Navbar />
 			<div className="container mx-auto px-4">
 				<div className="max-w-[700px] py-10">
-					<h1 className="pb-4 text-[42px] font-ef-black leading-[115%] tracking-[0.18px] text-ink-gray-8">
+					<Badge
+						asChild
+						theme="blue"
+						size="sm"
+						prefix={<SmallRightChevronIcon />}
+					>
+						<Link href="/gameplan">Browse examples</Link>
+					</Badge>
+					<h1 className="pb-4 text-[42px] font-ef-bold leading-[115%] tracking-[0.18px] text-ink-gray-8">
 						Frappe UI Component Registry
 					</h1>
 					<p className="max-w-[555px] text-[18px] font-ef-regular leading-[150%] tracking-[0.18px] text-ink-gray-7">
@@ -124,15 +134,18 @@ export default function IndexPage() {
 						accessible, beautifully-crafted UI elements.
 					</p>
 					<div className="mt-5 flex items-center space-x-2">
-						<Button variant="solid" size="lg">
-							Get started
+						<Button variant="solid" size="lg" asChild>
+							<Link href="/docs">
+								Get started
+								<SmallRightChevronIcon className="text-lg" />
+							</Link>
 						</Button>
 					</div>
 				</div>
-				<div className="grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 xl:grid-cols-11 xl:gap-4">
+				<div className="grid pb-10 md:gap-4 lg:grid-cols-10 xl:grid-cols-11 xl:gap-4">
 					<div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
 						<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-							<div className="w-full rounded-ef-6 border border-outline-gray-1 p-4">
+							<div className="w-full overflow-scroll rounded-ef-6 border border-outline-gray-1 p-4 sm:overflow-visible">
 								<div className="flex flex-col items-start justify-between space-y-3 pb-4 sm:flex-row sm:items-center sm:space-y-0">
 									<p className="text-[18px] font-ef-semibold leading-[115%] tracking-[0.18px] text-ink-gray-8">
 										My tasks
@@ -147,10 +160,12 @@ export default function IndexPage() {
 												Upcoming
 											</Button>
 										</DropdownMenuGameplan>
-										<Button variant="subtle">View all</Button>
+										<Button variant="subtle" className="xl:hidden 2xl:block">
+											View all
+										</Button>
 									</div>
 								</div>
-								<div className="overflow-x-auto">
+								<div className="overflow-x-scroll">
 									<table className="w-full border-collapse">
 										<thead className="rounded-lg bg-surface-gray-2">
 											<tr className="text-left text-sm text-gray-500">
@@ -219,7 +234,9 @@ export default function IndexPage() {
 												Newest
 											</Button>
 										</DropdownMenuGameplan>
-										<Button variant="subtle">View all</Button>
+										<Button variant="subtle" className="xl:hidden 2xl:block">
+											View all
+										</Button>
 									</div>
 								</div>
 								<div>
@@ -236,7 +253,7 @@ export default function IndexPage() {
 												Me: We have been passionately...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											12 mins ago
 										</span>
 									</div>
@@ -253,7 +270,7 @@ export default function IndexPage() {
 												Rushabh: The monthly statistics for...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											9 mins ago
 										</span>
 									</div>
@@ -270,7 +287,7 @@ export default function IndexPage() {
 												Faris: Let me move content from ...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											48 mins ago
 										</span>
 									</div>
@@ -287,7 +304,7 @@ export default function IndexPage() {
 												Me: We have been passionately...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											12 mins ago
 										</span>
 									</div>
@@ -304,7 +321,7 @@ export default function IndexPage() {
 												Rushabh: The monthly statistics for...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											45 mins ago
 										</span>
 									</div>
@@ -321,14 +338,14 @@ export default function IndexPage() {
 												Faris: Let me move content from ...
 											</p>
 										</div>
-										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+										<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 sm:block md:hidden 2xl:block">
 											24 mins ago
 										</span>
 									</div>
 								</div>
 							</div>
 							<div className="space-y-4 xl:space-y-4">
-								<div className="flex items-center justify-between gap-1.5">
+								<div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
 									<DropdownMenuGameplan>
 										<Button
 											variant="solid"
@@ -348,7 +365,7 @@ export default function IndexPage() {
 								</div>
 							</div>
 							<div className="space-y-4 text-center xl:space-y-4">
-								<AvatarGroup className="" size="3xl" max={8}>
+								<AvatarGroup className="" size="3xl" max={6}>
 									<Avatar>
 										<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png" />
 										<AvatarFallback>S</AvatarFallback>
@@ -379,14 +396,6 @@ export default function IndexPage() {
 									</Avatar>
 									<Avatar>
 										<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_17.png" />
-										<AvatarFallback>S</AvatarFallback>
-									</Avatar>
-									<Avatar>
-										<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_17.png" />
-										<AvatarFallback>S</AvatarFallback>
-									</Avatar>
-									<Avatar>
-										<AvatarImage src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_30.png" />
 										<AvatarFallback>S</AvatarFallback>
 									</Avatar>
 									<Avatar>
@@ -562,22 +571,21 @@ export default function IndexPage() {
 										</div>
 									</div>
 								</div>
-								<Button variant="subtle" className="my-1.5 sm:w-full">
-									Button
-								</Button>
-								<Button variant="solid" size="lg" className="my-1.5 sm:w-full">
-									Button
-								</Button>
-								<Button variant="ghost" size="sm" className="my-1.5 sm:w-full">
-									Button
-								</Button>
-								<Button
-									variant="outline"
-									size="sm"
-									className="my-1.5 sm:w-full"
-								>
-									Button
-								</Button>
+
+								<div className="">
+									<Button variant="subtle" className="my-1.5 w-full">
+										Button
+									</Button>
+									<Button variant="solid" size="sm" className="my-1.5 w-full">
+										Button
+									</Button>
+									<Button variant="ghost" size="sm" className="my-1.5 w-full">
+										Button
+									</Button>
+									<Button variant="outline" size="sm" className="my-1.5 w-full">
+										Button
+									</Button>
+								</div>
 							</div>
 							<div className="pt-3 sm:pl-2 sm:pt-0 xl:pl-3">
 								<div className="flex flex-col items-start border-b border-outline-gray-1 py-2.5 pl-3 pr-2.5 sm:flex-row sm:items-center">
@@ -593,7 +601,7 @@ export default function IndexPage() {
 											Rushabh: The monthly statistics for...
 										</p>
 									</div>
-									<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+									<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 md:block lg:hidden 2xl:block">
 										45 mins ago
 									</span>
 								</div>
@@ -610,12 +618,12 @@ export default function IndexPage() {
 											Faris: Let me move content from ...
 										</p>
 									</div>
-									<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6">
+									<span className="text-[13px] font-[420] leading-[115%] tracking-[0.28px] text-ink-gray-6 md:block lg:hidden 2xl:block">
 										24 mins ago
 									</span>
 								</div>
 								<div className="mt-10 p-2">
-									<div className="h-full min-w-[330px] max-w-[330px] rounded-ef-6 bg-surface-white shadow-[0px_0px_1px_0px_rgba(0,0,0,0.45),0px_1px_2px_0px_rgba(0,0,0,0.10)] dark:border dark:border-outline-gray-1 md:max-w-full lg:min-w-[298px] lg:max-w-[298px] xl:min-w-full xl:max-w-full">
+									<div className="h-full min-w-full max-w-full rounded-ef-6 bg-surface-white shadow-[0px_0px_1px_0px_rgba(0,0,0,0.45),0px_1px_2px_0px_rgba(0,0,0,0.10)] dark:border dark:border-outline-gray-1 md:max-w-full lg:min-w-[298px] lg:max-w-[298px] xl:min-w-full xl:max-w-full">
 										<Image
 											src={CourseImg1}
 											alt="Course"

@@ -432,6 +432,11 @@
 		--ef-font-size-13xl: 72px;
 		--ef-font-size-14xl: 80px;
 		--ef-font-size-15xl: 88px;
+		--ef-font-weight-regular: 400;
+		--ef-font-weight-medium: 500;
+		--ef-font-weight-semibold: 600;
+		--ef-font-weight-bold: 700;
+		--ef-font-weight-black: 800;
 		--ef-line-height-tiny: 0px;
 		--ef-line-height-2xs: 13px;
 		--ef-line-height-xs: 14px;

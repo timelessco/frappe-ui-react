@@ -459,6 +459,12 @@
 					"ef-line-height-14xl": "96px",
 					"ef-line-height-15xl": "106px",
 
+					"ef-font-weight-regular": "400",
+					"ef-font-weight-medium": "500",
+					"ef-font-weight-semibold": "600",
+					"ef-font-weight-bold": "700",
+					"ef-font-weight-black": "800",
+
 					"ef-radius-0": "0px",
 					"ef-radius-1": "4px",
 					"ef-radius-2": "5px",

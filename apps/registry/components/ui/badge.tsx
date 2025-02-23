@@ -40,9 +40,15 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
 				className={cn(badgeVariants({ theme, variant, size, className }))}
 				{...props}
 			>
-				{prefixContent}
-				<span>{children}</span>
-				{suffixContent}
+				{asChild ? (
+					children
+				) : (
+					<>
+						{prefixContent}
+						<span>{children}</span>
+						{suffixContent}
+					</>
+				)}
 			</Comp>
 		);
 	},
