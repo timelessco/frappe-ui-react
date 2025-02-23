@@ -1,20 +1,82 @@
-# registry-template
+# Frappe UI React Registry
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A design-driven React component collection built with Espresso UI principles and Shadcn compatibility. Offers a distributed library of accessible, beautifully-crafted UI elements.
+
+## Features
+
+- Built on Next.js and TypeScript
+- Fully compatible with Shadcn CLI
+- Dark/light theme support
+- Comprehensive design tokens system
+- Component distribution via registry.json
+- Built-in documentation and kitchen sink demo
 
 ## Getting Started
 
 This is a template for creating a custom registry using Next.js.
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+```bash
+pnpm install
+pnpm dev
+```
+
+## Project Structure
+
+```bash
+.
+├── app
+│   ├── docs             # Documentation
+│   ├── favicon.ico
+│   ├── gameplan         # /gameplan block demo
+│   ├── kitchen-sink     # /kitchen-sink block demo
+│   ├── lms              # /lms block demo
+│   ├── page.tsx
+├── components
+│   └── ui               # Component library
+│       ├── avatar-group.tsx
+│       ├── avatar.tsx
+│       ├── badge.tsx
+│       ├── button-group.tsx
+│       ├── button.tsx
+│       ├── dropdown-menu.tsx
+│       ├── icon.tsx
+│       └── input.tsx
+├── icons              # Icon components
+├── components/        # React components
+├── lib/               # Utility functions
+├── public/            # Static files
+└── registry.json      # Component registry config
+```
+
+## Build and deploy
+
+Build the registry:
+
+```shell
+pnpm run registry:build
+```
+
+Then build the registry app:
+
+```shell
+pnpm run build
+```
+
+## Available demos
+
+- [`/gameplan`](https://frappe-ui-react.tmls.dev/gameplan) - showcases the Frappe Gameplan app block
+- [`/lms`](https://frappe-ui-react.tmls.dev/lms) - showcases the Frappe LMS app block
+- [`/kitchen-sink`](https://frappe-ui-react.tmls.dev/kitchen-sink) - showcases all components
 
 ## Documentation
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to learn more about:
+
+- Registry configuration
+- Component development
+- Distribution setup
+- CLI usage
+
+## License
+
+MIT License - See [LICENSE](LICENSE) for details.

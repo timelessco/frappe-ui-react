@@ -27,7 +27,7 @@ export default function Home() {
 	return (
 		<div className="relative mx-auto w-full max-w-[540px] px-4 py-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
 			<header className="relative flex flex-col gap-1 py-8">
-				<h1 className="text-3xl font-bold tracking-tight">Kitchen Sink</h1>
+				<h1 className="text-3xl font-bold tracking-tight">All Components</h1>
 				<p className="text-outline-gray-5">
 					A collection of components to test the frappe-ui-react library.
 				</p>
