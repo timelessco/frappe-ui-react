@@ -11,6 +11,7 @@ import {
 	AvatarLabel,
 	AvatarLabelGroup,
 } from "@/components/ui/avatar-group";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
@@ -33,20 +34,307 @@ export default function Home() {
 				<ModeToggle className="absolute right-2 top-4" />
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
-				{/* Icon Component */}
+				{/* Badge Component */}
 				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
-							An icon component
+							A badge component
 						</h2>
-						<OpenInV0Button name="icon" className="w-fit" />
+						<OpenInV0Button name="badge" className="w-fit" />
 					</div>
-					<div className="relative flex items-center justify-center gap-2">
-						<PlaceholderIcon />
-						<SmallRightChevronIcon />
-						<SmallDownIcon />
-						<SortIcon />
-						<UserIcon />
+					<div className="relative flex flex-col items-center justify-center gap-4">
+						{/* Solid badges */}
+						<div className="flex items-center gap-4">
+							<Badge size="sm">Badge</Badge>
+							<Badge size="sm" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge size="sm" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								size="sm"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="blue">Badge</Badge>
+							<Badge theme="blue" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge theme="blue" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								theme="blue"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="green" size="lg">
+								Badge
+							</Badge>
+							<Badge theme="green" size="lg" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge theme="green" size="lg" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								theme="green"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+
+						{/* Subtle badges */}
+						<div className="flex items-center gap-4">
+							<Badge theme="amber" variant="subtle" size="sm">
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="subtle"
+								size="sm"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="subtle"
+								size="sm"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="subtle"
+								size="sm"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="red" variant="subtle">
+								Badge
+							</Badge>
+							<Badge theme="red" variant="subtle" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge theme="red" variant="subtle" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								theme="red"
+								variant="subtle"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="violet" variant="subtle" size="lg">
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="subtle"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="subtle"
+								size="lg"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="subtle"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+
+						{/* Outline badges */}
+						<div className="flex items-center gap-4">
+							<Badge variant="outline" size="sm">
+								Badge
+							</Badge>
+							<Badge variant="outline" size="sm" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge variant="outline" size="sm" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								variant="outline"
+								size="sm"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="blue" variant="outline">
+								Badge
+							</Badge>
+							<Badge
+								theme="blue"
+								variant="outline"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="blue"
+								variant="outline"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="blue"
+								variant="outline"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="green" variant="outline" size="lg">
+								Badge
+							</Badge>
+							<Badge
+								theme="green"
+								variant="outline"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="green"
+								variant="outline"
+								size="lg"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="green"
+								variant="outline"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+
+						{/* Ghost badges */}
+						<div className="flex items-center gap-4">
+							<Badge theme="amber" variant="ghost" size="sm">
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="ghost"
+								size="sm"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="ghost"
+								size="sm"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="amber"
+								variant="ghost"
+								size="sm"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="red" variant="ghost">
+								Badge
+							</Badge>
+							<Badge theme="red" variant="ghost" prefix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge theme="red" variant="ghost" suffix={<PlaceholderIcon />}>
+								Badge
+							</Badge>
+							<Badge
+								theme="red"
+								variant="ghost"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
+						<div className="flex items-center gap-4">
+							<Badge theme="violet" variant="ghost" size="lg">
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="ghost"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="ghost"
+								size="lg"
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+							<Badge
+								theme="violet"
+								variant="ghost"
+								size="lg"
+								prefix={<PlaceholderIcon />}
+								suffix={<PlaceholderIcon />}
+							>
+								Badge
+							</Badge>
+						</div>
 					</div>
 				</div>
 
@@ -154,7 +442,7 @@ export default function Home() {
 							</Avatar>
 						</AvatarGroup>
 						<AvatarLabelGroup size="2xl">
-							<AvatarLabel>8 members</AvatarLabel>
+							<AvatarLabel>4 members</AvatarLabel>
 							<AvatarGroup size="2xl" max={3}>
 								<Avatar>
 									<AvatarFallback>N</AvatarFallback>
@@ -171,7 +459,7 @@ export default function Home() {
 							</AvatarGroup>
 						</AvatarLabelGroup>
 						<AvatarLabelGroup size="3xl">
-							<AvatarLabel>8 members</AvatarLabel>
+							<AvatarLabel>4 members</AvatarLabel>
 							<AvatarGroup max={3}>
 								<Avatar>
 									<AvatarImage src="https://github.com/shadcn.png" />
@@ -270,37 +558,37 @@ export default function Home() {
 								<AvatarImage src="https://github.com/shadcn.png" />
 							</Avatar>
 
-							<Avatar size="xs" squared>
+							<Avatar size="xs" squared status="active">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="sm" squared>
+							<Avatar size="sm" squared status="active">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="md" squared>
+							<Avatar size="md" squared status="away">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="lg" squared>
+							<Avatar size="lg" squared status="away">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="xl" squared>
+							<Avatar size="xl" squared status="sleep">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="2xl" squared>
+							<Avatar size="2xl" squared status="pinned">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
 							</Avatar>
-							<Avatar size="3xl" squared>
+							<Avatar size="3xl" squared status="pin">
 								<AvatarIcon>
 									<UserIcon />
 								</AvatarIcon>
@@ -800,6 +1088,23 @@ export default function Home() {
 					</div>
 					<div className="relative flex min-h-[100px] items-center justify-center gap-4">
 						<DropdownMenuComp />
+					</div>
+				</div>
+
+				{/* Icon Component */}
+				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							An icon component
+						</h2>
+						<OpenInV0Button name="icon" className="w-fit" />
+					</div>
+					<div className="relative flex items-center justify-center gap-2">
+						<PlaceholderIcon />
+						<SmallRightChevronIcon />
+						<SmallDownIcon />
+						<SortIcon />
+						<UserIcon />
 					</div>
 				</div>
 			</main>
