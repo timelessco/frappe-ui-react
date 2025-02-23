@@ -2,44 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Shadcn UI */
+/* Frappe UI Design System Tokens */
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 240 10% 3.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 240 10% 3.9%;
-		--primary: 240 5.9% 10%;
-		--primary-foreground: 0 0% 98%;
-		--secondary: 240 4.8% 95.9%;
-		--secondary-foreground: 240 5.9% 10%;
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
-		--accent: 240 4.8% 95.9%;
-		--accent-foreground: 240 5.9% 10%;
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 5.9% 90%;
-		--input: 240 5.9% 90%;
-		--ring: 240 10% 3.9%;
-		--chart-1: 12 76% 61%;
-		--chart-2: 173 58% 39%;
-		--chart-3: 197 37% 24%;
-		--chart-4: 43 74% 66%;
-		--chart-5: 27 87% 67%;
-		--radius: 0.5rem;
-		--sidebar-background: 0 0% 98%;
-		--sidebar-foreground: 240 5.3% 26.1%;
-		--sidebar-primary: 240 5.9% 10%;
-		--sidebar-primary-foreground: 0 0% 98%;
-		--sidebar-accent: 240 4.8% 95.9%;
-		--sidebar-accent-foreground: 240 5.9% 10%;
-		--sidebar-border: 220 13% 91%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
+		/* Neutrals */
 		--ef-neutrals-white: #fff;
 		--ef-neutrals-black: #000;
+
+		/* 🌞 Light Colors */
+
+		/* Gray */
 		--ef-light-gray-50: #f8f8f8;
 		--ef-light-gray-100: #f3f3f3;
 		--ef-light-gray-200: #ededed;
@@ -50,6 +22,8 @@
 		--ef-light-gray-700: #525252;
 		--ef-light-gray-800: #383838;
 		--ef-light-gray-900: #171717;
+
+		/* Blue */
 		--ef-light-blue-50: #f2f9ff;
 		--ef-light-blue-100: #e6f4ff;
 		--ef-light-blue-200: #c8e6ff;
@@ -60,6 +34,8 @@
 		--ef-light-blue-700: #0070cc;
 		--ef-light-blue-800: #005ca3;
 		--ef-light-blue-900: #004880;
+
+		/* Green */
 		--ef-light-green-50: #f2fdf4;
 		--ef-light-green-100: #e4faeb;
 		--ef-light-green-200: #c3f9d3;
@@ -70,6 +46,8 @@
 		--ef-light-green-700: #137949;
 		--ef-light-green-800: #075e35;
 		--ef-light-green-900: #173b2c;
+
+		/* Red */
 		--ef-light-red-50: #fff7f7;
 		--ef-light-red-100: #ffe7e7;
 		--ef-light-red-200: #ffd8d8;
@@ -80,6 +58,8 @@
 		--ef-light-red-700: #b52a2a;
 		--ef-light-red-800: #941f1f;
 		--ef-light-red-900: #6b1515;
+
+		/* Amber */
 		--ef-light-amber-50: #fdfaed;
 		--ef-light-amber-100: #fff7d3;
 		--ef-light-amber-200: #feeda9;
@@ -90,6 +70,8 @@
 		--ef-light-amber-700: #b35309;
 		--ef-light-amber-800: #91400d;
 		--ef-light-amber-900: #763813;
+
+		/* Orange */
 		--ef-light-orange-50: #fff9f5;
 		--ef-light-orange-100: #ffefe4;
 		--ef-light-orange-200: #ffdec5;
@@ -100,6 +82,8 @@
 		--ef-light-orange-700: #bd3e0c;
 		--ef-light-orange-800: #9e3513;
 		--ef-light-orange-900: #6b2711;
+
+		/* Yellow */
 		--ef-light-yellow-50: #fffcef;
 		--ef-light-yellow-100: #fff7d3;
 		--ef-light-yellow-200: #f7e9a8;
@@ -110,6 +94,8 @@
 		--ef-light-yellow-700: #ab6e05;
 		--ef-light-yellow-800: #8c5600;
 		--ef-light-yellow-900: #733f12;
+
+		/* Cyan */
 		--ef-light-cyan-50: #f5fbfc;
 		--ef-light-cyan-100: #ddf7ff;
 		--ef-light-cyan-200: #b3e8f7;
@@ -120,6 +106,8 @@
 		--ef-light-cyan-700: #267a94;
 		--ef-light-cyan-800: #125c73;
 		--ef-light-cyan-900: #164759;
+
+		/* Teal */
 		--ef-light-teal-50: #f0fdfa;
 		--ef-light-teal-100: #e6f7f4;
 		--ef-light-teal-200: #bae8e1;
@@ -130,6 +118,8 @@
 		--ef-light-teal-700: #0f736b;
 		--ef-light-teal-800: #115c57;
 		--ef-light-teal-900: #114541;
+
+		/* Violet */
 		--ef-light-violet-50: #fbfaff;
 		--ef-light-violet-100: #eee8ff;
 		--ef-light-violet-200: #dbd5ff;
@@ -140,6 +130,8 @@
 		--ef-light-violet-700: #4f3da1;
 		--ef-light-violet-800: #392980;
 		--ef-light-violet-900: #251959;
+
+		/* Pink */
 		--ef-light-pink-50: #fff7fc;
 		--ef-light-pink-100: #fde8f5;
 		--ef-light-pink-200: #ffd5f0;
@@ -150,6 +142,8 @@
 		--ef-light-pink-700: #9c2671;
 		--ef-light-pink-800: #801458;
 		--ef-light-pink-900: #570f3e;
+
+		/* Purple */
 		--ef-light-purple-50: #fdfaff;
 		--ef-light-purple-100: #f6e9ff;
 		--ef-light-purple-200: #ecd3ff;
@@ -160,6 +154,8 @@
 		--ef-light-purple-700: #6e399d;
 		--ef-light-purple-800: #5c2f83;
 		--ef-light-purple-900: #401863;
+
+		/* Gray */
 		--ef-dark-gray-50: #f8f8f8;
 		--ef-dark-gray-100: #d4d4d4;
 		--ef-dark-gray-200: #afafaf;
@@ -172,6 +168,8 @@
 		--ef-dark-gray-800: #232323;
 		--ef-dark-gray-900: #1c1c1c;
 		--ef-dark-gray-950: #0f0f0f;
+
+		/* Gray Alpha */
 		--ef-dark-gray-alpha-50: rgb(255 255 255 / 97%);
 		--ef-dark-gray-alpha-100: rgb(255 255 255 / 82%);
 		--ef-dark-gray-alpha-200: rgb(255 255 255 / 67%);
@@ -184,6 +182,8 @@
 		--ef-dark-gray-alpha-800: rgb(255 255 255 / 8%);
 		--ef-dark-gray-alpha-900: rgb(255 255 255 / 6%);
 		--ef-dark-gray-alpha-950: rgb(255 255 255 / 4%);
+
+		/* Blue */
 		--ef-dark-blue-50: #c9e0f5;
 		--ef-dark-blue-100: #add2f5;
 		--ef-dark-blue-200: #8cc1ec;
@@ -195,6 +195,8 @@
 		--ef-dark-blue-800: #052b53;
 		--ef-dark-blue-900: #0e2037;
 		--ef-dark-blue-950: #0b192c;
+
+		/* Green */
 		--ef-dark-green-50: #c8f3de;
 		--ef-dark-green-100: #9be6c1;
 		--ef-dark-green-200: #78d7a9;
@@ -206,6 +208,8 @@
 		--ef-dark-green-800: #0a3f27;
 		--ef-dark-green-900: #0b2e1c;
 		--ef-dark-green-950: #0c2016;
+
+		/* Red */
 		--ef-dark-red-50: #ffdede;
 		--ef-dark-red-100: #ffc1c1;
 		--ef-dark-red-200: #fe7c7c;
@@ -217,6 +221,8 @@
 		--ef-dark-red-800: #521515;
 		--ef-dark-red-900: #3c1316;
 		--ef-dark-red-950: #2a0c0c;
+
+		/* Red Alpha */
 		--ef-dark-red-alpha-50: #ffdede;
 		--ef-dark-red-alpha-100: #ffc1c1;
 		--ef-dark-red-alpha-200: #fe7c7c;
@@ -228,6 +234,8 @@
 		--ef-dark-red-alpha-800: rgb(192 27 27 / 38%);
 		--ef-dark-red-alpha-900: rgb(95 22 22 / 56%);
 		--ef-dark-red-alpha-950: rgb(83 6 6 / 40%);
+
+		/* Amber */
 		--ef-dark-amber-50: #ffe59a;
 		--ef-dark-amber-100: #f4c25f;
 		--ef-dark-amber-200: #ffaa3e;
@@ -239,6 +247,8 @@
 		--ef-dark-amber-800: #4b2606;
 		--ef-dark-amber-900: #371e06;
 		--ef-dark-amber-950: #281808;
+
+		/* Orange */
 		--ef-dark-orange-50: #ffcdad;
 		--ef-dark-orange-100: #ffa873;
 		--ef-dark-orange-200: #fa8a40;
@@ -250,6 +260,8 @@
 		--ef-dark-orange-800: #532707;
 		--ef-dark-orange-900: #361c09;
 		--ef-dark-orange-950: #261407;
+
+		/* Yellow */
 		--ef-dark-yellow-50: #ffeeb8;
 		--ef-dark-yellow-100: #ffe386;
 		--ef-dark-yellow-200: #f8d76a;
@@ -261,6 +273,8 @@
 		--ef-dark-yellow-800: #5b4605;
 		--ef-dark-yellow-900: #3f3004;
 		--ef-dark-yellow-950: #322604;
+
+		/* Cyan */
 		--ef-dark-cyan-50: #d0f0fa;
 		--ef-dark-cyan-100: #95e3f6;
 		--ef-dark-cyan-200: #62cae9;
@@ -272,6 +286,8 @@
 		--ef-dark-cyan-800: #0d3b49;
 		--ef-dark-cyan-900: #0c2d37;
 		--ef-dark-cyan-950: #0c242d;
+
+		/* Teal */
 		--ef-dark-teal-50: #a0f7ed;
 		--ef-dark-teal-100: #7ef3e7;
 		--ef-dark-teal-200: #51decf;
@@ -283,6 +299,8 @@
 		--ef-dark-teal-800: #0b3a35;
 		--ef-dark-teal-900: #0a2d29;
 		--ef-dark-teal-950: #0a211e;
+
+		/* Violet */
 		--ef-dark-violet-50: #cdbeff;
 		--ef-dark-violet-100: #bca9fc;
 		--ef-dark-violet-200: #9f87ed;
@@ -294,6 +312,8 @@
 		--ef-dark-violet-800: #291d64;
 		--ef-dark-violet-900: #1d1643;
 		--ef-dark-violet-950: #161130;
+
+		/* Pink */
 		--ef-dark-pink-50: #ffbbe4;
 		--ef-dark-pink-100: #f69ad1;
 		--ef-dark-pink-200: #ed77be;
@@ -305,6 +325,8 @@
 		--ef-dark-pink-800: #5b183f;
 		--ef-dark-pink-900: #42132f;
 		--ef-dark-pink-950: #341126;
+
+		/* Purple */
 		--ef-dark-purple-50: #e5c6fb;
 		--ef-dark-purple-100: #d9aff5;
 		--ef-dark-purple-200: #c993ef;
@@ -316,6 +338,8 @@
 		--ef-dark-purple-800: #391457;
 		--ef-dark-purple-900: #270e3b;
 		--ef-dark-purple-950: #1f112a;
+
+		/* 🌟 White Overlay */
 		--ef-white-overlay-50: rgb(255 255 255 / 10%);
 		--ef-white-overlay-100: rgb(255 255 255 / 18%);
 		--ef-white-overlay-200: rgb(255 255 255 / 27%);
@@ -326,6 +350,8 @@
 		--ef-white-overlay-700: rgb(255 255 255 / 72%);
 		--ef-white-overlay-800: rgb(255 255 255 / 81%);
 		--ef-white-overlay-900: rgb(255 255 255 / 90%);
+
+		/* ⚫ Black Overlay */
 		--ef-black-overlay-50: rgb(0 0 0 / 9%);
 		--ef-black-overlay-100: rgb(0 0 0 / 18%);
 		--ef-black-overlay-200: rgb(0 0 0 / 27%);
@@ -336,6 +362,10 @@
 		--ef-black-overlay-700: rgb(0 0 0 / 72%);
 		--ef-black-overlay-800: rgb(0 0 0 / 81%);
 		--ef-black-overlay-900: rgb(0 0 0 / 90%);
+
+		/* 🌙 Light Mode Colors */
+
+		/* Outline Colors */
 		--ef-outline-white: var(--ef-neutrals-white);
 		--ef-outline-gray-1: var(--ef-light-gray-200);
 		--ef-outline-gray-2: var(--ef-light-gray-300);
@@ -353,6 +383,8 @@
 		--ef-outline-orange-3: var(--ef-light-orange-400);
 		--ef-outline-violet-2: var(--ef-light-violet-300);
 		--ef-outline-gray-modals: var(--ef-light-gray-200);
+
+		/* Text & Icon Colors */
 		--ef-ink-white: var(--ef-neutrals-white);
 		--ef-ink-gray-1: var(--ef-light-gray-200);
 		--ef-ink-gray-2: var(--ef-light-gray-300);
@@ -379,6 +411,8 @@
 		--ef-ink-violet-1: var(--ef-light-violet-50);
 		--ef-ink-violet-3: var(--ef-light-violet-500);
 		--ef-ink-blue-link: var(--ef-light-blue-400);
+
+		/* Surface Colors */
 		--ef-surface-white: var(--ef-neutrals-white);
 		--ef-surface-gray-1: var(--ef-light-gray-50);
 		--ef-surface-gray-2: var(--ef-light-gray-100);
@@ -411,6 +445,10 @@
 		--ef-surface-cards: var(--ef-neutrals-white);
 		--ef-surface-modal: var(--ef-neutrals-white);
 		--ef-surface-selected: var(--ef-neutrals-white);
+
+		/* Typography */
+
+		/* 🔤 Font Sizes */
 		--ef-font-size-tiny: 11px;
 		--ef-font-size-2xs: 11px;
 		--ef-font-size-xs: 12px;
@@ -432,6 +470,8 @@
 		--ef-font-size-13xl: 72px;
 		--ef-font-size-14xl: 80px;
 		--ef-font-size-15xl: 88px;
+
+		/* 🔠 Line Heights */
 		--ef-line-height-tiny: 0px;
 		--ef-line-height-2xs: 13px;
 		--ef-line-height-xs: 14px;
@@ -453,6 +493,15 @@
 		--ef-line-height-13xl: 92px;
 		--ef-line-height-14xl: 96px;
 		--ef-line-height-15xl: 106px;
+
+		/* Font Weight */
+		--ef-font-weight-regular: 400;
+		--ef-font-weight-medium: 500;
+		--ef-font-weight-semibold: 600;
+		--ef-font-weight-bold: 700;
+		--ef-font-weight-black: 800;
+
+		/* 🌟 Border Radius */
 		--ef-radius-0: 0px;
 		--ef-radius-1: 4px;
 		--ef-radius-2: 5px;
@@ -462,43 +511,35 @@
 		--ef-radius-6: 12px;
 		--ef-radius-7: 16px;
 		--ef-radius-8: 20px;
-		--ef-radius-9: 9999px;
+		--ef-radius-9: 9999px; /* Full large radius */
+
+		/* 📏 Spacing */
+		--ef-spacing-0: 0px;
+		--ef-spacing-1: 1px;
+		--ef-spacing-2: 2px;
+		--ef-spacing-3: 3px;
+		--ef-spacing-4: 4px;
+		--ef-spacing-5: 5px;
+		--ef-spacing-6: 6px;
+		--ef-spacing-7: 7px;
+		--ef-spacing-8: 8px;
+		--ef-spacing-9: 9px;
+		--ef-spacing-10: 10px;
+		--ef-spacing-11: 11px;
+		--ef-spacing-12: 12px;
+		--ef-spacing-13: 14px;
+		--ef-spacing-14: 16px;
+		--ef-spacing-15: 20px;
+		--ef-spacing-16: 26px;
+
+		/* Focus */
 		--ef-focus-light-default: #c9c9c9;
 	}
 
 	.dark {
-		--background: 240 10% 3.9%;
-		--foreground: 0 0% 98%;
-		--card: 240 10% 3.9%;
-		--card-foreground: 0 0% 98%;
-		--popover: 240 10% 3.9%;
-		--popover-foreground: 0 0% 98%;
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
-		--secondary: 240 3.7% 15.9%;
-		--secondary-foreground: 0 0% 98%;
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
-		--accent: 240 3.7% 15.9%;
-		--accent-foreground: 0 0% 98%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
-		--ring: 240 4.9% 83.9%;
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
-		--sidebar-background: 240 5.9% 10%;
-		--sidebar-foreground: 240 4.8% 95.9%;
-		--sidebar-primary: 224.3 76.3% 48%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 240 3.7% 15.9%;
-		--sidebar-accent-foreground: 240 4.8% 95.9%;
-		--sidebar-border: 240 3.7% 15.9%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
+		/* 🌙 Dark Mode Colors */
+
+		/* Outline Colors */
 		--ef-outline-white: var(--ef-dark-gray-950);
 		--ef-outline-gray-1: var(--ef-dark-gray-800);
 		--ef-outline-gray-2: var(--ef-dark-gray-600);
@@ -516,6 +557,8 @@
 		--ef-outline-orange-3: var(--ef-dark-orange-700);
 		--ef-outline-violet-2: var(--ef-dark-violet-800);
 		--ef-outline-gray-modals: var(--ef-dark-gray-600);
+
+		/* Text & Icon Colors */
 		--ef-ink-white: var(--ef-dark-gray-950);
 		--ef-ink-gray-1: var(--ef-dark-gray-800);
 		--ef-ink-gray-2: var(--ef-dark-gray-500);
@@ -542,6 +585,8 @@
 		--ef-ink-violet-1: var(--ef-neutral-white);
 		--ef-ink-violet-3: var(--ef-dark-violet-400);
 		--ef-ink-blue-link: var(--ef-dark-blue-500);
+
+		/* Surface Colors */
 		--ef-surface-white: var(--ef-dark-gray-950);
 		--ef-surface-gray-1: var(--ef-dark-gray-800);
 		--ef-surface-gray-2: var(--ef-dark-gray-700);

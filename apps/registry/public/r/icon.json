@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon",
+  "type": "registry:ui",
+  "title": "Icon",
+  "description": "An icon component",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/ui/icon.tsx",
+      "content": "import { type ComponentProps } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface IconProps extends ComponentProps<\"svg\"> {\n\t/**\n\t * If it has a label, the icon will be given a role of \"img\" for accessibility\n\t * If it does not have a label, the icon will be hidden from screen readers\n\t */\n\tariaLabel?: string;\n}\n\n// For accessibility - https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/\n// Default: aria hidden props are used as the majority of icons are decorative\nexport const Icon = ({\n\tariaLabel = undefined,\n\tclassName,\n\tchildren,\n\t...props\n}: IconProps) => {\n\tconst ariaLabelProps: AriaHiddenProps | AriaLabelProps = ariaLabel\n\t\t? {\n\t\t\t\trole: \"img\",\n\t\t\t}\n\t\t: {\n\t\t\t\t\"aria-hidden\": \"true\",\n\t\t\t\tfocusable: \"false\",\n\t\t\t};\n\n\treturn (\n\t\t<svg\n\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\tclassName={cn(\n\t\t\t\t\"inline-block h-[1em] w-[1em] shrink-0 align-middle leading-[1em]\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t{...ariaLabelProps}\n\t\t\t{...props}\n\t\t>\n\t\t\t{ariaLabel ? <title>{ariaLabel}</title> : null}\n\t\t\t{children}\n\t\t</svg>\n\t);\n};\n\ninterface AriaLabelProps {\n\trole: ComponentProps<\"svg\">[\"role\"];\n}\n\ninterface AriaHiddenProps {\n\t\"aria-hidden\": ComponentProps<\"svg\">[\"aria-hidden\"];\n\tfocusable: ComponentProps<\"svg\">[\"focusable\"];\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ]
+}
