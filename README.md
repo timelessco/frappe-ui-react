@@ -62,6 +62,24 @@ This library ensures React applications can maintain the same look and feel as o
 - Tailwind CSS
 - Radix UI (for accessible primitives)
 
+### Build the nextjs registry with docs website
+
+```bash
+turbo run build
+```
+
+### Build and start the nextjs registry with docs website
+
+```bash
+turbo run start
+```
+
+## Available demos
+
+- [`/gameplan`](https://frappe-ui-react.tmls.dev/gameplan) - showcases the Frappe Gameplan app block
+- [`/lms`](https://frappe-ui-react.tmls.dev/lms) - showcases the Frappe LMS app block
+- [`/kitchen-sink`](https://frappe-ui-react.tmls.dev/kitchen-sink) - showcases all components
+
 ### Design System
 
 Components are built following the [Espresso UI Design System](https://www.figma.com/community/file/1407648399328528443) specifications, ensuring:
@@ -76,13 +94,15 @@ Components are built following the [Espresso UI Design System](https://www.figma
 
 ```txt
 .
-└── apps
-    └── registry (shadcn component registry with nextjs website)
+├── apps
+│   └── registry (shadcn component registry with nextjs website)
+└── native-app (react native app)
 ```
 
 ## Apps
 
 - [apps/registry](./apps/registry): Next.js, Typescript [README](./apps/registry/README.md) | [CHANGELOG](./apps/registry/CHANGELOG.md)
+- [native-app](./native-app): Frappe UI React Native, Typescript [README](./native-app/README.md)
 
 ## Development
 
