@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "type": "registry:ui",
+  "title": "Button Group",
+  "description": "A button group component",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://frappe-ui-react.tmls.dev/r/utils.json",
+    "https://frappe-ui-react.tmls.dev/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/web/default/ui/button-group.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { type ButtonProps } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ButtonGroupContextValue {\n\tsize?: NonNullable<ButtonProps[\"size\"]>;\n\tvariant?: NonNullable<ButtonProps[\"variant\"]>;\n}\n\nconst ButtonGroupContext = React.createContext<ButtonGroupContextValue>({});\n\nexport const useButtonGroupContext = () => React.useContext(ButtonGroupContext);\n\ninterface ButtonGroupProps\n\textends ButtonGroupContextValue,\n\t\tReact.HTMLAttributes<HTMLDivElement> {\n\tchildren: React.ReactNode;\n}\n\nexport const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(\n\t({ className, children, size, variant, ...props }, ref) => {\n\t\tconst contextValue = React.useMemo(\n\t\t\t() => ({ size, variant }),\n\t\t\t[size, variant],\n\t\t);\n\n\t\treturn (\n\t\t\t<ButtonGroupContext.Provider value={contextValue}>\n\t\t\t\t<div\n\t\t\t\t\tref={ref}\n\t\t\t\t\tclassName={cn(\"flex gap-ef-4\", className)}\n\t\t\t\t\trole=\"group\"\n\t\t\t\t\t{...props}\n\t\t\t\t>\n\t\t\t\t\t{children}\n\t\t\t\t</div>\n\t\t\t</ButtonGroupContext.Provider>\n\t\t);\n\t},\n);\n\nButtonGroup.displayName = \"ButtonGroup\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ]
+}

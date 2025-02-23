@@ -1,7 +1,6 @@
 import typography from "@tailwindcss/typography";
 import { type Config } from "tailwindcss";
 import tailwindAnimate from "tailwindcss-animate";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -15,8 +14,10 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: [
-					`var(--font-inter), ${defaultTheme.fontFamily.sans.join(", ")}`,
-					{ fontVariationSettings: '"opsz" 32' },
+					"var(--font-inter), sans-serif",
+					{
+						fontVariationSettings: "opsz 32",
+					},
 				],
 			},
 			colors: {
