@@ -1,7 +1,6 @@
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Navbar } from "@/components/navbar";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -36,7 +35,6 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<Navbar />
 					{children}
 				</ThemeProvider>
 				<TailwindIndicator />
