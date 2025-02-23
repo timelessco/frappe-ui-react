@@ -40,6 +40,11 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
 const ModeToggleIcon = ({ className, ...props }: IconProps) => {
 	const { theme } = useTheme();
 
+	const hasMounted = useHasMounted();
+	if (!hasMounted) {
+		return null;
+	}
+
 	if (theme === "dark") {
 		return (
 			<Moon
@@ -62,3 +67,11 @@ const ModeToggleIcon = ({ className, ...props }: IconProps) => {
 		/>
 	);
 };
+
+function useHasMounted() {
+	const [hasMounted, setHasMounted] = React.useState(false);
+	React.useEffect(() => {
+		setHasMounted(true);
+	}, []);
+	return hasMounted;
+}
