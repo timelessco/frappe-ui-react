@@ -77,7 +77,7 @@ export interface TagProps extends PressableProps {
 	 * so that people who use VoiceOver know what element they have selected.
 	 * VoiceOver will read this string when a user selects the associated element.
 	 */
-	accesibilityLabel: string;
+	accessibilityLabel: string;
 	/**
 	 * When set to true, The Tap creates a Touch Feedback
 	 * Check more -> https://docs.expo.dev/versions/latest/sdk/haptics/
@@ -103,7 +103,7 @@ export const Tag = (tagProps: PropsWithChildren<Partial<TagProps>>) => {
 		suffix: suffixFromProps,
 		style,
 		textStyle,
-		accesibilityLabel,
+		accessibilityLabel,
 		hapticEnabled = true,
 		onPress,
 		children,
@@ -192,7 +192,7 @@ export const Tag = (tagProps: PropsWithChildren<Partial<TagProps>>) => {
 			{...otherProps}
 			accessible
 			accessibilityRole="button"
-			accessibilityLabel={accesibilityLabel}
+			accessibilityLabel={accessibilityLabel}
 			{...handlers}
 			onPress={handlePress}
 			style={animatedStyle}>

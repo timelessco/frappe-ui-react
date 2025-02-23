@@ -95,7 +95,9 @@ export default [
 			// no ignore
 			"!**/.*",
 			"!monorepo.code-workspace",
-			//  Node.js
+			// Native app
+			"native-app",
+			// Node.js
 			".npmrc",
 			".nvmrc",
 			// Lock files
