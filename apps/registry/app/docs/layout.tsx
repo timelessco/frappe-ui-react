@@ -25,9 +25,10 @@ export default function DocsLayout({
 	const categoryGroups = registry.items
 		.filter(
 			(item: RegistryItem) =>
-				item.type === "registry:ui" ||
-				item.type === "registry:hook" ||
-				item.name === "getting-started",
+				(item.type === "registry:ui" ||
+					item.type === "registry:hook" ||
+					item.name === "getting-started") &&
+				item.name !== "native-utils",
 		)
 		.reduce<
 			Record<
@@ -66,6 +67,19 @@ export default function DocsLayout({
 		{
 			title: "Welcome",
 			href: "/docs",
+		},
+		{
+			title: "Examples",
+			items: [
+				{
+					title: "Gameplan",
+					href: "/gameplan",
+				},
+				{
+					title: "LMS",
+					href: "/lms",
+				},
+			],
 		},
 		...Object.entries(categoryGroups).map(([category, categoryItems]) => {
 			const sortedItems = categoryItems.sort((a, b) => {
