@@ -20,7 +20,7 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button iconOnly={<ModeToggleIcon />} {...props} />
+				<Button variant="outline" iconOnly={<ModeToggleIcon />} {...props} />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end">
 				<DropdownMenuItem onClick={() => setTheme("light")}>

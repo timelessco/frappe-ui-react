@@ -691,14 +691,22 @@ function Navbar() {
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="container relative mx-auto flex items-center justify-between p-4">
 				<div className="flex items-center gap-2">
-					<Logo className="text-lg" />
+					<Logo className="text-lg text-ink-gray-8" />
 					<Link href="/" className="font-semibold">
 						Frappe UI React
 					</Link>
 				</div>
 				<div className="flex items-center gap-4">
-					<Link href="https://github.com/timelessco/frappe-ui-react">
-						<Button size="sm" variant="subtle" iconOnly={<GithubIcon />} />
+					<Link
+						target="_blank"
+						href="https://github.com/timelessco/frappe-ui-react"
+					>
+						<Button
+							variant="outline"
+							iconOnly={
+								<GithubIcon className="inline-block size-[1em] shrink-0 align-middle leading-[1em]" />
+							}
+						/>
 					</Link>
 					<ModeToggle />
 				</div>

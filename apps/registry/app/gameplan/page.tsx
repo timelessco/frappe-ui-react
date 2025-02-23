@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarGroup } from "@/components/ui/avatar-group";
@@ -80,7 +81,7 @@ const GamePlanPage = () => {
 				<div className="relative mx-auto w-full max-w-[540px] px-4 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
 					<nav className="mx-auto py-5 xl:max-w-[900px]">
 						<p className="flex items-center justify-between text-ef-lg font-ef-medium leading-[115%] tracking-[0.24px]">
-							Home
+							<Link href="/">Home</Link>
 							<ModeToggle />
 						</p>
 					</nav>

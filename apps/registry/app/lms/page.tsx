@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -29,8 +30,7 @@ const LmsPage = () => {
 				<div className="relative mx-auto w-full max-w-[540px] px-4 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1200px]">
 					<nav className="mx-auto flex items-center justify-between py-2.5">
 						<p className="flex items-center justify-between text-ef-lg font-ef-medium leading-[115%] tracking-[0.24px] text-ink-gray-8">
-							Home
-							{/* <ModeToggle /> */}
+							<Link href="/">Home</Link>
 						</p>
 						<div className="flex items-center gap-3">
 							<Button variant="subtle" prefix={<ShareIcon />}>
