@@ -1,0 +1,228 @@
+import { Avatar, AvatarImage, AvatarFallback, AvatarIcon } from "@/components/ui/avatar";
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PlaceholderIcon } from "@/icons/placeholder";
+
+
+# Avatar
+
+An avatar component that follows our design system guidelines with support for different sizes, statuses, icons and fallbacks.
+
+<ComponentPreview name="avatar" component={<Avatar size="2xl">
+  <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+</Avatar>}>
+  <EnhancedCodeBlock language="tsx">
+    {`import { Avatar, AvatarImage } from "@/components/ui/avatar"
+
+export function AvatarDemo() {
+  return (
+    <Avatar size="2xl">
+      <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+    </Avatar>
+  )
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+    1. Create a new component file in the `components/ui` directory called `avatar.tsx`
+    2. Update the import path according to your project structure
+    3. Copy and paste the following code into the file:
+    <EnhancedCodeBlock language="tsx">
+      {`"use client";
+
+import * as React from "react";
+import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { Icon, type IconProps } from "@/components/ui/icon";
+import { cn } from "@/lib/utils";
+
+import { useAvatarGroupContext } from "./avatar-group";
+
+// ... rest of the code from avatar.tsx`}
+    </EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/avatar"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/avatar"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/avatar"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+## Usage
+
+### Sizes
+
+Avatar comes in 7 different sizes: xs, sm, md, lg, xl, 2xl, and 3xl.
+
+<ComponentPreview component={<div className="flex items-center gap-4">
+  <Avatar size="xs">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="sm">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="md">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="lg">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="xl">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="3xl">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+</div>}>
+  <EnhancedCodeBlock language="tsx">
+    {`
+		import { Avatar, AvatarImage } from "@/components/ui/avatar";
+
+export function AvatarDemo() {
+  return (
+			<div className="flex items-center gap-4">
+				<Avatar size="xs">
+					<AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+				</Avatar>
+				<Avatar size="sm">
+					<AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+				</Avatar>
+			</div>
+  )
+}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+### Status Indicators
+
+Avatars can show different status indicators: active, away, sleep, pin, and pinned.
+
+<ComponentPreview component={<div className="flex items-center gap-4">
+  <Avatar size="2xl" status="active">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl" status="away">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl" status="sleep">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl" status="pin">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl" status="pinned">
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+</div>}>
+  <EnhancedCodeBlock language="tsx">
+    {`
+		import { Avatar, AvatarImage } from "@/components/ui/avatar";
+
+		export function AvatarDemo() {
+			return (
+				<div className="flex items-center gap-4">
+					<Avatar size="2xl" status="active">
+						<AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+					</Avatar>
+				</div>
+			)
+		}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+### Fallback and Icons
+
+You can use text fallbacks or icons when no image is available.
+
+<ComponentPreview component={<div className="flex items-center gap-4">
+  <Avatar size="2xl">
+    <AvatarFallback>CN</AvatarFallback>
+  </Avatar>
+  <Avatar size="2xl">
+    <AvatarIcon>
+      <PlaceholderIcon />
+    </AvatarIcon>
+  </Avatar>
+</div>}>
+  <EnhancedCodeBlock language="tsx">
+    {`
+		import { Avatar, AvatarFallback, AvatarIcon } from "@/components/ui/avatar";
+
+    	export function AvatarDemo() {
+    		return (
+    			<div className="flex items-center gap-4">
+    				<Avatar size="2xl">
+    					<AvatarFallback>CN</AvatarFallback>
+    				</Avatar>
+    				<Avatar size="2xl">
+    					<AvatarIcon>
+    						<PlaceholderIcon />
+    					</AvatarIcon>
+    				</Avatar>
+    	</div>
+    	)
+	}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>
+
+### Squared Variant
+
+Avatars can be squared instead of circular.
+
+<ComponentPreview component={<div className="flex items-center gap-4">
+  <Avatar size="2xl" squared>
+    <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+  </Avatar>
+  <Avatar size="2xl" squared>
+    <AvatarFallback>CN</AvatarFallback>
+  </Avatar>
+</div>}>
+  <EnhancedCodeBlock language="tsx">
+    {`
+		import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+		export function AvatarDemo() {
+			return (
+				<div className="flex items-center gap-4">
+					<Avatar size="2xl" squared>
+						<AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" />
+					</Avatar>
+				</div>
+			)
+		}`}
+  </EnhancedCodeBlock>
+</ComponentPreview>

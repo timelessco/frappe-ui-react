@@ -86,8 +86,10 @@ export function EnhancedCodeBlock({
 					className,
 				)}
 			>
-				<pre className={`language-${language} m-0`}>
-					<code className={`language-${language}`}>{codeContent}</code>
+				<pre className={`language-${language} m-0`} suppressHydrationWarning>
+					<code className={`language-${language}`} suppressHydrationWarning>
+						{codeContent}
+					</code>
 				</pre>
 			</div>
 		</div>

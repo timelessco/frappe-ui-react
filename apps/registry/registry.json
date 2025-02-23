@@ -87,6 +87,43 @@
 				}
 			],
 			"categories": ["overlays"]
+		},
+		{
+			"name": "avatar",
+			"type": "registry:ui",
+			"title": "Avatar",
+			"description": "An avatar component",
+			"dependencies": ["@radix-ui/react-avatar", "class-variance-authority"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/utils.json",
+				"https://frappe-ui-react.tmls.dev/r/icon.json",
+				"https://frappe-ui-react.tmls.dev/r/avatar-group.json"
+			],
+			"files": [
+				{
+					"path": "registry/web/default/ui/avatar.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"]
+		},
+		{
+			"name": "avatar-group",
+			"type": "registry:ui",
+			"title": "Avatar Group",
+			"description": "An avatar group component",
+			"dependencies": ["class-variance-authority"],
+			"registryDependencies": [
+				"https://frappe-ui-react.tmls.dev/r/utils.json",
+				"https://frappe-ui-react.tmls.dev/r/avatar.json"
+			],
+			"files": [
+				{
+					"path": "registry/web/default/ui/avatar-group.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"categories": ["primitives"]
 		}
 	]
 }
