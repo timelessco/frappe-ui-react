@@ -76,7 +76,7 @@
 			"dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
 			"files": [
 				{
-					"path": "registry/web/default/ui/dropdown.tsx",
+					"path": "registry/web/default/ui/dropdown-menu.tsx",
 					"type": "registry:ui"
 				}
 			],
