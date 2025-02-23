@@ -14,6 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
+import { Input } from "@/components/ui/input";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
 import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
@@ -34,6 +35,60 @@ export default function Home() {
 				<ModeToggle className="absolute right-2 top-4" />
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
+				{/* Complete Input Component */}
+				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-sm text-outline-gray-5 sm:pl-3">
+							An input component
+						</h2>
+						<OpenInV0Button name="input" className="w-fit" />
+					</div>
+					<div className="relative flex flex-col items-center justify-center gap-4">
+						{/* Outline inputs */}
+						{["subtle", "outline"].map((variant) =>
+							["sm", "md", "lg", "xl"].map((size) => (
+								<div
+									className="flex w-full flex-col items-center justify-center gap-4 sm:w-[600px]"
+									key={`${variant}-${size}`}
+								>
+									<div className="flex w-full flex-wrap items-center justify-center gap-2 sm:flex-nowrap">
+										<Input
+											variant={variant as "outline" | "subtle"}
+											size={size as "lg" | "md" | "sm" | "xl"}
+											placeholder="Type here..."
+										/>
+										<Input
+											variant={variant as "outline" | "subtle"}
+											size={size as "lg" | "md" | "sm" | "xl"}
+											placeholder="Type here..."
+											prefix={<PlaceholderIcon />}
+										/>
+									</div>
+									<div
+										className="flex w-full flex-wrap items-center justify-center gap-2 sm:flex-nowrap"
+										key={`${variant}-${size}`}
+									>
+										<Input
+											variant={variant as "outline" | "subtle"}
+											size={size as "lg" | "md" | "sm" | "xl"}
+											disabled
+											placeholder="Disabled..."
+											suffix={<PlaceholderIcon />}
+										/>
+										<Input
+											variant={variant as "outline" | "subtle"}
+											invalid
+											size={size as "lg" | "md" | "sm" | "xl"}
+											placeholder="Invalid..."
+											prefix={<PlaceholderIcon />}
+											suffix={<PlaceholderIcon />}
+										/>
+									</div>
+								</div>
+							)),
+						)}
+					</div>
+				</div>
 				{/* Badge Component */}
 				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
@@ -337,7 +392,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-
 				{/* Avatar Group Component */}
 				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
@@ -481,7 +535,6 @@ export default function Home() {
 						</AvatarLabelGroup>
 					</div>
 				</div>
-
 				{/* Avatar Component */}
 				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
@@ -596,7 +649,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-
 				{/* Button Component */}
 				<div className="relative flex flex-col gap-8 rounded-lg border px-4 pb-8 pt-4">
 					<div className="flex items-center justify-between">
@@ -1041,7 +1093,6 @@ export default function Home() {
 					</div>
 					{/* ghost buttons ends */}
 				</div>
-
 				{/* Button Group Component */}
 				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
@@ -1077,7 +1128,6 @@ export default function Home() {
 						</ButtonGroup>
 					</div>
 				</div>
-
 				{/* Dropdown Menu Component */}
 				<div className="relative flex min-h-[100px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
@@ -1090,7 +1140,6 @@ export default function Home() {
 						<DropdownMenuComp />
 					</div>
 				</div>
-
 				{/* Icon Component */}
 				<div className="relative flex flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
