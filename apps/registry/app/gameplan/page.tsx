@@ -4,8 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuGameplan } from "@/components/dropdown-menu-gameplan";
 import { ModeToggle } from "@/components/mode-toggle";
-import { SmallDownIcon } from "@/registry/web/default/icons/line/small-down";
-import { SortIcon } from "@/registry/web/default/icons/line/sort";
+import { SmallDownIcon } from "@/icons/line/small-down";
+import { SortIcon } from "@/icons/line/sort";
 
 const GamePlanPage = () => {
 	const tasks = [

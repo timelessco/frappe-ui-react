@@ -16,11 +16,11 @@ import { ButtonGroup } from "@/components/ui/button-group";
 import { DropdownMenuComp } from "@/components/dropdown-menu-comp";
 import { ModeToggle } from "@/components/mode-toggle";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
-import { SmallDownIcon } from "@/registry/web/default/icons/line/small-down";
-import { SmallRightChevronIcon } from "@/registry/web/default/icons/line/small-right-chevron";
-import { SortIcon } from "@/registry/web/default/icons/line/sort";
-import { PlaceholderIcon } from "@/registry/web/default/icons/placeholder";
-import { UserIcon } from "@/registry/web/default/icons/solid/user";
+import { SmallDownIcon } from "@/icons/line/small-down";
+import { SmallRightChevronIcon } from "@/icons/line/small-right-chevron";
+import { SortIcon } from "@/icons/line/sort";
+import { PlaceholderIcon } from "@/icons/placeholder";
+import { UserIcon } from "@/icons/solid/user";
 
 export default function Home() {
 	return (
