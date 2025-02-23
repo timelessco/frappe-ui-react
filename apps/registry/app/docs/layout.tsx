@@ -1,3 +1,7 @@
+"use client";
+
+import { redirect } from "next/navigation";
+
 import { DocsSidebarNav } from "@/components/docs-sidebar";
 import registry from "@/registry.json";
 
@@ -67,6 +71,11 @@ export default function DocsLayout({
 			});
 
 			const basePath = category === "React Native" ? "native" : "web";
+
+			// Redirect /docs/web to /docs/web/getting-started
+			if (window?.location?.pathname === `/docs/${basePath}`) {
+				redirect(`/docs/${basePath}/getting-started`);
+			}
 
 			return {
 				title: category,
