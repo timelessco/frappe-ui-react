@@ -14,6 +14,7 @@ import { PeopleIcon } from "@/icons/line/people";
 import { SmallDownIcon } from "@/icons/line/small-down";
 import { SmallRightChevronIcon } from "@/icons/line/small-right-chevron";
 import { SortIcon } from "@/icons/line/sort";
+import Logo from "@/icons/logo";
 
 import CourseImg1 from "./lms/_images/course-img-1.png";
 
@@ -123,15 +124,18 @@ export default function IndexPage() {
 						size="sm"
 						prefix={<SmallRightChevronIcon />}
 					>
-						<Link href="/gameplan">Browse examples</Link>
+						<Link href="/gameplan">
+							Browse examples
+							<SmallRightChevronIcon />
+						</Link>
 					</Badge>
 					<h1 className="pb-4 text-[42px] font-ef-bold leading-[115%] tracking-[0.18px] text-ink-gray-8">
 						Frappe UI Component Registry
 					</h1>
 					<p className="max-w-[555px] text-[18px] font-ef-regular leading-[150%] tracking-[0.18px] text-ink-gray-7">
-						A design-driven React component collection built with Espresso UI
-						principles and Shadcn compatibility. Offers a distributed library of
-						accessible, beautifully-crafted UI elements.
+						A design-driven React and React Native component collection built
+						with Espresso UI principles and Shadcn compatibility. Offers a
+						distributed library of accessible, beautifully-crafted UI elements.
 					</p>
 					<div className="mt-5 flex items-center space-x-2">
 						<Button variant="solid" size="lg" asChild>
@@ -686,7 +690,8 @@ function Navbar() {
 	return (
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="container relative mx-auto flex items-center justify-between p-4">
-				<div className="flex items-center gap-6">
+				<div className="flex items-center gap-2">
+					<Logo className="text-lg" />
 					<Link href="/" className="font-semibold">
 						Frappe UI React
 					</Link>
