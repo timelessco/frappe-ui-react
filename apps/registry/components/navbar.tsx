@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { GithubIcon } from "lucide-react";
 
 import { ModeToggle } from "@/components/mode-toggle";
+
+import { Button } from "./ui/button";
 
 export function Navbar() {
 	return (
@@ -12,6 +15,9 @@ export function Navbar() {
 					</Link>
 				</div>
 				<div className="flex items-center gap-4">
+					<Link href="https://github.com/timelessco/frappe-ui-react">
+						<Button size="sm" variant="subtle" iconOnly={<GithubIcon />} />
+					</Link>
 					<ModeToggle />
 				</div>
 			</div>
