@@ -6,13 +6,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
 import { cn } from "@/lib/utils";
 
+import { OpenInV0Button } from "./open-in-v0-button";
+
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 	className?: string;
 	component: React.ReactNode;
+	name: string;
 }
 
 export function ComponentPreview({
+	name,
 	component,
 	children,
 	className,
@@ -29,6 +33,9 @@ export function ComponentPreview({
 					value="preview"
 					className="rounded-lg border p-6 shadow-sm"
 				>
+					<div className="flex items-center justify-end">
+						<OpenInV0Button name={name} />
+					</div>
 					<div className="flex min-h-[350px] items-center justify-center">
 						{component}
 					</div>

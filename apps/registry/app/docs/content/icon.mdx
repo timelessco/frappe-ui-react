@@ -1,0 +1,170 @@
+import { Icon } from "@/components/ui/icon";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ComponentPreview } from "@/components/component-preview";
+import { EnhancedCodeBlock } from "@/components/enhanced-codeblock";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { PackageManagerTabs } from "@/components/package-manager-tabs";
+
+# Icon
+
+A flexible icon component that follows accessibility best practices with support for labels and decorative icons.
+
+<ComponentPreview name="icon" component={<Icon><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Icon>}>
+
+<EnhancedCodeBlock language="tsx">
+{`import { Icon } from "@/components/ui/icon";
+
+export function IconDemo() {
+  return (
+    <Icon>
+      <path
+        d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+        stroke="currentColor"
+        fill="none"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+`}
+</EnhancedCodeBlock>
+</ComponentPreview>
+
+## Installation
+
+<InstallationTabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="manual">
+	1. Create a new component file in the `components/ui` directory called `icon.tsx`
+	2. Update the import path according to your project structure
+	3. Copy and paste the following code into the file:
+    <EnhancedCodeBlock language="bash">
+		```tsx
+		import { type ComponentProps } from "react";
+
+import { cn } from "@/lib/utils";
+
+export interface IconProps extends ComponentProps<"svg"> {
+	/**
+	 * If it has a label, the icon will be given a role of "img" for accessibility
+	 * If it does not have a label, the icon will be hidden from screen readers
+	 */
+	ariaLabel?: string;
+}
+
+// For accessibility - https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/
+// Default: aria hidden props are used as the majority of icons are decorative
+export const Icon = ({
+	ariaLabel = undefined,
+	className,
+	children,
+	...props
+}: IconProps) => {
+	const ariaLabelProps: AriaHiddenProps | AriaLabelProps = ariaLabel
+		? {
+				role: "img",
+			}
+		: {
+				"aria-hidden": "true",
+				focusable: "false",
+			};
+
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			className={cn(
+				"inline-block h-[1em] w-[1em] shrink-0 align-middle leading-[1em]",
+				className,
+			)}
+			viewBox="0 0 24 24"
+			{...ariaLabelProps}
+			{...props}
+		>
+			{ariaLabel ? <title>{ariaLabel}</title> : null}
+			{children}
+		</svg>
+	);
+};
+
+interface AriaLabelProps {
+	role: ComponentProps<"svg">["role"];
+}
+
+interface AriaHiddenProps {
+	"aria-hidden": ComponentProps<"svg">["aria-hidden"];
+	focusable: ComponentProps<"svg">["focusable"];
+}
+
+		```
+	</EnhancedCodeBlock>
+  </TabsContent>
+  <TabsContent value="cli">
+    <PackageManagerTabs defaultValue="npm">
+      <TabsList>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+				<TabsTrigger value="yarn">yarn</TabsTrigger>
+      </TabsList>
+      <TabsContent value="npm">
+        <EnhancedCodeBlock language="bash">
+          npx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/icon"
+        </EnhancedCodeBlock>
+      </TabsContent>
+      <TabsContent value="pnpm">
+        <EnhancedCodeBlock language="bash">
+          pnpm dlx shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/icon"
+        </EnhancedCodeBlock>
+      </TabsContent>
+		<TabsContent value="yarn">
+        <EnhancedCodeBlock language="bash">
+          yarn shadcn@latest add "https://frappe-ui-react.tmls.dev/registry/icon"
+        </EnhancedCodeBlock>
+      </TabsContent>
+    </PackageManagerTabs>
+  </TabsContent>
+</InstallationTabs>
+
+
+### Usage
+
+#### Decorative Icon (Default)
+<ComponentPreview component={<Icon><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Icon>}>
+<EnhancedCodeBlock language="tsx">
+{`import { Icon } from "@/components/ui/icon";
+
+export function IconDemo() {
+  return (
+			<>
+				<Icon>
+					<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+				</Icon>
+			</>
+  );
+}
+`}
+</EnhancedCodeBlock>
+</ComponentPreview>
+#### Icon with Aria Label
+
+<ComponentPreview component={<Icon ariaLabel="Icon with label"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Icon>}>
+<EnhancedCodeBlock language="tsx">
+{`import { Icon } from "@/components/ui/icon";
+
+export function IconDemo() {
+  return (
+    <>
+      <Icon ariaLabel="Icon with label">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+      </Icon>
+    </>
+  );
+}
+`}
+</EnhancedCodeBlock>
+</ComponentPreview>
+
