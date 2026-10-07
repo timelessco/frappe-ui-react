@@ -90,7 +90,7 @@
 		"eslint-plugin-tailwindcss": "3.18.0",
 		"eslint-plugin-yml": "1.17.0",
 		"lint-staged": "15.4.3",
-		"postcss": "8.5.3",
+		"postcss": "8.5.23",
 		"rimraf": "6.0.1",
 		"tailwindcss": "3.4.17",
 		"typescript": "5.7.3"
