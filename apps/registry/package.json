@@ -25,17 +25,18 @@
 	},
 	"type": "module",
 	"scripts": {
-		"build": "pnpm registry:build && next build",
-		"build:ci": "next build",
+		"build": "pnpm registry:source && pnpm registry:build && next build",
+		"build:ci": "pnpm registry:source && next build",
 		"build:start": "pnpm build && pnpm start",
 		"clean": "rimraf ./.next ./tsconfig.tsbuildinfo",
-		"dev": "next dev --turbopack",
+		"dev": "pnpm registry:source && next dev --turbopack",
 		"fix:eslint": "eslint --cache --color --fix .",
 		"lint:eslint": "eslint --cache --color .",
 		"lint:types": "tsc --noEmit",
 		"registry:build": "shadcn build",
 		"start": "next start",
-		"test": "echo \"no test specified\" && exit 0"
+		"test": "echo \"no test specified\" && exit 0",
+		"registry:source": "node scripts/build-registry-source.mjs"
 	},
 	"browserslist": {
 		"production": [
