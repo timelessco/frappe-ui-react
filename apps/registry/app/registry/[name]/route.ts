@@ -1,7 +1,6 @@
-import { promises as fs } from "fs";
-import path from "path";
 import { NextResponse } from "next/server";
 import { registryItemSchema } from "shadcn/registry";
+import registrySource from "@/lib/registry-source.generated.json";
 
 // This route shows an example for serving a component using a route handler.
 export async function GET(
@@ -36,14 +35,14 @@ export async function GET(
 			);
 		}
 
-		// Read all files in parallel.
-		const filesWithContent = await Promise.all(
-			registryItem.files.map(async (file) => {
-				const filePath = path.join(process.cwd(), file.path);
-				const content = await fs.readFile(filePath, "utf8");
-				return { ...file, content };
-			}),
-		);
+		// Resolve every file from the inlined map (see scripts/build-registry-source.mjs).
+		const filesWithContent = registryItem.files.map((file) => {
+			const content = (registrySource as Record<string, string>)[file.path];
+			if (content === undefined) {
+				throw new Error(`Missing registry source for ${file.path}`);
+			}
+			return { ...file, content };
+		});
 
 		// Return the component with the files.
 		return NextResponse.json({ ...registryItem, files: filesWithContent });
