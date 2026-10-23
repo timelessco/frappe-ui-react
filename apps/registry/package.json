@@ -37,8 +37,8 @@
     "start": "next start",
     "test": "echo \"no test specified\" && exit 0",
     "registry:source": "node scripts/build-registry-source.mjs",
-    "dev:vinext": "vite dev --port 3001",
-    "build:vinext": "vite build",
+    "dev:vinext": "pnpm registry:source && vite dev --port 3001",
+    "build:vinext": "pnpm registry:source && vite build",
     "start:vinext": "vite preview",
     "deploy:vinext": "vinext-cloudflare deploy"
   },
