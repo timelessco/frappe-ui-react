@@ -44,5 +44,5 @@ autoInstallPeers: false
 savePrefix: ""
 
 allowBuilds:
-  'workerd': true
+  "workerd": true
   sharp: true

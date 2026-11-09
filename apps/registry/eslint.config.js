@@ -261,5 +261,16 @@ export default [
 			files: ["**/*.yaml", "**/*.yml"],
 		};
 	}),
+	{
+		files: ["cloudflare.config.ts", "vite.config.ts"],
+		languageOptions: {
+			parserOptions: {
+				project: false,
+				projectService: {
+					allowDefaultProject: ["cloudflare.config.ts", "vite.config.ts"],
+				},
+			},
+		},
+	},
 	eslintConfigPrettier,
 ];
