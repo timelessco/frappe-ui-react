@@ -12,6 +12,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_BASE_URL ??
+			"https://frappe-ui-react.timeless.workers.dev",
+	),
 	title: "Frappe UI React",
 	description:
 		"Frappe UI React is a React library for building web applications using Espresso UI, a design system for building beautiful, responsive, and accessible web applications. 100% Shadcn compatible.",
