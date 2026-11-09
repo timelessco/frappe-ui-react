@@ -194,6 +194,9 @@ coverage
 .next
 out
 
+# Inlined registry sources (see apps/registry/scripts/build-registry-source.mjs)
+apps/registry/lib/registry-source.generated.json
+
 # Next PWA
 **/public/precache.*.*.js
 **/public/sw.js
