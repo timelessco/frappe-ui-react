@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { registryItemSchema } from "shadcn/registry";
+
 import registrySource from "@/lib/registry-source.generated.json";
 
 // This route shows an example for serving a component using a route handler.
@@ -38,9 +39,11 @@ export async function GET(
 		// Resolve every file from the inlined map (see scripts/build-registry-source.mjs).
 		const filesWithContent = registryItem.files.map((file) => {
 			const content = (registrySource as Record<string, string>)[file.path];
+
 			if (content === undefined) {
 				throw new Error(`Missing registry source for ${file.path}`);
 			}
+
 			return { ...file, content };
 		});
 

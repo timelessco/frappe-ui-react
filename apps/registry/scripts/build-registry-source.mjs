@@ -1,4 +1,4 @@
-// Inlines the registry sources into a JSON module so the `/registry/[name]`
+// Embed the registry sources into a JSON module so the `/registry/[name]`
 // route handler never touches the filesystem at request time. Workers have no
 // `fs`, and a bundled map also removes the need for Next to trace the source
 // files into the standalone output.
@@ -12,7 +12,9 @@ const registry = JSON.parse(
 
 const paths = [
 	...new Set(
-		registry.items.flatMap((item) => (item.files ?? []).map((file) => file.path)),
+		registry.items.flatMap((item) =>
+			(item.files ?? []).map((file) => file.path),
+		),
 	),
 ].sort();
 

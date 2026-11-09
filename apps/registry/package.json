@@ -34,9 +34,9 @@
 		"lint:eslint": "eslint --cache --color .",
 		"lint:types": "tsc --noEmit",
 		"registry:build": "shadcn build",
+		"registry:source": "node scripts/build-registry-source.mjs",
 		"start": "next start",
-		"test": "echo \"no test specified\" && exit 0",
-		"registry:source": "node scripts/build-registry-source.mjs"
+		"test": "echo \"no test specified\" && exit 0"
 	},
 	"browserslist": {
 		"production": [
