@@ -2,7 +2,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v9
+      - uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           any-of-labels: "Status: Awaiting Response,Resolution: Not Reproducible"
           close-issue-message: This issue was closed because it has been stalled for 7 days with no activity.
