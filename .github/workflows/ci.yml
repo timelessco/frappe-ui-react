@@ -6,7 +6,7 @@ jobs:
     name: 🔬 Lint Prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm turbo lint:prettier
     timeout-minutes: 15
@@ -18,7 +18,7 @@ jobs:
     name: 🔬 Lint ESLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm turbo lint:eslint
     timeout-minutes: 15
@@ -30,7 +30,7 @@ jobs:
     name: 🔬 Lint CSS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm lint:css
     timeout-minutes: 15
@@ -42,7 +42,7 @@ jobs:
     name: 🔬 Lint Types
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm lint:types
     timeout-minutes: 15
@@ -54,7 +54,7 @@ jobs:
     name: 🔬 Lint MD
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm lint:md
     timeout-minutes: 15
@@ -66,7 +66,7 @@ jobs:
     name: 🔬 Lint Package JSON
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm lint:package-json
     timeout-minutes: 15
@@ -78,7 +78,7 @@ jobs:
     name: 🔬 Lint Spelling
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/pnpm-install
       - run: pnpm lint:spelling
 
